@@ -1,0 +1,4 @@
+# Local dev / tooling — not needed for the static deployment
+server.js
+.claude
+README.md
