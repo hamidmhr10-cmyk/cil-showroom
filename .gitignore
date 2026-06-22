@@ -1,4 +1,6 @@
 # Local tooling & build artifacts
+# server.js is a local-only dev server (Vercel serves the static files directly)
+server.js
 .claude/
 .vercel/
 node_modules/
