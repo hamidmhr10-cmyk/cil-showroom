@@ -1,19 +1,6 @@
 {
   "lighting": [
     {
-      "id": "l1",
-      "cat": "chandeliers",
-      "art": "outdoor-light",
-      "image": "/images/grand-crystal-cascade-1782237937836.jpg",
-      "name": "Grand Crystal Cascade",
-      "price": "£485",
-      "desc": "Multi-tiered crystal chandelier, 12-light, chrome finish — a centrepiece for hallways and dining rooms.",
-      "dims": "80cm diameter, 120cm drop",
-      "finishes": "Chrome, Gold, Black",
-      "rooms": "Hallways, Dining Rooms",
-      "ukca": "Yes"
-    },
-    {
       "id": "l2",
       "cat": "chandeliers",
       "art": "chandelier",
