@@ -318,16 +318,22 @@
     lounge:"linear-gradient(135deg,#e8f0e8 0%,#d6e8d6 100%)", lounger:"linear-gradient(135deg,#e8f0e8 0%,#d6e8d6 100%)"
   };
 
+  /* Visual = a real photo if one was uploaded, else the styled SVG placeholder */
+  function productVisual(p) {
+    if (p.image) return '<img class="card__img" src="'+p.image+'" alt="'+escapeHTML(p.name)+'" loading="lazy">';
+    return (ART[p.art] || ART.chandelier)();
+  }
+  function visualBg(p) { return p.image ? "#0d0d0d" : (BG[p.art] || "#111"); }
+
   /* =================================================================
      RENDER: product card
      ================================================================= */
   function cardHTML(p, light) {
     var theme = light ? "card--light" : "card--dark";
     var btnClass = light ? "btn--navy" : "btn--gold";
-    var art = (ART[p.art] || ART.chandelier)();
     var priceLine = (p.from ? '<small>from</small>' : (p.unit ? '<small>'+p.unit+'</small>' : '')) ;
     return '<article class="card '+theme+' reveal" data-cat="'+p.cat+'" data-id="'+p.id+'">' +
-      '<div class="card__visual" style="background:'+(BG[p.art]||"#111")+'">' + art +
+      '<div class="card__visual" style="background:'+visualBg(p)+'">' + productVisual(p) +
         '<div class="card__overlay"><button class="btn '+btnClass+' btn--sm" data-detail="'+p.id+'" data-light="'+(light?1:0)+'">View Details</button></div>' +
       '</div>' +
       '<div class="card__body">' +
@@ -470,7 +476,7 @@
   function detailView(p, light) {
     var btnClass = light ? "btn--navy" : "btn--gold";
     return '<div class="modal__head"><span class="eyebrow">'+catLabel(p)+'</span><h3 id="modalTitle">'+p.name+'</h3></div>' +
-      '<div class="card__visual" style="aspect-ratio:16/9;border-radius:12px;background:'+(BG[p.art]||"#111")+';margin-bottom:1.2rem">'+(ART[p.art]||ART.chandelier)()+'</div>' +
+      '<div class="card__visual" style="aspect-ratio:16/9;border-radius:12px;background:'+visualBg(p)+';margin-bottom:1.2rem">'+productVisual(p)+'</div>' +
       '<div class="modal__detail">'+p.desc+'<dl>' +
         '<dt>Price</dt><dd>'+(p.from?"from ":"")+p.price+(p.unit?" "+p.unit:"")+(p.note?" ("+p.note+")":"")+'</dd>' +
         '<dt>Dimensions</dt><dd>'+p.dims+'</dd>' +
@@ -638,22 +644,9 @@
   /* =================================================================
      BOOT
      ================================================================= */
-  function boot() {
-    var body = document.body;
-    var page = body.getAttribute("data-page");
-
-    // inject nav + footer
-    var navMount = document.getElementById("site-nav");
-    var footMount = document.getElementById("site-footer");
-    if (navMount) navMount.innerHTML = navHTML(page);
-    if (footMount) footMount.innerHTML = footerHTML();
-
-    initNav();
-
-    if (page === "home") {
-      renderSparkles();
-      renderCarousel();
-    }
+  /* Render everything that depends on product data (runs after JSON loads) */
+  function renderData(page) {
+    if (page === "home") { renderCarousel(); }
     if (page === "lighting") {
       renderGrid("lightGrid", LIGHTING, false);
       renderFilters("lightFilter", LIGHT_CATS, "lightGrid", LIGHTING, false);
@@ -664,9 +657,31 @@
       renderFilters("furnFilter", FURN_CATS, "furnGrid", FURNITURE, true);
       filterFromHash("furnFilter", FURNITURE, "furnGrid", true);
     }
-
-    initInlineForms();
     observeReveals();
+  }
+
+  function boot() {
+    var page = document.body.getAttribute("data-page");
+
+    // inject nav + footer (no product data needed) so the page chrome shows instantly
+    var navMount = document.getElementById("site-nav");
+    var footMount = document.getElementById("site-footer");
+    if (navMount) navMount.innerHTML = navHTML(page);
+    if (footMount) footMount.innerHTML = footerHTML();
+    initNav();
+    initInlineForms();
+    if (page === "home") renderSparkles();
+    observeReveals();
+
+    // Products are managed in data/products.json (editable via /admin).
+    // The inline LIGHTING/FURNITURE arrays above are an offline fallback.
+    fetch("/data/products.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (data && data.lighting && data.furniture) { LIGHTING = data.lighting; FURNITURE = data.furniture; }
+      })
+      .catch(function () { /* keep fallback data */ })
+      .then(function () { renderData(page); });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

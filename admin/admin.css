@@ -1,0 +1,122 @@
+/* =================================================================
+   CIL Product Manager (admin dashboard)
+   ================================================================= */
+:root {
+  --bg: #f4f1ea;
+  --panel: #ffffff;
+  --ink: #15211b;
+  --text: #2b322c;
+  --muted: #6b726b;
+  --gold: #b2912f;
+  --emerald: #0b241d;
+  --emerald-2: #103128;
+  --border: #e3ddcf;
+  --danger: #b3402f;
+  --ok: #2e7d52;
+  --radius: 14px;
+  --font-head: 'Playfair Display', Georgia, serif;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+a { color: var(--gold); }
+.loading { padding: 4rem; text-align: center; color: var(--muted); }
+
+/* buttons */
+.btn { font-family: inherit; font-size: 0.92rem; font-weight: 600; border: 1.5px solid transparent; border-radius: 100px; padding: 0.7rem 1.3rem; cursor: pointer; transition: all .18s ease; display: inline-flex; align-items: center; gap: .5rem; }
+.btn--gold { background: var(--gold); color: #fff; }
+.btn--gold:hover { filter: brightness(1.07); transform: translateY(-1px); }
+.btn--emerald { background: var(--emerald); color: #fff; }
+.btn--emerald:hover { background: var(--emerald-2); transform: translateY(-1px); }
+.btn--ghost { background: transparent; border-color: var(--border); color: var(--text); }
+.btn--ghost:hover { border-color: var(--gold); color: var(--gold); }
+.btn--danger { background: transparent; border-color: #e3c9c4; color: var(--danger); }
+.btn--danger:hover { background: var(--danger); color: #fff; border-color: var(--danger); }
+.btn--sm { padding: 0.45rem 0.9rem; font-size: 0.82rem; }
+.btn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+
+/* =================================================================
+   LOGIN GATE
+   ================================================================= */
+.gate { min-height: 100vh; display: grid; place-items: center; padding: 1.5rem;
+  background: radial-gradient(ellipse 80% 70% at 50% 20%, rgba(11,36,29,0.06), transparent 60%), var(--bg); }
+.gate__card { background: var(--panel); border: 1px solid var(--border); border-radius: 20px; padding: 2.4rem; width: min(100%, 460px); box-shadow: 0 24px 60px rgba(0,0,0,0.08); }
+.gate__logo { font-family: var(--font-head); font-weight: 700; font-size: 1.5rem; color: var(--gold); border: 2px solid var(--gold); border-radius: 8px; padding: .1em .4em; display: inline-block; line-height: 1; }
+.gate h1 { font-family: var(--font-head); font-size: 1.7rem; color: var(--ink); margin: 1.1rem 0 .3rem; }
+.gate p.sub { color: var(--muted); font-size: .95rem; margin-bottom: 1.6rem; }
+.gate label { display: block; font-weight: 600; font-size: .85rem; margin-bottom: .4rem; }
+.gate input { width: 100%; padding: .85rem 1rem; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: .95rem; }
+.gate input:focus { outline: none; border-color: var(--gold); }
+.gate .btn { width: 100%; justify-content: center; margin-top: 1.1rem; }
+.gate details { margin-top: 1.6rem; border-top: 1px solid var(--border); padding-top: 1.2rem; }
+.gate summary { cursor: pointer; font-weight: 600; color: var(--gold); font-size: .9rem; }
+.gate details ol { margin: .9rem 0 0 1.1rem; font-size: .88rem; color: var(--text); }
+.gate details li { margin-bottom: .55rem; }
+.gate details code { background: #f0ece2; padding: .1em .4em; border-radius: 5px; font-size: .82em; }
+.gate .err { color: var(--danger); font-size: .85rem; margin-top: .8rem; min-height: 1.2em; }
+
+/* =================================================================
+   DASHBOARD
+   ================================================================= */
+.topbar { background: var(--emerald); color: #fff; padding: 0 1.5rem; height: 64px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+.topbar__brand { display: flex; align-items: center; gap: .7rem; font-family: var(--font-head); font-weight: 600; }
+.topbar__brand .mono { color: var(--gold); border: 1.5px solid var(--gold); border-radius: 5px; padding: .05em .35em; font-weight: 700; }
+.topbar__actions { display: flex; align-items: center; gap: .7rem; }
+.topbar .pill { font-size: .78rem; color: #cfe3d8; }
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 1.8rem 1.5rem 5rem; }
+.notice { border-radius: 12px; padding: .9rem 1.2rem; margin-bottom: 1.4rem; font-size: .9rem; display: none; align-items: center; gap: .6rem; }
+.notice.show { display: flex; }
+.notice--ok { background: #e7f4ec; color: var(--ok); border: 1px solid #bfe0cd; }
+.notice--err { background: #fbeae7; color: var(--danger); border: 1px solid #efcbc4; }
+.notice--info { background: #fdf7e8; color: #8a6d1e; border: 1px solid #ece0bd; }
+
+.group { margin-bottom: 2.4rem; }
+.group__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; gap: 1rem; flex-wrap: wrap; }
+.group__head h2 { font-family: var(--font-head); font-size: 1.5rem; color: var(--ink); }
+.group__head .count { color: var(--muted); font-weight: 400; font-size: 1rem; }
+
+.list { display: grid; gap: .7rem; }
+.item { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: .7rem .8rem; display: grid; grid-template-columns: 64px 1fr auto; gap: 1rem; align-items: center; }
+.item__thumb { width: 64px; height: 64px; border-radius: 10px; overflow: hidden; background: var(--emerald); display: grid; place-items: center; flex-shrink: 0; }
+.item__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.item__thumb .ph { color: var(--gold); font-size: .62rem; font-weight: 600; text-align: center; padding: .2rem; letter-spacing: .04em; }
+.item__info h3 { font-size: 1rem; color: var(--ink); margin-bottom: .15rem; }
+.item__meta { font-size: .82rem; color: var(--muted); }
+.item__meta .price { color: var(--gold); font-weight: 600; }
+.item__actions { display: flex; gap: .5rem; }
+@media (max-width: 560px) {
+  .item { grid-template-columns: 52px 1fr; }
+  .item__thumb { width: 52px; height: 52px; }
+  .item__actions { grid-column: 1 / -1; justify-content: flex-end; }
+}
+
+/* =================================================================
+   EDIT MODAL
+   ================================================================= */
+.modal-bg { position: fixed; inset: 0; background: rgba(15,25,20,.55); backdrop-filter: blur(4px); display: none; align-items: flex-start; justify-content: center; padding: 2rem 1rem; z-index: 100; overflow-y: auto; }
+.modal-bg.show { display: flex; }
+.modal { background: var(--panel); border-radius: 18px; width: min(100%, 640px); padding: 2rem; box-shadow: 0 30px 80px rgba(0,0,0,.3); }
+.modal h2 { font-family: var(--font-head); font-size: 1.5rem; color: var(--ink); margin-bottom: 1.4rem; }
+.field { margin-bottom: 1.1rem; }
+.field label { display: block; font-weight: 600; font-size: .85rem; margin-bottom: .35rem; }
+.field .hint { font-weight: 400; color: var(--muted); font-size: .78rem; }
+.field input, .field select, .field textarea { width: 100%; padding: .7rem .85rem; border: 1px solid var(--border); border-radius: 9px; font-family: inherit; font-size: .92rem; background: #fff; color: var(--text); }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); }
+.field textarea { resize: vertical; min-height: 80px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+.checkline { display: flex; align-items: center; gap: .5rem; }
+.checkline input { width: auto; }
+
+.photo-box { display: flex; align-items: center; gap: 1rem; }
+.photo-preview { width: 92px; height: 92px; border-radius: 10px; background: var(--emerald); display: grid; place-items: center; overflow: hidden; flex-shrink: 0; }
+.photo-preview img { width: 100%; height: 100%; object-fit: cover; }
+.photo-preview .ph { color: var(--gold); font-size: .6rem; text-align: center; padding: .3rem; }
+.photo-controls { flex: 1; }
+.photo-controls input[type=file] { font-size: .82rem; }
+
+.modal__foot { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--border); }
+.modal__foot .right { display: flex; gap: .7rem; }
+.spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
