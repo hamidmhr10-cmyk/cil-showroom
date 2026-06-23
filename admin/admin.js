@@ -196,7 +196,9 @@
       '<div class="field"><label>Photo <span class="hint">optional — upload a real product photo</span></label>' +
         '<div class="photo-box"><div class="photo-preview" id="mPrev"><span class="ph">No photo</span></div>' +
         '<div class="photo-controls"><input type="file" id="mFile" accept="image/*"><div class="field" style="margin:.6rem 0 0">' +
-          '<label style="font-size:.78rem">No photo yet? Pick an icon style</label><select id="mArt"></select></div>' +
+          '<label style="font-size:.78rem">No photo yet? Pick a placeholder style — or type your own</label>' +
+          '<input id="mArt" list="artList" autocomplete="off" placeholder="e.g. Chandelier — or type your own">' +
+          '<datalist id="artList"></datalist></div>' +
         '<button type="button" class="btn btn--ghost btn--sm" id="mClearImg" style="margin-top:.5rem;display:none">Remove photo</button>' +
         '</div></div></div>' +
       '<div class="modal__foot">' +
@@ -211,6 +213,21 @@
   function fillSelect(sel, pairs, val){
     sel.innerHTML = pairs.map(function(p){ return '<option value="'+p[0]+'"'+(p[0]===val?" selected":"")+'>'+esc(p[1])+'</option>'; }).join("");
   }
+  /* Icon-style combo: presets you can pick OR type your own custom style */
+  function fillArt(section, current){
+    el("artList").innerHTML = ARTS[section].map(function(p){ return '<option value="'+esc(p[1])+'">'; }).join("");
+    var label = "";
+    for (var i=0;i<ARTS[section].length;i++){ if (ARTS[section][i][0] === current){ label = ARTS[section][i][1]; break; } }
+    el("mArt").value = label || (current || "");
+  }
+  function resolveArt(section, value){
+    value = (value || "").trim();
+    if (!value) return ARTS[section][0][0];
+    var arr = ARTS[section], i;
+    for (i=0;i<arr.length;i++){ if (arr[i][1].toLowerCase() === value.toLowerCase()) return arr[i][0]; }
+    for (i=0;i<arr.length;i++){ if (arr[i][0].toLowerCase() === value.toLowerCase()) return arr[i][0]; }
+    return slug(value); // custom style — the site shows a category-appropriate icon
+  }
   function openEditor(section, index){
     editing = { section: section, index: index };
     pendingFile = null; removeImage = false;
@@ -218,7 +235,7 @@
     el("mTitle").textContent = (index>=0 ? "Edit product" : "Add "+section+" product");
     el("mName").value = p.name || "";
     fillSelect(el("mCat"), CATS[section], p.cat || CATS[section][0][0]);
-    fillSelect(el("mArt"), ARTS[section], p.art || ARTS[section][0][0]);
+    fillArt(section, p.art);
     el("mPrice").value = p.price || "";
     el("mUnit").value = p.unit || "";
     el("mUkca").value = p.ukca || "";
@@ -262,7 +279,7 @@
     var base = index >= 0 ? Object.assign({}, products[section][index]) : { id: (section==="lighting"?"l":"f") + Date.now().toString(36) };
     base.name = name;
     base.cat = el("mCat").value;
-    base.art = el("mArt").value;
+    base.art = resolveArt(section, el("mArt").value);
     base.price = price;
     base.desc = el("mDesc").value.trim();
     base.dims = el("mDims").value.trim();

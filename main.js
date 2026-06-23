@@ -318,12 +318,20 @@
     lounge:"linear-gradient(135deg,#e8f0e8 0%,#d6e8d6 100%)", lounger:"linear-gradient(135deg,#e8f0e8 0%,#d6e8d6 100%)"
   };
 
-  /* Visual = a real photo if one was uploaded, else the styled SVG placeholder */
-  function productVisual(p) {
-    if (p.image) return '<img class="card__img" src="'+p.image+'" alt="'+escapeHTML(p.name)+'" loading="lazy">';
-    return (ART[p.art] || ART.chandelier)();
+  /* For a custom/unknown icon style, fall back to a sensible icon per category */
+  var LIGHT_DEFAULT_ART = { chandeliers:"chandelier", ceiling:"cloud", garden:"lantern", fan:"fan" };
+  var FURN_DEFAULT_ART = { sofas:"sofa3", dining:"table", tv:"tvunit", garden:"recliner" };
+  function artKey(p, light) {
+    if (p.art && ART[p.art]) return p.art;
+    var d = light ? FURN_DEFAULT_ART : LIGHT_DEFAULT_ART;
+    return d[p.cat] || (light ? "sofa3" : "chandelier");
   }
-  function visualBg(p) { return p.image ? "#0d0d0d" : (BG[p.art] || "#111"); }
+  /* Visual = a real photo if one was uploaded, else the styled SVG placeholder */
+  function productVisual(p, light) {
+    if (p.image) return '<img class="card__img" src="'+p.image+'" alt="'+escapeHTML(p.name)+'" loading="lazy">';
+    return ART[artKey(p, light)]();
+  }
+  function visualBg(p, light) { return p.image ? "#0d0d0d" : (BG[artKey(p, light)] || "#111"); }
 
   /* =================================================================
      RENDER: product card
@@ -333,7 +341,7 @@
     var btnClass = light ? "btn--navy" : "btn--gold";
     var priceLine = (p.from ? '<small>from</small>' : (p.unit ? '<small>'+p.unit+'</small>' : '')) ;
     return '<article class="card '+theme+' reveal" data-cat="'+p.cat+'" data-id="'+p.id+'">' +
-      '<div class="card__visual" style="background:'+visualBg(p)+'">' + productVisual(p) +
+      '<div class="card__visual" style="background:'+visualBg(p, light)+'">' + productVisual(p, light) +
         '<div class="card__overlay"><button class="btn '+btnClass+' btn--sm" data-detail="'+p.id+'" data-light="'+(light?1:0)+'">View Details</button></div>' +
       '</div>' +
       '<div class="card__body">' +
@@ -476,7 +484,7 @@
   function detailView(p, light) {
     var btnClass = light ? "btn--navy" : "btn--gold";
     return '<div class="modal__head"><span class="eyebrow">'+catLabel(p)+'</span><h3 id="modalTitle">'+p.name+'</h3></div>' +
-      '<div class="card__visual" style="aspect-ratio:16/9;border-radius:12px;background:'+visualBg(p)+';margin-bottom:1.2rem">'+productVisual(p)+'</div>' +
+      '<div class="card__visual" style="aspect-ratio:16/9;border-radius:12px;background:'+visualBg(p, light)+';margin-bottom:1.2rem">'+productVisual(p, light)+'</div>' +
       '<div class="modal__detail">'+p.desc+'<dl>' +
         '<dt>Price</dt><dd>'+(p.from?"from ":"")+p.price+(p.unit?" "+p.unit:"")+(p.note?" ("+p.note+")":"")+'</dd>' +
         '<dt>Dimensions</dt><dd>'+p.dims+'</dd>' +
