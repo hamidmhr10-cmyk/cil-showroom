@@ -27,7 +27,7 @@
   --feature-text: #F4EFE5;
   --footer-bg: #1B1008;
   /* Home hero = rich coffee + umber with a gold glow (distinct from light content) */
-  --hero-bg: radial-gradient(ellipse 80% 70% at 50% 30%, rgba(201,168,76,0.22) 0%, transparent 60%), linear-gradient(158deg, #503722 0%, #2A1A0E 55%, #1E120A 100%);
+  --hero-bg: radial-gradient(ellipse 85% 65% at 50% 26%, rgba(201,168,76,0.22) 0%, transparent 62%), linear-gradient(180deg, #4E3521 0%, #2C1B0F 42%, #150C07 74%, #090603 100%);
   --hero-text: #F5F0E6;
   --hero-accent: #DBB748;
   --hero-glow: rgba(201, 168, 76, 0.22);
@@ -294,7 +294,7 @@ ul { list-style: none; }
   color: var(--hero-text);
 }
 .hero h1 .accent { color: var(--hero-accent); font-style: italic; }
-.hero .eyebrow { color: var(--hero-accent); }
+.hero .eyebrow { color: var(--hero-accent); font-size: clamp(1.05rem, 2.4vw, 1.55rem); letter-spacing: 0.34em; }
 .hero__sub {
   font-size: clamp(1rem, 2vw, 1.25rem);
   max-width: 560px; margin: 1.6rem auto 0;
@@ -348,6 +348,18 @@ ul { list-style: none; }
 .split__panel--furn .enter { color: var(--furn-navy); }
 .split__panel .enter:hover { gap: 1rem; }
 .split__panel--furn .enter:hover { color: var(--gold); }
+
+/* --- smooth transitions at the split seams --- */
+.split__panel > * { position: relative; z-index: 1; }        /* keep content above the blend overlays */
+.split__panel::before {                                       /* top: blend the hero into each panel */
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 170px; z-index: 0; pointer-events: none;
+}
+.split__panel--light::before { background: linear-gradient(180deg, #090603 0%, rgba(9,6,3,0) 100%); }
+.split__panel--furn::before  { background: linear-gradient(180deg, #0c0805 0%, rgba(12,8,5,0) 100%); }
+.split__panel--furn::after {                                  /* bottom: fade furniture into the section below */
+  content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 140px; z-index: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(251,247,238,0) 0%, var(--sec-1) 100%);
+}
 
 /* =================================================================
    SECTION SHELLS
