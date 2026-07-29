@@ -651,19 +651,23 @@ select.form-control option { background: var(--surface); color: var(--text-dark)
    MOTION — lightweight, CSS-driven (no libraries)
    ================================================================= */
 .reveal {
-  opacity: 0; transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.22,0.61,0.36,1), transform 0.7s cubic-bezier(0.22,0.61,0.36,1), filter 0.7s ease;
+  opacity: 0; transform: translateY(38px);
+  transition: opacity 0.8s cubic-bezier(0.22,0.61,0.36,1), transform 0.8s cubic-bezier(0.22,0.61,0.36,1), filter 0.8s ease;
   will-change: opacity, transform;
 }
-.reveal.in { opacity: 1; transform: none; filter: none; }
-.reveal.d1 { transition-delay: 0.08s; }
-.reveal.d2 { transition-delay: 0.16s; }
-.reveal.d3 { transition-delay: 0.24s; }
-/* directional + blur variants */
-.reveal.left  { transform: translateX(-28px); }
-.reveal.right { transform: translateX(28px); }
+.reveal.d1 { transition-delay: 0.10s; }
+.reveal.d2 { transition-delay: 0.20s; }
+.reveal.d3 { transition-delay: 0.30s; }
+/* directional + blur variant START states */
+.reveal.left  { transform: translateX(-34px); }
+.reveal.right { transform: translateX(34px); }
 .reveal.scale { transform: scale(0.94); }
-.reveal.blur  { filter: blur(12px); transform: translateY(16px); }
+.reveal.blur  { filter: blur(10px); transform: translateY(20px); }
+/* REVEALED state — declared last so it always wins over any variant */
+.reveal.in,
+.reveal.in.left, .reveal.in.right, .reveal.in.scale, .reveal.in.blur {
+  opacity: 1; transform: none; filter: none;
+}
 
 /* staggered cascade for groups of cards/tiles */
 .grid > *, .carousel > *, .pillars > *, .cards-3 > *, .timeline > * {
@@ -713,7 +717,7 @@ select.form-control option { background: var(--surface); color: var(--text-dark)
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+  .reveal, .reveal.blur, .reveal.left, .reveal.right, .reveal.scale { opacity: 1; transform: none; filter: none; transition: none; }
   .spark, .scroll-cue, .marquee__track, .btn--gold:hover::after { animation: none; }
   .card:hover .card__img, .magnetic { transform: none; }
   html { scroll-behavior: auto; }
