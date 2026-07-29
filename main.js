@@ -1,5 +1,5 @@
 /* =================================================================
-   Commercial Improvements Ltd (CIL) — Showroom Site JS
+   LURIXA — Showroom Site JS
    Data, CSS/SVG product art, rendering, filtering, modal, animation.
    ================================================================= */
 (function () {
@@ -7,7 +7,7 @@
 
   /* ---------- Company constants ---------- */
   var CO = {
-    name: "Commercial Improvements Ltd",
+    name: "LURIXA",
     phone: "+44 7402 176349",
     phoneRaw: "447402176349",
     email: "info@improvemental.co.uk",
@@ -364,9 +364,9 @@
   function navHTML(active) {
     function cur(p){ return active===p ? ' aria-current="page"' : ''; }
     return '<nav class="nav" id="nav" aria-label="Primary"><div class="nav__inner">' +
-      '<a class="brand" href="index.html" aria-label="CIL home">' +
-        '<span class="brand__mono">CIL</span>' +
-        '<span class="brand__name">Commercial Improvements<span>Ltd</span></span>' +
+      '<a class="brand" href="index.html" aria-label="LURIXA home">' +
+        '<span class="brand__mono">L</span>' +
+        '<span class="brand__name brand__word">LURIXA</span>' +
       '</a>' +
       '<ul class="nav__links">' +
         '<li class="nav__item"><a class="nav__link" href="index.html"'+cur("home")+'>Home</a></li>' +
@@ -401,7 +401,7 @@
   function footerHTML() {
     return '<footer class="footer"><div class="container"><div class="footer__grid">' +
       '<div class="footer__brand">' +
-        '<a class="brand" href="index.html"><span class="brand__mono">CIL</span><span class="brand__name">Commercial Improvements<span>Ltd</span></span></a>' +
+        '<a class="brand" href="index.html"><span class="brand__mono">L</span><span class="brand__name brand__word">LURIXA</span></a>' +
         '<p>Illuminate Your World. Furnish Your Life. Premium lighting and furniture, sourced directly from the world’s finest manufacturers.</p>' +
         '<div class="socials">' +
           '<a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener">'+ICON.instagram+'</a>' +
@@ -420,7 +420,7 @@
       '</div>' +
     '</div></div>' +
     '<div class="footer__strip">Warehouse &amp; Showroom: Luton, Bedfordshire, LU2 8DL &nbsp;|&nbsp; Tel: '+CO.phone+'</div>' +
-    '<div class="footer__bottom">© 2026 Commercial Improvements Ltd. All rights reserved. Registered in England and Wales.</div>' +
+    '<div class="footer__bottom">© 2026 LURIXA. All rights reserved. LURIXA is a trading name of Commercial Improvements Ltd, registered in England and Wales.</div>' +
     '</footer>';
   }
 

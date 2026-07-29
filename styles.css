@@ -1,42 +1,42 @@
 /* =================================================================
-   Commercial Improvements Ltd (CIL) — Showroom Website
+   LURIXA — Showroom Website
    Light-led luxury styling. Variable-driven theming (4 palettes).
    All product visuals are CSS/SVG generated.
    ================================================================= */
 
 /* =================================================================
-   PALETTE — Emerald & Gold (final)
-   Light content + dramatic emerald home hero.
+   PALETTE — Coffee & Umber (final)
+   Light content + rich coffee/umber home hero, warm gold accents.
    Lighting pages flip to a dark, moody gold-on-dark scheme below.
    ================================================================= */
 :root {
-  --bg: #F6F2E9;            /* page background */
+  --bg: #F6F2E9;            /* page background (warm ivory) */
   --surface: #FFFFFF;       /* cards / panels / nav-drop */
   --sec-1: #FBF7EE;         /* alt section tint A */
   --sec-2: #EFE9DC;         /* alt section tint B */
-  --ink: #15211B;           /* headings (deep, high-contrast) */
-  --text-dark: #1B2620;     /* body text on light */
+  --ink: #241811;           /* headings (warm espresso, high-contrast) */
+  --text-dark: #2A1E15;     /* body text on light */
   --text-light: #F4EFE5;    /* text on deep/feature surfaces */
   --gold: #B2912F;          /* accent (deeper gold reads better on light) */
   --gold-bright: #CFAE4E;
-  --furn-navy: #14352B;     /* deep emerald accent (furniture) */
-  --black: #14110A;         /* text on gold buttons */
+  --furn-navy: #3E2A1B;     /* deep coffee/walnut accent (furniture) */
+  --black: #17110A;         /* text on gold buttons */
   --border-gold: rgba(178, 145, 47, 0.40);
-  --card-border: rgba(20, 53, 43, 0.12);
-  --feature-bg: linear-gradient(180deg, #103128 0%, #0b241d 100%); /* deep accent band */
+  --card-border: rgba(58, 42, 27, 0.12);
+  --feature-bg: linear-gradient(180deg, #3A2416 0%, #211309 100%); /* deep accent band */
   --feature-text: #F4EFE5;
-  --footer-bg: #0b241d;
-  /* Home hero = dramatic deep emerald + gold (distinct from light content) */
-  --hero-bg: radial-gradient(ellipse 80% 70% at 50% 30%, rgba(201,168,76,0.20) 0%, transparent 60%), linear-gradient(160deg, #18463A 0%, #09201A 100%);
-  --hero-text: #F4F1E6;
+  --footer-bg: #1B1008;
+  /* Home hero = rich coffee + umber with a gold glow (distinct from light content) */
+  --hero-bg: radial-gradient(ellipse 80% 70% at 50% 30%, rgba(201,168,76,0.22) 0%, transparent 60%), linear-gradient(158deg, #503722 0%, #2A1A0E 55%, #1E120A 100%);
+  --hero-text: #F5F0E6;
   --hero-accent: #DBB748;
   --hero-glow: rgba(201, 168, 76, 0.22);
   /* Furniture / About page heroes = light tint */
   --phero-bg: linear-gradient(180deg, #FBF6EC 0%, var(--bg) 100%);
-  --phero-text: #1B2620;
+  --phero-text: #2A1E15;
   --nav-bg: rgba(246, 242, 233, 0.94);
   --nav-bg-scrolled: rgba(246, 242, 233, 0.80);
-  --nav-text: #1B2620;
+  --nav-text: #2A1E15;
   /* legacy aliases */
   --offwhite: var(--bg);
   --navy-dark: var(--sec-2);
@@ -155,6 +155,7 @@ ul { list-style: none; }
   max-width: 130px;
 }
 .brand__name span { display: block; font-family: var(--font-accent); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); opacity: 0.9; }
+.brand__word { max-width: none; font-weight: 700; font-size: 1.12rem; letter-spacing: 0.2em; text-transform: none; }
 
 .nav__links { display: flex; align-items: center; gap: 0.4rem; }
 .nav__item { position: relative; }

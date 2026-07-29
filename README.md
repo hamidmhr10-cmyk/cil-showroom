@@ -1,6 +1,6 @@
-# Commercial Improvements Ltd (CIL) — Showroom Website
+# LURIXA — Showroom Website
 
-A complete, production-ready, multi-page showroom site for **Commercial Improvements Ltd** — a UK home interiors and lighting company based in Luton, Bedfordshire.
+A complete, production-ready, multi-page showroom site for **LURIXA** — a UK home interiors and lighting brand based in Luton, Bedfordshire.
 
 Built as a **self-contained static site** (HTML + CSS + vanilla JS). **Zero external image dependencies** — every product visual is generated with CSS gradients and inline SVG. The only external requests are Google Fonts (Playfair Display, Inter, Cormorant Garamond).
 
@@ -49,5 +49,5 @@ All product data lives in the `LIGHTING` and `FURNITURE` arrays near the top of 
 
 ---
 
-© 2026 Commercial Improvements Ltd. Registered in England and Wales.
+© 2026 LURIXA — a trading name of Commercial Improvements Ltd. Registered in England and Wales.
 Luton, Bedfordshire, LU2 8DL · +44 7402 176349 · info@improvemental.co.uk

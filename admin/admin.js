@@ -1,5 +1,5 @@
 /* =================================================================
-   CIL Product Manager — edits data/products.json + /images in the
+   LURIXA Product Manager — edits data/products.json + /images in the
    GitHub repo (hamidmhr10-cmyk/cil-showroom) straight from the browser.
    The access key (a GitHub fine-grained token) is stored ONLY in this
    browser's localStorage. Saving commits to GitHub → Vercel redeploys.
@@ -83,7 +83,7 @@
   function renderGate(errMsg){
     app.innerHTML =
       '<div class="gate"><div class="gate__card">' +
-        '<span class="gate__logo">CIL</span>' +
+        '<span class="gate__logo">LURIXA</span>' +
         '<h1>Product Manager</h1>' +
         '<p class="sub">Enter your access key to add, edit and remove products on your website.</p>' +
         '<label for="tok">Access key</label>' +
@@ -92,7 +92,7 @@
         '<button class="btn btn--emerald" id="tokBtn">Unlock</button>' +
         '<details><summary>First time? How to get your access key (one-off, 2 minutes)</summary><ol>' +
           '<li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub fine-grained tokens</a> (sign in as <code>hamidmhr10-cmyk</code>).</li>' +
-          '<li><b>Token name:</b> <code>CIL website</code>. Set an expiry if you like.</li>' +
+          '<li><b>Token name:</b> <code>LURIXA website</code>. Set an expiry if you like.</li>' +
           '<li><b>Repository access:</b> choose <b>Only select repositories</b> → pick <code>cil-showroom</code>.</li>' +
           '<li><b>Permissions → Repository permissions → Contents:</b> set to <b>Read and write</b>.</li>' +
           '<li>Click <b>Generate token</b>, copy it, and paste it above. It is saved only in this browser.</li>' +
@@ -110,7 +110,7 @@
   /* ---------- DASHBOARD ---------- */
   function topbar(){
     return '<div class="topbar">' +
-      '<div class="topbar__brand"><span class="mono">CIL</span> Product Manager</div>' +
+      '<div class="topbar__brand"><span class="mono">LURIXA</span> Product Manager</div>' +
       '<div class="topbar__actions">' +
         '<a class="pill" href="/" target="_blank" rel="noopener">View site ↗</a>' +
         '<button class="btn btn--ghost btn--sm" id="logout" style="color:#cfe3d8;border-color:rgba(255,255,255,.25)">Log out</button>' +

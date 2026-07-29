@@ -1,15 +1,15 @@
 /* =================================================================
-   CIL Product Manager (admin dashboard)
+   LURIXA Product Manager (admin dashboard)
    ================================================================= */
 :root {
   --bg: #f4f1ea;
   --panel: #ffffff;
-  --ink: #15211b;
-  --text: #2b322c;
-  --muted: #6b726b;
+  --ink: #241811;
+  --text: #2a1e15;
+  --muted: #7a6f63;
   --gold: #b2912f;
-  --emerald: #0b241d;
-  --emerald-2: #103128;
+  --emerald: #241610;   /* coffee (kept var name for simplicity) */
+  --emerald-2: #3A2416;
   --border: #e3ddcf;
   --danger: #b3402f;
   --ok: #2e7d52;

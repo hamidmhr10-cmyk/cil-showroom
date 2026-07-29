@@ -17,7 +17,7 @@ device/browser.
 
 1. Go to **https://github.com/settings/personal-access-tokens/new**
    (sign in as **hamidmhr10-cmyk** if asked).
-2. **Token name:** type `CIL website`.
+2. **Token name:** type `LURIXA website`.
 3. **Expiration:** pick whatever you like (e.g. 1 year). When it expires you just
    make a new one the same way.
 4. **Repository access:** choose **Only select repositories**, then pick
