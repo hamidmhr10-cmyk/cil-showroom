@@ -46,6 +46,7 @@
   --font-accent: 'Cormorant Garamond', Georgia, serif;
   --ease: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   --ease-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --maxw: 1320px;
   --nav-h: 76px;
 }
@@ -647,16 +648,74 @@ select.form-control option { background: var(--surface); color: var(--text-dark)
 .footer__strip { text-align: center; font-size: 0.78rem; padding-bottom: 1.5rem; opacity: 0.6; }
 
 /* =================================================================
-   SCROLL ANIMATIONS
+   MOTION — lightweight, CSS-driven (no libraries)
    ================================================================= */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity var(--ease-slow), transform var(--ease-slow); }
-.reveal.in { opacity: 1; transform: none; }
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22,0.61,0.36,1), transform 0.7s cubic-bezier(0.22,0.61,0.36,1), filter 0.7s ease;
+  will-change: opacity, transform;
+}
+.reveal.in { opacity: 1; transform: none; filter: none; }
 .reveal.d1 { transition-delay: 0.08s; }
 .reveal.d2 { transition-delay: 0.16s; }
 .reveal.d3 { transition-delay: 0.24s; }
+/* directional + blur variants */
+.reveal.left  { transform: translateX(-28px); }
+.reveal.right { transform: translateX(28px); }
+.reveal.scale { transform: scale(0.94); }
+.reveal.blur  { filter: blur(12px); transform: translateY(16px); }
+
+/* staggered cascade for groups of cards/tiles */
+.grid > *, .carousel > *, .pillars > *, .cards-3 > *, .timeline > * {
+  transition-delay: calc(var(--i, 0) * 75ms);
+}
+
+/* scroll progress bar */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0;
+  background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+  box-shadow: 0 0 10px rgba(201,168,76,0.5);
+  z-index: 1200; pointer-events: none;
+}
+
+/* animated nav underline */
+.nav__link { position: relative; }
+.nav__link::after {
+  content: ""; position: absolute; left: 0.9rem; right: 0.9rem; bottom: 0.34rem; height: 1.5px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left center;
+  transition: transform 0.32s var(--motion-ease); opacity: 0.9;
+}
+.nav__link:hover::after, .nav__link[aria-current="page"]::after { transform: scaleX(1); }
+
+/* card photo gently zooms on hover */
+.card__img { transition: transform 0.6s cubic-bezier(0.22,0.61,0.36,1); }
+.card:hover .card__img { transform: scale(1.06); }
+
+/* magnetic CTAs follow the cursor slightly (JS sets --mx/--my) */
+.magnetic { transition: transform 0.35s cubic-bezier(0.22,0.61,0.36,1); }
+
+/* sheen sweep across gold buttons on hover */
+.btn--gold { position: relative; overflow: hidden; }
+.btn--gold::after {
+  content: ""; position: absolute; top: 0; left: -60%; width: 45%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-18deg); pointer-events: none;
+}
+.btn--gold:hover::after { animation: sheen 0.85s ease; }
+@keyframes sheen { from { left: -60%; } to { left: 130%; } }
+
+/* slow marquee band */
+.marquee { overflow: hidden; border-block: 1px solid var(--border-gold); background: var(--sec-1); }
+.marquee__track { display: inline-flex; align-items: center; white-space: nowrap; padding: 0.95rem 0; animation: marquee 32s linear infinite; will-change: transform; }
+.marquee__track span { font-family: var(--font-accent); text-transform: uppercase; letter-spacing: 0.24em; font-size: 0.85rem; color: var(--gold); padding: 0 2.2rem; }
+.marquee__track .dot { color: var(--gold); opacity: 0.55; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-  .spark, .scroll-cue { animation: none; }
+  .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+  .spark, .scroll-cue, .marquee__track, .btn--gold:hover::after { animation: none; }
+  .card:hover .card__img, .magnetic { transform: none; }
   html { scroll-behavior: auto; }
 }
 

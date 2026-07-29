@@ -550,6 +550,7 @@
       var key = b.getAttribute("data-filter");
       var filtered = key==="all" ? items : items.filter(function(p){ return p.cat===key; });
       renderGrid(gridId, filtered, light);
+      initStagger();
       observeReveals();
     });
   }
@@ -652,6 +653,66 @@
   /* =================================================================
      BOOT
      ================================================================= */
+  /* =================================================================
+     MOTION (lightweight — CSS-driven, rAF-throttled, no libraries)
+     ================================================================= */
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function initScrollProgress() {
+    if (document.getElementById("scrollProgress")) return;
+    var bar = document.createElement("div");
+    bar.className = "scroll-progress"; bar.id = "scrollProgress";
+    document.body.appendChild(bar);
+    var ticking = false;
+    function update() {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0).toFixed(2) + "%";
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+  }
+
+  function initMagnetic() {
+    if (reduceMotion || !window.matchMedia || !window.matchMedia("(pointer: fine)").matches) return;
+    var els = document.querySelectorAll(".nav__cta, .hero__cta .btn");
+    els.forEach(function (el) {
+      el.classList.add("magnetic");
+      el.addEventListener("mousemove", function (e) {
+        var r = el.getBoundingClientRect();
+        var x = e.clientX - r.left - r.width / 2;
+        var y = e.clientY - r.top - r.height / 2;
+        el.style.transform = "translate(" + (x * 0.25).toFixed(1) + "px," + (y * 0.35).toFixed(1) + "px)";
+      });
+      el.addEventListener("mouseleave", function () { el.style.transform = ""; });
+    });
+  }
+
+  function initHeroParallax() {
+    if (reduceMotion) return;
+    var sparks = document.getElementById("sparkles");
+    if (!sparks) return;
+    var ticking = false;
+    function update() { sparks.style.transform = "translateY(" + (window.scrollY * 0.18).toFixed(1) + "px)"; ticking = false; }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  }
+
+  /* assign an index to grouped items so they cascade in with a stagger */
+  function initStagger() {
+    var groups = document.querySelectorAll(".grid, .carousel, .pillars, .cards-3, .timeline");
+    for (var g = 0; g < groups.length; g++) {
+      var kids = groups[g].children;
+      for (var i = 0; i < kids.length; i++) { kids[i].style.setProperty("--i", i % 6); }
+    }
+  }
+
+  function initMotion() {
+    initScrollProgress();
+    initMagnetic();
+    initHeroParallax();
+  }
+
   /* Render everything that depends on product data (runs after JSON loads) */
   function renderData(page) {
     if (page === "home") { renderCarousel(); }
@@ -665,6 +726,7 @@
       renderFilters("furnFilter", FURN_CATS, "furnGrid", FURNITURE, true);
       filterFromHash("furnFilter", FURNITURE, "furnGrid", true);
     }
+    initStagger();
     observeReveals();
   }
 
@@ -680,6 +742,8 @@
     initInlineForms();
     if (page === "home") renderSparkles();
     observeReveals();
+    initStagger();
+    initMotion();
 
     // Products are managed in data/products.json (editable via /admin).
     // The inline LIGHTING/FURNITURE arrays above are an offline fallback.
