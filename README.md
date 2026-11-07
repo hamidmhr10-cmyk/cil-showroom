@@ -45,7 +45,7 @@ Drag-and-drop the folder to **Netlify**, or for **Vercel** run `vercel` in this 
 
 ## Editing products
 
-All product data lives in the `LIGHTING` and `FURNITURE` arrays near the top of `main.js`. Add or edit entries there — name, price, description, dimensions, finishes, suitable rooms, UKCA status, and which SVG illustration (`art`) to use.
+All product data lives in the `LIGHTING` and `FURNITURE` arrays near the top of `main.js`. Add or edit entries there — name, price, description, dimensions, finishes, suitable rooms, and which SVG illustration (`art`) to use.
 
 ---
 

@@ -1,4 +1,42 @@
 {
+  "categories": {
+    "lighting": [
+      {
+        "key": "chandeliers",
+        "label": "Chandeliers"
+      },
+      {
+        "key": "ceiling",
+        "label": "Ceiling Lights"
+      },
+      {
+        "key": "garden",
+        "label": "Garden Lights"
+      },
+      {
+        "key": "fan",
+        "label": "Fan + Light"
+      }
+    ],
+    "furniture": [
+      {
+        "key": "sofas",
+        "label": "Sofas & Beds"
+      },
+      {
+        "key": "dining",
+        "label": "Dining & Chairs"
+      },
+      {
+        "key": "garden",
+        "label": "Garden Furniture"
+      },
+      {
+        "key": "tv",
+        "label": "TV & Storage"
+      }
+    ]
+  },
   "lighting": [
     {
       "id": "l2",
@@ -10,8 +48,7 @@
       "desc": "Petal-shaped arms in antique brass with frosted glass shades. 8-light, softly diffused.",
       "dims": "65cm diameter, 90cm drop",
       "finishes": "Antique Brass",
-      "rooms": "Living Rooms, Bedrooms",
-      "ukca": "Yes"
+      "rooms": "Living Rooms, Bedrooms"
     },
     {
       "id": "l3",
@@ -23,8 +60,7 @@
       "desc": "Minimalist circular ring in matte black with integrated, dimmable 40W LED.",
       "dims": "60cm diameter",
       "finishes": "Matte Black",
-      "rooms": "Kitchens, Dining Rooms, Loft Apartments",
-      "ukca": "Yes"
+      "rooms": "Kitchens, Dining Rooms, Loft Apartments"
     },
     {
       "id": "l4",
@@ -36,8 +72,7 @@
       "desc": "Mid-century modern starburst, 18 arms, E14 bulbs in brushed gold — a true statement piece.",
       "dims": "75cm diameter",
       "finishes": "Brushed Gold",
-      "rooms": "Feature Rooms, Hotels",
-      "ukca": "Yes"
+      "rooms": "Feature Rooms, Hotels"
     },
     {
       "id": "l5",
@@ -49,8 +84,7 @@
       "desc": "Soft white acrylic cloud-shaped flush fitting. Integrated 24W LED, 4000K, IP44 bathroom safe.",
       "dims": "Surface mount",
       "finishes": "White Acrylic",
-      "rooms": "Bedrooms, Bathrooms",
-      "ukca": "Yes"
+      "rooms": "Bedrooms, Bathrooms"
     },
     {
       "id": "l6",
@@ -62,8 +96,7 @@
       "desc": "Concentric rings in brushed nickel with a warm integrated LED strip. 36W, dimmable, 3000K.",
       "dims": "Semi-flush",
       "finishes": "Brushed Nickel",
-      "rooms": "Living Rooms, Hallways",
-      "ukca": "Yes"
+      "rooms": "Living Rooms, Hallways"
     },
     {
       "id": "l7",
@@ -75,8 +108,7 @@
       "desc": "Honeycomb geometric surface-mount panel, 48W LED, IP20 — crisp, modern light.",
       "dims": "50cm x 50cm",
       "finishes": "White / Black trim",
-      "rooms": "Home Offices, Kitchens",
-      "ukca": "Yes"
+      "rooms": "Home Offices, Kitchens"
     },
     {
       "id": "l8",
@@ -88,8 +120,7 @@
       "desc": "Exposed cage fitting with Edison bulb (E27 included) in wrought iron, antique finish.",
       "dims": "Surface mount",
       "finishes": "Antique Iron",
-      "rooms": "Kitchens, Bars, Studies",
-      "ukca": "Pending"
+      "rooms": "Kitchens, Bars, Studies"
     },
     {
       "id": "l9",
@@ -102,7 +133,6 @@
       "dims": "Height: 120cm",
       "finishes": "Black",
       "rooms": "Driveways, Patios, Pathways",
-      "ukca": "Yes",
       "unit": "per pair"
     },
     {
@@ -116,7 +146,6 @@
       "dims": "Wall mount",
       "finishes": "Black, Antique Bronze",
       "rooms": "Porches, Exterior Walls",
-      "ukca": "Yes",
       "unit": "each"
     },
     {
@@ -130,7 +159,6 @@
       "dims": "Spike mount",
       "finishes": "Black",
       "rooms": "Borders, Trees, Features",
-      "ukca": "Yes",
       "unit": "per set of 4"
     },
     {
@@ -143,8 +171,7 @@
       "desc": "10m festoon string lights, 20 × E27 warm white globes, IP44, mains powered.",
       "dims": "10m length",
       "finishes": "Black cable",
-      "rooms": "Patios, Gardens, Events",
-      "ukca": "Yes"
+      "rooms": "Patios, Gardens, Events"
     },
     {
       "id": "l13",
@@ -156,8 +183,7 @@
       "desc": "52-inch 5-blade fan with integrated 3-colour LED kit. Remote + wall switch, ultra-quiet DC motor.",
       "dims": "52-inch span",
       "finishes": "White, Black, Brushed Nickel",
-      "rooms": "Living Rooms, Bedrooms",
-      "ukca": "Yes"
+      "rooms": "Living Rooms, Bedrooms"
     },
     {
       "id": "l14",
@@ -169,8 +195,7 @@
       "desc": "48-inch 3-blade fan with Edison bulb cage light and exposed motor housing in antique bronze.",
       "dims": "48-inch span",
       "finishes": "Antique Bronze",
-      "rooms": "Loft Spaces, Restaurants",
-      "ukca": "Yes"
+      "rooms": "Loft Spaces, Restaurants"
     },
     {
       "id": "l15",
@@ -182,8 +207,7 @@
       "desc": "42-inch fan with natural rattan blade covers, Boho style, warm LED integrated. Remote control.",
       "dims": "42-inch span",
       "finishes": "Natural Rattan",
-      "rooms": "Bedrooms, Conservatories",
-      "ukca": "Yes"
+      "rooms": "Bedrooms, Conservatories"
     },
     {
       "id": "l16",
@@ -195,8 +219,7 @@
       "desc": "Ultra-slim flush mount fan light, Alexa/Google compatible, 36W LED panel, app controlled, 3 speeds.",
       "dims": "Low-profile flush",
       "finishes": "White",
-      "rooms": "Low Ceilings, Bedrooms",
-      "ukca": "Yes"
+      "rooms": "Low Ceilings, Bedrooms"
     },
     {
       "id": "lmw6mfnue",
@@ -208,7 +231,6 @@
       "dims": "53 x 53 x 15 cm (Box/Measurement)",
       "finishes": "Black",
       "rooms": "Every Room",
-      "ukca": "Yes",
       "unit": "per product",
       "image": "/images/ym6030-13-black-1794069124223.jpeg"
     }
@@ -224,8 +246,7 @@
       "desc": "Space-saving compression sofa that vacuum-packs for easy delivery. High-density foam, linen fabric. Assembles in under 10 minutes.",
       "dims": "3-seater",
       "finishes": "Light Grey, Dark Grey, Cream, Navy Blue",
-      "rooms": "Living Rooms",
-      "ukca": "N/A (Fire-rated)"
+      "rooms": "Living Rooms"
     },
     {
       "id": "f2",
@@ -237,8 +258,7 @@
       "desc": "Same compression technology in a 2-seater. Perfect for smaller rooms and apartments.",
       "dims": "2-seater",
       "finishes": "Light Grey, Dark Grey, Cream, Navy Blue",
-      "rooms": "Living Rooms, Studies",
-      "ukca": "N/A (Fire-rated)"
+      "rooms": "Living Rooms, Studies"
     },
     {
       "id": "f3",
@@ -250,8 +270,7 @@
       "desc": "L-shaped compression sofa seating 5, chaise end included. Vacuum-packed for easy delivery.",
       "dims": "L-shape, seats 5",
       "finishes": "Grey, Cream",
-      "rooms": "Living Rooms, Family Rooms",
-      "ukca": "N/A (Fire-rated)"
+      "rooms": "Living Rooms, Family Rooms"
     },
     {
       "id": "f4",
@@ -264,7 +283,6 @@
       "dims": "Double / King",
       "finishes": "White cover",
       "rooms": "Bedrooms",
-      "ukca": "N/A (Fire-rated)",
       "from": true
     },
     {
@@ -278,7 +296,6 @@
       "dims": "160cm × 90cm (extends to 210cm)",
       "finishes": "Solid Oak",
       "rooms": "Dining Rooms",
-      "ukca": "N/A",
       "note": "table + 6 chairs"
     },
     {
@@ -292,7 +309,6 @@
       "dims": "Set of 4",
       "finishes": "Beige Boucle",
       "rooms": "Dining Rooms, Kitchens",
-      "ukca": "N/A",
       "note": "per set of 4"
     },
     {
@@ -305,8 +321,7 @@
       "desc": "Contemporary floating TV shelf and media unit in walnut veneer. 3 shelves + 2 cupboards. Fits TVs up to 75 inches.",
       "dims": "180cm × 45cm × 50cm",
       "finishes": "Walnut Veneer",
-      "rooms": "Living Rooms",
-      "ukca": "N/A"
+      "rooms": "Living Rooms"
     },
     {
       "id": "f8",
@@ -318,8 +333,7 @@
       "desc": "Matching open-shelf display unit in walnut veneer to pair with the media range.",
       "dims": "90cm × 30cm × 180cm",
       "finishes": "Walnut Veneer",
-      "rooms": "Living Rooms, Studies",
-      "ukca": "N/A"
+      "rooms": "Living Rooms, Studies"
     },
     {
       "id": "f9",
@@ -332,7 +346,6 @@
       "dims": "Pair + side table",
       "finishes": "Grey rattan / cream cushions",
       "rooms": "Gardens, Patios, Balconies",
-      "ukca": "N/A",
       "unit": "per pair"
     },
     {
@@ -345,8 +358,7 @@
       "desc": "Round table with 4 chairs in all-weather rattan weave with a tempered glass tabletop.",
       "dims": "Table diameter: 120cm",
       "finishes": "Mixed Rattan",
-      "rooms": "Gardens, Patios",
-      "ukca": "N/A"
+      "rooms": "Gardens, Patios"
     },
     {
       "id": "f11",
@@ -358,8 +370,7 @@
       "desc": "6-piece modular outdoor corner sofa set, weatherproof cushions with removable covers, powder-coated aluminium frame.",
       "dims": "6-piece modular",
       "finishes": "Graphite / Light Grey",
-      "rooms": "Gardens, Terraces",
-      "ukca": "N/A"
+      "rooms": "Gardens, Terraces"
     },
     {
       "id": "f12",
@@ -372,7 +383,6 @@
       "dims": "Pair + folding table",
       "finishes": "Grey textilene",
       "rooms": "Gardens, Poolsides",
-      "ukca": "N/A",
       "unit": "per set"
     }
   ]

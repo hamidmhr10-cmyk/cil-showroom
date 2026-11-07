@@ -26,6 +26,14 @@
     lighting: [["chandelier","Chandelier"],["ring","Ring"],["sputnik","Sputnik / starburst"],["cloud","Cloud / flush"],["saturn","Saturn rings"],["hexagon","Hexagon panel"],["cage","Cage / Edison"],["lantern","Lantern"],["coach","Coach / wall"],["spike","Spike spotlight"],["festoon","Festoon string"],["fan","Fan light"]],
     furniture: [["sofa3","Sofa (3 seater)"],["sofa2","Sofa (2 seater)"],["corner","Corner sofa"],["mattress","Mattress / bed"],["table","Dining table"],["chair","Chair"],["tvunit","TV unit"],["bookshelf","Bookshelf / display"],["recliner","Recliner"],["diningset","Garden dining set"],["lounge","Lounge sofa"],["lounger","Sun lounger"]]
   };
+  var NEW_CAT = "__new__";
+  function addCategories(section, list){
+    (list || []).forEach(function(c){
+      if (!c || !c.key) return;
+      for (var i=0;i<CATS[section].length;i++) if (CATS[section][i][0]===c.key) return;
+      CATS[section].push([c.key, c.label || c.key]);
+    });
+  }
   function catLabel(section, key) { var a = CATS[section]; for (var i=0;i<a.length;i++) if(a[i][0]===key) return a[i][1]; return key; }
 
   /* ---------- helpers ---------- */
@@ -54,10 +62,14 @@
       var data = JSON.parse(fromB64utf8(j.content));
       products.lighting = data.lighting || [];
       products.furniture = data.furniture || [];
+      var cats = data.categories || {};
+      addCategories("lighting", cats.lighting);
+      addCategories("furniture", cats.furniture);
     });
   }
   function commitProducts(message){
-    var body = { lighting: products.lighting, furniture: products.furniture };
+    function catList(section){ return CATS[section].map(function(c){ return { key:c[0], label:c[1] }; }); }
+    var body = { categories: { lighting: catList("lighting"), furniture: catList("furniture") }, lighting: products.lighting, furniture: products.furniture };
     var content = b64utf8(JSON.stringify(body, null, 2) + "\n");
     return api("/contents/"+CFG.dataPath, { method:"PUT", body:{ message:message, content:content, sha:sha, branch:CFG.branch } })
       .then(function(r){ if(!r.ok) return r.json().then(function(e){ throw { code:r.status, msg:e&&e.message }; }); return r.json(); })
@@ -179,13 +191,11 @@
       '<h2 id="mTitle">Add product</h2>' +
       '<div class="field"><label>Product name</label><input id="mName" placeholder="e.g. Grand Crystal Cascade"></div>' +
       '<div class="row">' +
-        '<div class="field"><label>Category</label><select id="mCat"></select></div>' +
+        '<div class="field"><label>Category</label><select id="mCat"></select>' +
+          '<input id="mCatNew" placeholder="Type the new category name, e.g. Wall Lights" style="display:none;margin-top:.5rem"></div>' +
         '<div class="field"><label>Price <span class="hint">include £</span></label><input id="mPrice" placeholder="£485"></div>' +
       '</div>' +
-      '<div class="row">' +
-        '<div class="field"><label>Price note <span class="hint">optional</span></label><input id="mUnit" placeholder="per pair / per set of 4"></div>' +
-        '<div class="field"><label>UKCA / status</label><input id="mUkca" placeholder="Yes / Pending / N/A"></div>' +
-      '</div>' +
+      '<div class="field"><label>Price note <span class="hint">optional</span></label><input id="mUnit" placeholder="per pair / per set of 4"></div>' +
       '<div class="field checkline"><input type="checkbox" id="mFrom"><label for="mFrom" style="margin:0">Show “from” before the price</label></div>' +
       '<div class="field"><label>Description</label><textarea id="mDesc" placeholder="Short selling description…"></textarea></div>' +
       '<div class="row">' +
@@ -211,7 +221,25 @@
   var removeImage = false;  // user removed existing photo
 
   function fillSelect(sel, pairs, val){
-    sel.innerHTML = pairs.map(function(p){ return '<option value="'+p[0]+'"'+(p[0]===val?" selected":"")+'>'+esc(p[1])+'</option>'; }).join("");
+    sel.innerHTML = pairs.map(function(p){ return '<option value="'+esc(p[0])+'"'+(p[0]===val?" selected":"")+'>'+esc(p[1])+'</option>'; }).join("");
+  }
+  function fillCatSelect(section, val){
+    var sel = el("mCat");
+    fillSelect(sel, CATS[section], val);
+    sel.insertAdjacentHTML("beforeend", '<option value="'+NEW_CAT+'">＋ Add a new category (type your own)…</option>');
+    el("mCatNew").value = ""; el("mCatNew").style.display = "none";
+  }
+  /* returns the category key to save, creating the category if it's new */
+  function resolveCat(section){
+    var v = el("mCat").value;
+    if (v !== NEW_CAT) return v;
+    var label = el("mCatNew").value.trim();
+    if (!label) return null;
+    var arr = CATS[section], i;
+    for (i=0;i<arr.length;i++){ if (arr[i][1].toLowerCase()===label.toLowerCase() || arr[i][0]===slug(label)) return arr[i][0]; }
+    var key = slug(label);
+    arr.push([key, label]);
+    return key;
   }
   /* Icon-style combo: presets you can pick OR type your own custom style */
   function fillArt(section, current){
@@ -234,11 +262,10 @@
     var p = index >= 0 ? products[section][index] : {};
     el("mTitle").textContent = (index>=0 ? "Edit product" : "Add "+section+" product");
     el("mName").value = p.name || "";
-    fillSelect(el("mCat"), CATS[section], p.cat || CATS[section][0][0]);
+    fillCatSelect(section, p.cat || CATS[section][0][0]);
     fillArt(section, p.art);
     el("mPrice").value = p.price || "";
     el("mUnit").value = p.unit || "";
-    el("mUkca").value = p.ukca || "";
     el("mFrom").checked = !!p.from;
     el("mDesc").value = p.desc || "";
     el("mDims").value = p.dims || "";
@@ -267,6 +294,11 @@
     });
     el("mClearImg").onclick = function(){ pendingFile=null; removeImage=true; el("mFile").value=""; setPreview(""); };
     el("mSave").onclick = saveEditor;
+    el("mCat").addEventListener("change", function(){
+      var isNew = this.value === NEW_CAT;
+      el("mCatNew").style.display = isNew ? "block" : "none";
+      if (isNew) el("mCatNew").focus();
+    });
   }
 
   function saveEditor(){
@@ -275,17 +307,18 @@
     var price = el("mPrice").value.trim();
     if (!name){ alert("Please enter a product name."); return; }
     if (!price){ alert("Please enter a price."); return; }
+    if (el("mCat").value === NEW_CAT && !el("mCatNew").value.trim()){ alert("Please type a name for the new category."); el("mCatNew").focus(); return; }
 
     var base = index >= 0 ? Object.assign({}, products[section][index]) : { id: (section==="lighting"?"l":"f") + Date.now().toString(36) };
     base.name = name;
-    base.cat = el("mCat").value;
+    base.cat = resolveCat(section);
     base.art = resolveArt(section, el("mArt").value);
     base.price = price;
     base.desc = el("mDesc").value.trim();
     base.dims = el("mDims").value.trim();
     base.finishes = el("mFin").value.trim();
     base.rooms = el("mRooms").value.trim();
-    base.ukca = el("mUkca").value.trim();
+    delete base.ukca;
     if (el("mFrom").checked) base.from = true; else delete base.from;
     var unit = el("mUnit").value.trim();
     if (unit) base.unit = unit; else delete base.unit;

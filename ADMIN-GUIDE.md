@@ -39,9 +39,12 @@ If you ever use a new computer, just paste the same key (or make a new one).
 2. Under **Lighting** or **Furniture**, click **“+ Add product”**.
 3. Fill in the form:
    - **Name**, **Category**, **Price** (include the £).
+     Need a category that isn't listed? Choose **“＋ Add a new category (type your own)…”**
+     at the bottom of the Category list and type its name. It appears as a filter
+     button on the website as soon as a product uses it.
    - **Price note** (optional) — e.g. *per pair*, *per set of 4*.
    - Tick **“Show ‘from’ before the price”** if it's a starting price.
-   - **Description**, **Dimensions**, **Finishes/options**, **Suitable rooms**, **UKCA/status**.
+   - **Description**, **Dimensions**, **Finishes/options**, **Suitable rooms**.
    - **Photo** — click *Choose file* and pick a photo of the product.
      (No photo yet? Pick an **icon style** and a tidy placeholder graphic is used instead.)
 4. Click **Save product**.

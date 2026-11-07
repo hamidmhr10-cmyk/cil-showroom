@@ -132,6 +132,28 @@
     chandeliers:"Chandelier", ceiling:"Ceiling Light", fan:"Fan + Light",
     sofas:"Sofas & Beds", dining:"Dining & Chairs", tv:"TV & Storage"
   };
+  var DEFAULT_KEYS = { lighting: ["chandeliers","ceiling","garden","fan"], furniture: ["sofas","dining","garden","tv"] };
+  /* Categories added in /admin are stored in products.json → merge them into the filter bars */
+  function applyCategories(cats) {
+    function merge(base, list, items, section) {
+      var out = base.slice(), seen = {};
+      out.forEach(function(c){ seen[c.key] = 1; });
+      (list || []).forEach(function(c){
+        if (!c || !c.key || seen[c.key]) return;
+        seen[c.key] = 1; out.push({ key:c.key, label:c.label || c.key });
+        if (!CAT_LABEL[c.key]) CAT_LABEL[c.key] = c.label || c.key;
+      });
+      items.forEach(function(p){ if (p.cat && !seen[p.cat]) { seen[p.cat] = 1; out.push({ key:p.cat, label:CAT_LABEL[p.cat] || p.cat }); } });
+      // hide custom categories that currently have no products
+      return out.filter(function(c){
+        return c.key === "all" || DEFAULT_KEYS[section].indexOf(c.key) > -1 ||
+          items.some(function(p){ return p.cat === c.key; });
+      });
+    }
+    cats = cats || {};
+    LIGHT_CATS = merge(LIGHT_CATS, cats.lighting, LIGHTING, "lighting");
+    FURN_CATS = merge(FURN_CATS, cats.furniture, FURNITURE, "furniture");
+  }
   function catLabel(p) {
     if (p.cat === "garden") return p.art && p.art.indexOf("sofa")>-1 ? "Garden" : (LIGHTING.indexOf(p)>-1 ? "Garden Light" : "Garden Furniture");
     return CAT_LABEL[p.cat] || p.cat;
@@ -468,7 +490,6 @@
             '<dt>Dimensions</dt><dd>'+p.dims+'</dd>' +
             '<dt>Finishes</dt><dd>'+p.finishes+'</dd>' +
             '<dt>Suitable for</dt><dd>'+p.rooms+'</dd>' +
-            '<dt>UKCA marked</dt><dd>'+p.ukca+'</dd>' +
           '</dl></div>' : '') +
       '<form id="enqForm" novalidate>' +
         '<div class="form-field"><label for="en">Name</label><input class="form-control" id="en" name="name" required></div>' +
@@ -490,7 +511,6 @@
         '<dt>Dimensions</dt><dd>'+p.dims+'</dd>' +
         '<dt>Finishes</dt><dd>'+p.finishes+'</dd>' +
         '<dt>Suitable rooms</dt><dd>'+p.rooms+'</dd>' +
-        '<dt>UKCA marked</dt><dd>'+p.ukca+'</dd>' +
       '</dl></div>' +
       '<button class="btn '+btnClass+' btn--block btn--lg" data-enquire="'+p.id+'" data-light="'+(light?1:0)+'">Enquire About This Product</button>';
   }
@@ -750,7 +770,7 @@
     fetch("/data/products.json", { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
-        if (data && data.lighting && data.furniture) { LIGHTING = data.lighting; FURNITURE = data.furniture; }
+        if (data && data.lighting && data.furniture) { LIGHTING = data.lighting; FURNITURE = data.furniture; applyCategories(data.categories); }
       })
       .catch(function () { /* keep fallback data */ })
       .then(function () { renderData(page); });
