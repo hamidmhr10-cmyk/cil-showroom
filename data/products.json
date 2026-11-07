@@ -197,6 +197,20 @@
       "finishes": "White",
       "rooms": "Low Ceilings, Bedrooms",
       "ukca": "Yes"
+    },
+    {
+      "id": "lmw6mfnue",
+      "name": "YM6030-13 Black",
+      "cat": "chandeliers",
+      "art": "chandelier",
+      "price": "£64",
+      "desc": "LED Ceiling Light + Fan",
+      "dims": "53 x 53 x 15 cm (Box/Measurement)",
+      "finishes": "Black",
+      "rooms": "Every Room",
+      "ukca": "Yes",
+      "unit": "per product",
+      "image": "/images/ym6030-13-black-1794069124223.jpeg"
     }
   ],
   "furniture": [
