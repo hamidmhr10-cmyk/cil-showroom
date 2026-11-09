@@ -120,3 +120,14 @@ a { color: var(--gold); }
 .modal__foot .right { display: flex; gap: .7rem; }
 .spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* extra photos + video */
+.gal-edit { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
+.gal-empty { font-size: .8rem; color: #8a7f74; margin: .2rem 0 0; }
+.gal-item { position: relative; width: 78px; height: 78px; border-radius: 8px; overflow: hidden; background: var(--emerald); }
+.gal-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gal-del { position: absolute; top: 3px; right: 3px; width: 22px; height: 22px; border-radius: 50%; border: 0; background: rgba(0,0,0,.65); color: #fff; font-size: 15px; line-height: 22px; cursor: pointer; padding: 0; }
+.gal-del:hover { background: #a33; }
+.gal-new { position: absolute; left: 3px; bottom: 3px; background: var(--gold); color: #fff; font-size: .6rem; font-weight: 600; padding: 0 .35rem; border-radius: 4px; }
+.vid-edit { display: flex; align-items: center; gap: .8rem; margin-top: .6rem; }
+.vid-edit video { width: 180px; max-height: 120px; border-radius: 8px; background: #000; }

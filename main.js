@@ -355,6 +355,53 @@
   }
   function visualBg(p, light) { return p.image ? "#0d0d0d" : (BG[artKey(p, light)] || "#111"); }
 
+  /* All media for a product: main photo, extra photos, then the video */
+  function mediaList(p) {
+    var m = [];
+    if (p.image) m.push({ t:"img", src:p.image });
+    (p.gallery || []).forEach(function(src){ if (src) m.push({ t:"img", src:src }); });
+    if (p.video) m.push({ t:"video", src:p.video });
+    return m;
+  }
+  function mediaBadge(p) {
+    var photos = (p.image ? 1 : 0) + (p.gallery || []).length, bits = [];
+    if (photos > 1) bits.push(photos + " photos");
+    if (p.video) bits.push("&#9654; Video");
+    return bits.length ? '<span class="card__media">'+bits.join(" · ")+'</span>' : "";
+  }
+  function stageHTML(item, p) {
+    if (item.t === "video")
+      return '<video class="gallery__media" src="'+escapeHTML(item.src)+'" controls playsinline preload="metadata"></video>';
+    return '<img class="gallery__media" src="'+escapeHTML(item.src)+'" alt="'+escapeHTML(p.name)+'">';
+  }
+  function galleryHTML(p, light) {
+    var m = mediaList(p);
+    if (!m.length) return '<div class="card__visual" style="aspect-ratio:16/9;border-radius:12px;background:'+visualBg(p, light)+';margin-bottom:1.2rem">'+productVisual(p, light)+'</div>';
+    var many = m.length > 1;
+    var thumbs = many ? '<div class="gallery__thumbs">' + m.map(function(it, i){
+      var inner = it.t === "video"
+        ? '<video src="'+escapeHTML(it.src)+'#t=0.5" muted playsinline preload="metadata"></video><span class="gallery__play">&#9654;</span>'
+        : '<img src="'+escapeHTML(it.src)+'" alt="" loading="lazy">';
+      return '<button type="button" class="gallery__thumb'+(i===0?' active':'')+'" data-gidx="'+i+'" aria-label="'+(it.t==="video"?"Play video":"Photo "+(i+1))+'">'+inner+'</button>';
+    }).join("") + '</div>' : '';
+    var nav = many ? '<button type="button" class="gallery__nav gallery__nav--prev" data-gstep="-1" aria-label="Previous">&#8249;</button>' +
+                     '<button type="button" class="gallery__nav gallery__nav--next" data-gstep="1" aria-label="Next">&#8250;</button>' +
+                     '<span class="gallery__count">1 / '+m.length+'</span>' : '';
+    return '<div class="gallery" data-pid="'+escapeHTML(p.id)+'" data-gi="0">' +
+      '<div class="gallery__stage">'+stageHTML(m[0], p)+nav+'</div>' + thumbs + '</div>';
+  }
+  function galleryGo(g, idx) {
+    var p = findProduct(g.getAttribute("data-pid")); if (!p) return;
+    var m = mediaList(p); if (!m.length) return;
+    idx = (idx + m.length) % m.length;
+    g.setAttribute("data-gi", idx);
+    var stage = g.querySelector(".gallery__stage");
+    var old = stage.querySelector(".gallery__media");
+    if (old) old.outerHTML = stageHTML(m[idx], p);
+    var c = g.querySelector(".gallery__count"); if (c) c.textContent = (idx+1) + " / " + m.length;
+    g.querySelectorAll(".gallery__thumb").forEach(function(t, i){ t.classList.toggle("active", i === idx); });
+  }
+
   /* =================================================================
      RENDER: product card
      ================================================================= */
@@ -363,7 +410,7 @@
     var btnClass = light ? "btn--navy" : "btn--gold";
     var priceLine = (p.from ? '<small>from</small>' : (p.unit ? '<small>'+p.unit+'</small>' : '')) ;
     return '<article class="card '+theme+' reveal" data-cat="'+p.cat+'" data-id="'+p.id+'">' +
-      '<div class="card__visual" style="background:'+visualBg(p, light)+'">' + productVisual(p, light) +
+      '<div class="card__visual" style="background:'+visualBg(p, light)+'">' + productVisual(p, light) + mediaBadge(p) +
         '<div class="card__overlay"><button class="btn '+btnClass+' btn--sm" data-detail="'+p.id+'" data-light="'+(light?1:0)+'">View Details</button></div>' +
       '</div>' +
       '<div class="card__body">' +
@@ -468,7 +515,12 @@
     document.body.appendChild(root);
     root.addEventListener("click", function(e){ if (e.target === root) closeModal(); });
     document.getElementById("modalClose").addEventListener("click", closeModal);
-    document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeModal(); });
+    document.addEventListener("keydown", function(e){
+      if (e.key === "Escape") return closeModal();
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      var g = root.classList.contains("open") && root.querySelector(".gallery");
+      if (g && g.querySelector(".gallery__thumb")) galleryGo(g, (+g.getAttribute("data-gi") || 0) + (e.key === "ArrowRight" ? 1 : -1));
+    });
   }
   function openModal(html) {
     ensureModal();
@@ -478,7 +530,7 @@
   }
   function closeModal() {
     var r = document.getElementById("modalRoot");
-    if (r) r.classList.remove("open");
+    if (r) { r.classList.remove("open"); r.querySelectorAll("video").forEach(function(v){ try { v.pause(); } catch (x) {} }); }
     document.body.style.overflow = "";
   }
 
@@ -505,7 +557,7 @@
   function detailView(p, light) {
     var btnClass = light ? "btn--navy" : "btn--gold";
     return '<div class="modal__head"><span class="eyebrow">'+catLabel(p)+'</span><h3 id="modalTitle">'+p.name+'</h3></div>' +
-      '<div class="card__visual" style="aspect-ratio:16/9;border-radius:12px;background:'+visualBg(p, light)+';margin-bottom:1.2rem">'+productVisual(p, light)+'</div>' +
+      galleryHTML(p, light) +
       '<div class="modal__detail">'+p.desc+'<dl>' +
         '<dt>Price</dt><dd>'+(p.from?"from ":"")+p.price+(p.unit?" "+p.unit:"")+(p.note?" ("+p.note+")":"")+'</dd>' +
         '<dt>Dimensions</dt><dd>'+p.dims+'</dd>' +
@@ -529,6 +581,14 @@
   document.addEventListener("click", function(e) {
     var enq = e.target.closest("[data-enquire]");
     var det = e.target.closest("[data-detail]");
+    var gt = e.target.closest("[data-gidx],[data-gstep]");
+    if (gt) {
+      var g = gt.closest(".gallery");
+      if (!g) return;
+      var cur = +g.getAttribute("data-gi") || 0;
+      galleryGo(g, gt.hasAttribute("data-gidx") ? +gt.getAttribute("data-gidx") : cur + (+gt.getAttribute("data-gstep")));
+      return;
+    }
     if (enq) {
       var p = findProduct(enq.getAttribute("data-enquire"));
       openModal(enquiryForm(p));

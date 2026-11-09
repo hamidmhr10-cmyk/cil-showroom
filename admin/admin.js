@@ -75,18 +75,41 @@
       .then(function(r){ if(!r.ok) return r.json().then(function(e){ throw { code:r.status, msg:e&&e.message }; }); return r.json(); })
       .then(function(j){ sha = j.content.sha; });
   }
+  /* Shrink big photos before upload (max 1800px, JPEG) so the site stays fast */
+  function prepImage(file){
+    if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return Promise.resolve(file);
+    return new Promise(function(res){
+      var url = URL.createObjectURL(file), img = new Image();
+      img.onload = function(){
+        var MAX = 1800, w = img.naturalWidth, h = img.naturalHeight, k = Math.min(1, MAX / Math.max(w, h));
+        if (k === 1 && file.size < 1.2*1024*1024){ URL.revokeObjectURL(url); return res(file); }
+        var c = document.createElement("canvas"); c.width = Math.round(w*k); c.height = Math.round(h*k);
+        var x = c.getContext("2d"); x.fillStyle = "#ffffff"; x.fillRect(0, 0, c.width, c.height); x.drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        c.toBlob(function(b){
+          if (!b || b.size >= file.size) return res(file);
+          res(new File([b], file.name.replace(/\.[^.]+$/, "") + ".jpg", { type: "image/jpeg" }));
+        }, "image/jpeg", 0.85);
+      };
+      img.onerror = function(){ URL.revokeObjectURL(url); res(file); };
+      img.src = url;
+    });
+  }
   function uploadImage(file, nameForFile){
+    return prepImage(file).then(function(f){ return uploadFile(f, nameForFile); });
+  }
+  function uploadFile(file, nameForFile){
     return fileToB64(file).then(function(b64){
       var ext = (file.name.split(".").pop()||"jpg").toLowerCase().replace(/[^a-z0-9]/g,"") || "jpg";
       var path = CFG.imagesDir + "/" + slug(nameForFile) + "-" + Date.now() + "." + ext;
-      return api("/contents/"+path, { method:"PUT", body:{ message:"Upload image "+path, content:b64, branch:CFG.branch } })
+      return api("/contents/"+path, { method:"PUT", body:{ message:"Upload "+path, content:b64, branch:CFG.branch } })
         .then(function(r){ if(!r.ok) return r.json().then(function(e){ throw { code:r.status, msg:e&&e.message }; }); return "/"+path; });
     });
   }
   function fileToB64(file){
     return new Promise(function(res,rej){
       var fr = new FileReader();
-      fr.onload = function(){ var b=new Uint8Array(fr.result), s="", i; for(i=0;i<b.length;i++) s+=String.fromCharCode(b[i]); res(btoa(s)); };
+      fr.onload = function(){ var b=new Uint8Array(fr.result), parts=[], i; for(i=0;i<b.length;i+=0x8000) parts.push(String.fromCharCode.apply(null, b.subarray(i, i+0x8000))); res(btoa(parts.join(""))); };
       fr.onerror = rej; fr.readAsArrayBuffer(file);
     });
   }
@@ -203,7 +226,7 @@
         '<div class="field"><label>Finishes / options</label><input id="mFin" placeholder="Chrome, Gold, Black"></div>' +
       '</div>' +
       '<div class="field"><label>Suitable rooms</label><input id="mRooms" placeholder="Hallways, Dining Rooms"></div>' +
-      '<div class="field"><label>Photo <span class="hint">optional — upload a real product photo</span></label>' +
+      '<div class="field"><label>Main photo <span class="hint">shown on the product card</span></label>' +
         '<div class="photo-box"><div class="photo-preview" id="mPrev"><span class="ph">No photo</span></div>' +
         '<div class="photo-controls"><input type="file" id="mFile" accept="image/*"><div class="field" style="margin:.6rem 0 0">' +
           '<label style="font-size:.78rem">No photo yet? Pick a placeholder style — or type your own</label>' +
@@ -211,12 +234,21 @@
           '<datalist id="artList"></datalist></div>' +
         '<button type="button" class="btn btn--ghost btn--sm" id="mClearImg" style="margin-top:.5rem;display:none">Remove photo</button>' +
         '</div></div></div>' +
+      '<div class="field"><label>More photos <span class="hint">optional — shown in “View Details”. You can pick several at once</span></label>' +
+        '<input type="file" id="mGallery" accept="image/jpeg,image/png,image/webp" multiple>' +
+        '<div class="gal-edit" id="mGalList"></div></div>' +
+      '<div class="field"><label>Video <span class="hint">optional — short MP4 clip, under 20 MB</span></label>' +
+        '<input type="file" id="mVideo" accept="video/mp4,video/webm,video/quicktime">' +
+        '<div class="vid-edit" id="mVidBox"></div></div>' +
       '<div class="modal__foot">' +
         '<button class="btn btn--ghost" id="mCancel">Cancel</button>' +
         '<div class="right"><button class="btn btn--gold" id="mSave">Save product</button></div>' +
       '</div>' +
     '</div></div>';
   }
+  var galleryItems = [];    // [{ src, file? }] extra photos (file = not yet uploaded)
+  var videoItem = null;     // { src, file? } or null
+  var MAX_VIDEO_MB = 20;
   var pendingFile = null;   // File chosen but not yet uploaded
   var removeImage = false;  // user removed existing photo
 
@@ -273,6 +305,10 @@
     el("mRooms").value = p.rooms || "";
     setPreview(p.image || "");
     el("mFile").value = "";
+    galleryItems = (p.gallery || []).map(function(src){ return { src: src }; });
+    videoItem = p.video ? { src: p.video } : null;
+    el("mGallery").value = ""; el("mVideo").value = "";
+    renderGallery(); renderVideo();
     el("modalBg").classList.add("show");
   }
   function setPreview(src){
@@ -280,7 +316,26 @@
     if (src){ box.innerHTML = '<img src="'+esc(src)+'" alt="">'; clearBtn.style.display = "inline-flex"; }
     else { box.innerHTML = '<span class="ph">No photo</span>'; clearBtn.style.display = "none"; }
   }
-  function closeModal(){ el("modalBg").classList.remove("show"); }
+  function renderGallery(){
+    var box = el("mGalList");
+    if (!galleryItems.length){ box.innerHTML = '<p class="gal-empty">No extra photos yet.</p>'; return; }
+    box.innerHTML = galleryItems.map(function(g, i){
+      return '<div class="gal-item"><img src="'+esc(g.src)+'" alt="">' +
+        (g.file ? '<span class="gal-new">new</span>' : '') +
+        '<button type="button" class="gal-del" data-gdel="'+i+'" title="Remove this photo">×</button></div>';
+    }).join("");
+  }
+  function renderVideo(){
+    var box = el("mVidBox");
+    if (!videoItem){ box.innerHTML = ""; return; }
+    box.innerHTML = '<video src="'+esc(videoItem.src)+'" controls muted playsinline preload="metadata"></video>' +
+      '<button type="button" class="btn btn--ghost btn--sm" id="mVidDel">Remove video</button>';
+  }
+  function isHeic(f){ return /heic|heif/i.test(f.type) || /\.(heic|heif)$/i.test(f.name); }
+  function closeModal(){
+    var v = el("mVidBox") && el("mVidBox").querySelector("video"); if (v) try { v.pause(); } catch(e){}
+    el("modalBg").classList.remove("show");
+  }
 
   function bindModal(){
     el("mCancel").onclick = closeModal;
@@ -288,11 +343,35 @@
     el("mFile").addEventListener("change", function(){
       var f = this.files && this.files[0];
       if (!f) return;
-      if (f.size > 8*1024*1024){ alert("Please choose an image under 8 MB."); this.value=""; return; }
+      if (isHeic(f)){ alert("iPhone HEIC photos can't be shown on websites. Please choose a JPG or PNG (on iPhone: Settings → Camera → Formats → Most Compatible)."); this.value=""; return; }
+      if (f.size > 15*1024*1024){ alert("Please choose an image under 15 MB."); this.value=""; return; }
       pendingFile = f; removeImage = false;
       var url = URL.createObjectURL(f); setPreview(url);
     });
     el("mClearImg").onclick = function(){ pendingFile=null; removeImage=true; el("mFile").value=""; setPreview(""); };
+    el("mGallery").addEventListener("change", function(){
+      var files = Array.prototype.slice.call(this.files || []), skipped = 0;
+      files.forEach(function(f){
+        if (isHeic(f) || f.size > 15*1024*1024 || !/^image\//.test(f.type)){ skipped++; return; }
+        galleryItems.push({ src: URL.createObjectURL(f), file: f });
+      });
+      this.value = "";
+      renderGallery();
+      if (skipped) alert(skipped + " file(s) skipped — use JPG/PNG photos under 15 MB.");
+    });
+    el("mGalList").addEventListener("click", function(e){
+      var b = e.target.closest("[data-gdel]"); if (!b) return;
+      galleryItems.splice(+b.getAttribute("data-gdel"), 1); renderGallery();
+    });
+    el("mVideo").addEventListener("change", function(){
+      var f = this.files && this.files[0]; if (!f) return;
+      if (f.size > MAX_VIDEO_MB*1024*1024){ alert("That video is " + (f.size/1048576).toFixed(0) + " MB. Please use a short clip under " + MAX_VIDEO_MB + " MB (trim it or record at 1080p)."); this.value=""; return; }
+      videoItem = { src: URL.createObjectURL(f), file: f };
+      this.value = ""; renderVideo();
+    });
+    el("mVidBox").addEventListener("click", function(e){
+      if (e.target.id === "mVidDel"){ videoItem = null; renderVideo(); }
+    });
     el("mSave").onclick = saveEditor;
     el("mCat").addEventListener("change", function(){
       var isNew = this.value === NEW_CAT;
@@ -328,10 +407,27 @@
     var saveBtn = el("mSave");
     saveBtn.disabled = true; saveBtn.innerHTML = '<span class="spinner"></span> Saving…';
 
+    // Upload everything one by one (main photo → extra photos → video), then save the product
+    var newGal = galleryItems.filter(function(g){ return g.file; }).length;
+    var total = (pendingFile ? 1 : 0) + newGal + (videoItem && videoItem.file ? 1 : 0), done = 0;
+    function step(label){ done++; saveBtn.innerHTML = '<span class="spinner"></span> Uploading '+label+' ('+done+' of '+total+')…'; }
     var work = Promise.resolve();
     if (pendingFile) {
-      work = uploadImage(pendingFile, name).then(function(path){ base.image = path; });
+      work = work.then(function(){ step("main photo"); return uploadImage(pendingFile, name); }).then(function(path){ base.image = path; pendingFile = null; });
     }
+    var gal = [];
+    galleryItems.forEach(function(g, i){
+      work = work.then(function(){
+        if (!g.file){ gal.push(g.src); return; }
+        step("photo");
+        return uploadImage(g.file, name + "-" + (i+2)).then(function(path){ gal.push(path); g.src = path; delete g.file; });
+      });
+    });
+    work = work.then(function(){ if (gal.length) base.gallery = gal; else delete base.gallery; });
+    if (videoItem && videoItem.file) {
+      work = work.then(function(){ step("video"); return uploadFile(videoItem.file, name + "-video"); })
+                 .then(function(path){ base.video = path; videoItem = { src: path }; });
+    } else if (videoItem) base.video = videoItem.src; else delete base.video;
     work.then(function(){
       if (index >= 0) products[section][index] = base;
       else products[section].push(base);

@@ -45,8 +45,14 @@ If you ever use a new computer, just paste the same key (or make a new one).
    - **Price note** (optional) — e.g. *per pair*, *per set of 4*.
    - Tick **“Show ‘from’ before the price”** if it's a starting price.
    - **Description**, **Dimensions**, **Finishes/options**, **Suitable rooms**.
-   - **Photo** — click *Choose file* and pick a photo of the product.
+   - **Main photo** — click *Choose file* and pick a photo of the product.
      (No photo yet? Pick an **icon style** and a tidy placeholder graphic is used instead.)
+   - **More photos** (optional) — pick as many as you like (hold Ctrl to select several).
+     They appear in **View Details** with arrows and thumbnails. Click × on a thumbnail to remove one.
+     Big photos are shrunk automatically before upload. iPhone HEIC photos are not supported:
+     set iPhone → Settings → Camera → Formats → **Most Compatible** to take JPGs.
+   - **Video** (optional) — one short MP4 clip, under 20 MB (about 20–40 seconds at 1080p).
+     It shows as the last item in View Details.
 4. Click **Save product**.
 5. You'll see *“Saved!”* — your live website updates in **about a minute**.
    Refresh the site to see it.
