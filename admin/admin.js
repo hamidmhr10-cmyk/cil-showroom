@@ -368,6 +368,19 @@
       if (f.size > MAX_VIDEO_MB*1024*1024){ alert("That video is " + (f.size/1048576).toFixed(0) + " MB. Please use a short clip under " + MAX_VIDEO_MB + " MB (trim it or record at 1080p)."); this.value=""; return; }
       videoItem = { src: URL.createObjectURL(f), file: f };
       this.value = ""; renderVideo();
+      // catch broken/preview files (e.g. a 0.2-second clip) and codecs the browser can't play
+      var probe = document.createElement("video"), item = videoItem;
+      probe.preload = "metadata"; probe.muted = true;
+      probe.onloadedmetadata = function(){
+        if (item !== videoItem) return;
+        if (probe.duration && probe.duration < 1)
+          alert("Heads up: this video is only " + probe.duration.toFixed(1) + " seconds long — it may be a preview/thumbnail rather than the full clip. Check the original file, or remove it and choose another.");
+      };
+      probe.onerror = function(){
+        if (item !== videoItem) return;
+        alert("This video can't be played in this browser (often iPhone 'High Efficiency'/HEVC video). Please export it as a standard MP4 (H.264) and try again.");
+      };
+      probe.src = item.src;
     });
     el("mVidBox").addEventListener("click", function(e){
       if (e.target.id === "mVidDel"){ videoItem = null; renderVideo(); }
