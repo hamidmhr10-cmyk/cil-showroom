@@ -159,11 +159,29 @@
     return '<div class="item">' +
       '<div class="item__thumb">'+thumb+'</div>' +
       '<div class="item__info"><h3>'+esc(p.name)+'</h3>' +
-        '<div class="item__meta"><span class="price">'+esc(p.price)+'</span>'+suffix+' &nbsp;·&nbsp; '+esc(catLabel(section,p.cat))+'</div></div>' +
+        '<div class="item__meta"><span class="price">'+esc(p.price)+'</span>'+suffix+' &nbsp;·&nbsp; '+esc(catLabel(section,p.cat))+stockChip(p)+'</div></div>' +
       '<div class="item__actions">' +
+        (typeof p.stock === "number" && p.stock > 0 ? '<button class="btn btn--ghost btn--sm" data-sold="'+section+':'+i+'" title="Take one off the stock count">−1 sold</button>' : '') +
         '<button class="btn btn--ghost btn--sm" data-edit="'+section+':'+i+'">Edit</button>' +
         '<button class="btn btn--danger btn--sm" data-del="'+section+':'+i+'">Delete</button>' +
       '</div></div>';
+  }
+  function stockChip(p){
+    if (typeof p.stock === "number"){
+      var cls = p.stock === 0 ? "out" : (p.stock <= 3 ? "low" : "ok");
+      return ' &nbsp;·&nbsp; <span class="stockchip stockchip--'+cls+'">Stock: '+p.stock+'</span>';
+    }
+    return p.incoming ? ' &nbsp;·&nbsp; <span class="stockchip stockchip--soon">'+esc(p.incoming)+'</span>' : '';
+  }
+  function soldOne(section, index){
+    var p = products[section][index];
+    if (!p || typeof p.stock !== "number" || p.stock <= 0) return;
+    if (!confirm('Mark one "'+p.name+'" as sold? Stock goes from '+p.stock+' to '+(p.stock-1)+'.')) return;
+    p.stock -= 1;
+    commitProducts("Sold 1: "+p.name+" (stock now "+p.stock+")").then(function(){
+      refreshLists();
+      notice("ok", "<strong>Updated.</strong> “"+esc(p.name)+"” stock is now "+p.stock+". The website updates in about a minute.");
+    }).catch(function(e){ p.stock += 1; refreshLists(); handleError(e); });
   }
   function groupHTML(section, title){
     var arr = products[section];
@@ -194,6 +212,8 @@
     var add = e.target.closest("[data-add]");
     var edit = e.target.closest("[data-edit]");
     var del = e.target.closest("[data-del]");
+    var sold = e.target.closest("[data-sold]");
+    if (sold){ var s=sold.getAttribute("data-sold").split(":"); return soldOne(s[0], +s[1]); }
     if (add) return openEditor(add.getAttribute("data-add"), -1);
     if (edit){ var a=edit.getAttribute("data-edit").split(":"); return openEditor(a[0], +a[1]); }
     if (del){ var b=del.getAttribute("data-del").split(":"); return deleteItem(b[0], +b[1]); }
@@ -219,6 +239,11 @@
         '<div class="field"><label>Price <span class="hint">include £</span></label><input id="mPrice" placeholder="£485"></div>' +
       '</div>' +
       '<div class="field"><label>Price note <span class="hint">optional</span></label><input id="mUnit" placeholder="per pair / per set of 4"></div>' +
+      '<div class="row">' +
+        '<div class="field"><label>Stock quantity <span class="hint">leave blank to hide</span></label><input id="mStock" type="number" min="0" step="1" inputmode="numeric" placeholder="e.g. 6"></div>' +
+        '<div class="field"><label>Coming soon note <span class="hint">optional</span></label><input id="mIncoming" placeholder="e.g. Arriving December"></div>' +
+      '</div>' +
+      '<p class="hint-line">Customers see <b>In stock</b> (4+), <b>Only 3 / 2 / 1 left</b>, or <b>Out of stock</b> — the note shows instead when stock is 0 or blank.</p>' +
       '<div class="field checkline"><input type="checkbox" id="mFrom"><label for="mFrom" style="margin:0">Show “from” before the price</label></div>' +
       '<div class="field"><label>Description</label><textarea id="mDesc" placeholder="Short selling description…"></textarea></div>' +
       '<div class="row">' +
@@ -298,6 +323,8 @@
     fillArt(section, p.art);
     el("mPrice").value = p.price || "";
     el("mUnit").value = p.unit || "";
+    el("mStock").value = (p.stock === undefined || p.stock === null) ? "" : p.stock;
+    el("mIncoming").value = p.incoming || "";
     el("mFrom").checked = !!p.from;
     el("mDesc").value = p.desc || "";
     el("mDims").value = p.dims || "";
@@ -412,6 +439,10 @@
     base.rooms = el("mRooms").value.trim();
     delete base.ukca;
     if (el("mFrom").checked) base.from = true; else delete base.from;
+    var stockVal = el("mStock").value.trim();
+    if (stockVal === "") delete base.stock; else base.stock = Math.max(0, parseInt(stockVal, 10) || 0);
+    var incoming = el("mIncoming").value.trim();
+    if (incoming) base.incoming = incoming; else delete base.incoming;
     var unit = el("mUnit").value.trim();
     if (unit) base.unit = unit; else delete base.unit;
     if (removeImage) base.image = "";

@@ -806,3 +806,19 @@ select.form-control option { background: var(--surface); color: var(--text-dark)
   background: rgba(20,12,7,0.62); color: #fff; font-size: .68rem; letter-spacing: .02em;
   padding: .22rem .6rem; border-radius: 999px; backdrop-filter: blur(4px); pointer-events: none;
 }
+
+/* =================================================================
+   STOCK LABELS + FORM ERRORS
+   ================================================================= */
+.stock { display: inline-flex; align-items: center; gap: .35rem; font-size: .72rem; font-weight: 600; letter-spacing: .02em; margin: .15rem 0 .35rem; }
+.stock::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+.stock--ok   { color: #3f8f5a; }
+.stock--low  { color: #c9741e; }
+.stock--soon { color: #b2912f; }
+.stock--out  { color: #a34a3c; }
+body[data-page="lighting"] .stock--ok { color: #6cc48a; }
+body[data-page="lighting"] .stock--low { color: #f0a24a; }
+body[data-page="lighting"] .stock--out { color: #e07b6b; }
+.modal__detail dd .stock { margin: 0; }
+.form-error { margin-top: .9rem; font-size: .85rem; color: #c0503f; line-height: 1.5; }
+.form-error a { color: inherit; text-decoration: underline; }

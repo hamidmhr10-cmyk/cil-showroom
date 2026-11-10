@@ -131,3 +131,11 @@ a { color: var(--gold); }
 .gal-new { position: absolute; left: 3px; bottom: 3px; background: var(--gold); color: #fff; font-size: .6rem; font-weight: 600; padding: 0 .35rem; border-radius: 4px; }
 .vid-edit { display: flex; align-items: center; gap: .8rem; margin-top: .6rem; }
 .vid-edit video { width: 180px; max-height: 120px; border-radius: 8px; background: #000; }
+
+/* stock */
+.hint-line { font-size: .74rem; color: #8a7f74; margin: -.3rem 0 .9rem; }
+.stockchip { font-weight: 600; }
+.stockchip--ok { color: #3f8f5a; }
+.stockchip--low { color: #c9741e; }
+.stockchip--out { color: #a34a3c; }
+.stockchip--soon { color: #b2912f; }

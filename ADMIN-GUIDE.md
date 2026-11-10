@@ -43,6 +43,10 @@ If you ever use a new computer, just paste the same key (or make a new one).
      at the bottom of the Category list and type its name. It appears as a filter
      button on the website as soon as a product uses it.
    - **Price note** (optional) — e.g. *per pair*, *per set of 4*.
+   - **Stock quantity** (optional) — how many you have. Customers see *In stock* (4 or more),
+     *Only 3 / 2 / 1 left*, or *Out of stock*. Leave blank to show nothing.
+   - **Coming soon note** (optional) — e.g. *Arriving December*; shown when stock is 0 or blank.
+   - Sold one? Click **−1 sold** next to the product in the list — no need to open it.
    - Tick **“Show ‘from’ before the price”** if it's a starting price.
    - **Description**, **Dimensions**, **Finishes/options**, **Suitable rooms**.
    - **Main photo** — click *Choose file* and pick a photo of the product.

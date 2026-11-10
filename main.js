@@ -10,7 +10,7 @@
     name: "LURIXA",
     phone: "+44 7402 176349",
     phoneRaw: "447402176349",
-    email: "info@improvemental.co.uk",
+    email: "hamid@improvemental.co.uk",
     address: "250 The Village, Butterfield, Great Marlings, Luton, Bedfordshire, LU2 8DL"
   };
 
@@ -363,6 +363,21 @@
     if (p.video) m.push({ t:"video", src:p.video });
     return m;
   }
+  /* Stock: p.stock = number (blank = not shown), p.incoming = "Arriving December" etc. */
+  var LOW_STOCK = 3;
+  function stockInfo(p) {
+    var has = p.stock !== undefined && p.stock !== null && p.stock !== "";
+    var n = has ? +p.stock : NaN;
+    if (has && n > LOW_STOCK) return { cls:"ok", text:"In stock" };
+    if (has && n > 0) return { cls:"low", text:"Only " + n + " left" };
+    if (p.incoming) return { cls:"soon", text:p.incoming };
+    if (has) return { cls:"out", text:"Out of stock" };
+    return null;
+  }
+  function stockHTML(p) {
+    var s = stockInfo(p);
+    return s ? '<span class="stock stock--'+s.cls+'">'+escapeHTML(s.text)+'</span>' : "";
+  }
   function mediaBadge(p) {
     var photos = (p.image ? 1 : 0) + (p.gallery || []).length, bits = [];
     if (photos > 1) bits.push(photos + " photos");
@@ -415,7 +430,7 @@
       '</div>' +
       '<div class="card__body">' +
         '<span class="badge">'+catLabel(p)+'</span>' +
-        '<h3 class="card__name">'+p.name+'</h3>' +
+        '<h3 class="card__name">'+p.name+'</h3>' + stockHTML(p) +
         '<p class="card__desc">'+p.desc+'</p>' +
         '<div class="card__foot">' +
           '<span class="card__price">'+priceLine+p.price+'</span>' +
@@ -544,6 +559,7 @@
             '<dt>Suitable for</dt><dd>'+p.rooms+'</dd>' +
           '</dl></div>' : '') +
       '<form id="enqForm" novalidate>' +
+        '<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
         '<div class="form-field"><label for="en">Name</label><input class="form-control" id="en" name="name" required></div>' +
         '<div class="form-field"><label for="ee">Email</label><input class="form-control" id="ee" name="email" type="email" required></div>' +
         '<div class="form-field"><label for="ep">Phone</label><input class="form-control" id="ep" name="phone" type="tel"></div>' +
@@ -560,6 +576,7 @@
       galleryHTML(p, light) +
       '<div class="modal__detail">'+p.desc+'<dl>' +
         '<dt>Price</dt><dd>'+(p.from?"from ":"")+p.price+(p.unit?" "+p.unit:"")+(p.note?" ("+p.note+")":"")+'</dd>' +
+        (stockInfo(p) ? '<dt>Availability</dt><dd>'+stockHTML(p)+'</dd>' : '') +
         '<dt>Dimensions</dt><dd>'+p.dims+'</dd>' +
         '<dt>Finishes</dt><dd>'+p.finishes+'</dd>' +
         '<dt>Suitable rooms</dt><dd>'+p.rooms+'</dd>' +
@@ -598,12 +615,55 @@
       openModal(detailView(p2, det.getAttribute("data-light")==="1"));
     }
   });
+  /* Enquiries are emailed to CO.email via FormSubmit (no server needed).
+     The very first submission sends an activation email to that inbox — click it once. */
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/" + CO.email;
+  function sendEnquiry(fields, subject) {
+    var body = { _subject: subject, _template: "table", _captcha: "false" };
+    Object.keys(fields).forEach(function(k){ if (fields[k] !== "" && fields[k] != null) body[k] = fields[k]; });
+    body["Sent from page"] = location.href;
+    return fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){
+      if (!r.ok || String(j.success) === "false") throw new Error(j.message || ("HTTP " + r.status));
+      return j;
+    }); });
+  }
+  function formFields(f) {
+    var out = {};
+    Array.prototype.forEach.call(f.elements, function(el){
+      if (!el.name || el.name === "_honey" || el.type === "submit") return;
+      var label = f.querySelector('label[for="'+el.id+'"]');
+      out[label ? label.textContent.trim() : el.name] = el.value.trim();
+    });
+    return out;
+  }
+  function isSpam(f) { var h = f.querySelector('[name="_honey"]'); return !!(h && h.value); }
+  function sendFailHTML() {
+    return '<p class="form-error">Sorry, your message couldn’t be sent just now. Please call <a href="tel:'+CO.phoneRaw+'">'+CO.phone+'</a>, ' +
+      'email <a href="mailto:'+CO.email+'">'+CO.email+'</a> or <a href="https://wa.me/'+CO.phoneRaw+'" target="_blank" rel="noopener">WhatsApp us</a>.</p>';
+  }
   function bindEnqForm(p) {
     var f = document.getElementById("enqForm");
     if (!f) return;
     f.addEventListener("submit", function(e){
       e.preventDefault();
-      openModal(thanksHTML(f.name.value, p ? p.name : ""));
+      if (!f.checkValidity()) { f.reportValidity(); return; }
+      var who = f.name.value;
+      if (isSpam(f)) { openModal(thanksHTML(who, p ? p.name : "")); return; }
+      var btn = f.querySelector('[type="submit"]'), old = btn.innerHTML;
+      btn.disabled = true; btn.innerHTML = "Sending…";
+      var fields = formFields(f);
+      if (p) { fields["Price shown"] = (p.from ? "from " : "") + p.price + (p.unit ? " " + p.unit : ""); }
+      sendEnquiry(fields, "Website enquiry" + (p ? ": " + p.name : "")).then(function(){
+        openModal(thanksHTML(who, p ? p.name : ""));
+      }).catch(function(){
+        btn.disabled = false; btn.innerHTML = old;
+        var err = f.querySelector(".form-error"); if (err) err.remove();
+        f.insertAdjacentHTML("beforeend", sendFailHTML());
+      });
     });
   }
 
@@ -715,19 +775,38 @@
      ================================================================= */
   function initInlineForms() {
     document.querySelectorAll("[data-inline-form]").forEach(function(f){
+      if (!f.querySelector('[name="_honey"]'))
+        f.insertAdjacentHTML("beforeend", '<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">');
       f.addEventListener("submit", function(e){
         e.preventDefault();
+        if (f.getAttribute("data-sending")) return;
+        if (isSpam(f)) { showInlineThanks(f); return; }
+        var btn = f.querySelector('[type="submit"]'), old = btn ? btn.innerHTML : "";
+        if (btn) { btn.disabled = true; btn.innerHTML = "Sending…"; }
+        f.setAttribute("data-sending", "1");
+        var page = (document.querySelector("h1") || {}).textContent || document.title;
+        sendEnquiry(formFields(f), "Website " + (f.querySelector('[name="message"]') ? "contact form" : "callback request") + " — " + page.trim())
+          .then(function(){ showInlineThanks(f); })
+          .catch(function(){
+            if (btn) { btn.disabled = false; btn.innerHTML = old; }
+            f.removeAttribute("data-sending");
+            var err = f.parentNode.querySelector(".form-error"); if (err) err.remove();
+            f.insertAdjacentHTML("afterend", sendFailHTML());
+          });
+      });
+    });
+  }
+  function showInlineThanks(f) {
         var msg = f.getAttribute("data-success") || "Thank you! We’ll be in touch.";
         var name = f.querySelector('[name="name"]');
         if (name && name.value) msg = msg.replace("{name}", escapeHTML(name.value));
         msg = msg.replace("{name}", "");
+        var err = f.parentNode.querySelector(".form-error"); if (err) err.remove();
         var box = f.parentNode.querySelector(".form-success");
         if (!box) { box = document.createElement("p"); box.className = "form-success"; f.parentNode.appendChild(box); }
         box.innerHTML = msg;
         f.reset();
         f.style.display = "none";
-      });
-    });
   }
 
   /* =================================================================
