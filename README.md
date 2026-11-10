@@ -50,4 +50,4 @@ All product data lives in the `LIGHTING` and `FURNITURE` arrays near the top of 
 ---
 
 © 2026 LURIXA — a trading name of Commercial Improvements Ltd. Registered in England and Wales.
-Luton, Bedfordshire, LU2 8DL · +44 7402 176349 · info@improvemental.co.uk
+Luton, Bedfordshire, LU2 8DL · +44 7402 176349 · hamid@improvemental.co.uk

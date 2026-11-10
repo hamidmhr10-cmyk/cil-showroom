@@ -84,4 +84,4 @@ If you ever use a new computer, just paste the same key (or make a new one).
 
 ---
 
-*Contact: +44 7402 176349 · info@improvemental.co.uk*
+*Contact: +44 7402 176349 · hamid@improvemental.co.uk*
