@@ -449,8 +449,8 @@
     function cur(p){ return active===p ? ' aria-current="page"' : ''; }
     return '<nav class="nav" id="nav" aria-label="Primary"><div class="nav__inner">' +
       '<a class="brand" href="index.html" aria-label="LURIXA home">' +
-        '<span class="brand__mono">L</span>' +
-        '<span class="brand__name brand__word">LURIXA</span>' +
+        '<img class="brand__logo brand__logo--bronze" src="images/logo/lurixa-horizontal-bronze.svg" width="179" height="54" alt="LURIXA">' +
+        '<img class="brand__logo brand__logo--gold" src="images/logo/lurixa-horizontal-gold.svg" width="179" height="54" alt="LURIXA">' +
       '</a>' +
       '<ul class="nav__links">' +
         '<li class="nav__item"><a class="nav__link" href="index.html"'+cur("home")+'>Home</a></li>' +
@@ -485,7 +485,7 @@
   function footerHTML() {
     return '<footer class="footer"><div class="container"><div class="footer__grid">' +
       '<div class="footer__brand">' +
-        '<a class="brand" href="index.html"><span class="brand__mono">L</span><span class="brand__name brand__word">LURIXA</span></a>' +
+        '<a class="brand" href="index.html" aria-label="LURIXA home"><img class="brand__logo brand__logo--gold" src="images/logo/lurixa-horizontal-gold.svg" width="218" height="66" alt="LURIXA"></a>' +
         '<p>Illuminate Your World. Furnish Your Life. Premium lighting and furniture, sourced directly from the world’s finest manufacturers.</p>' +
         '<div class="socials">' +
           '<a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener">'+ICON.instagram+'</a>' +

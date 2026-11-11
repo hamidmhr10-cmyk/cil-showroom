@@ -156,6 +156,14 @@ ul { list-style: none; }
 }
 .brand__name span { display: block; font-family: var(--font-accent); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); opacity: 0.9; }
 .brand__word { max-width: none; font-weight: 700; font-size: 1.12rem; letter-spacing: 0.2em; text-transform: none; }
+/* Logo artwork: bronze version on light backgrounds, gold version on dark ones */
+.brand__logo { display: block; height: 54px; width: auto; }
+.brand__logo--gold { display: none; }
+body[data-page="lighting"] .nav .brand__logo--bronze { display: none; }
+body[data-page="lighting"] .nav .brand__logo--gold { display: block; }
+.footer .brand__logo--bronze { display: none; }
+.footer .brand__logo--gold { display: block; height: 66px; }
+@media (max-width: 560px) { .brand__logo { height: 44px; } .footer .brand__logo--gold { height: 56px; } }
 
 .nav__links { display: flex; align-items: center; gap: 0.4rem; }
 .nav__item { position: relative; }
