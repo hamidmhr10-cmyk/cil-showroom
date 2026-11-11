@@ -2,22 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lurixa.co.uk/</loc>
-    <lastmod>2026-11-11</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://lurixa.co.uk/lighting</loc>
-    <lastmod>2026-11-11</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lurixa.co.uk/furniture</loc>
-    <lastmod>2026-11-11</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lurixa.co.uk/about</loc>
-    <lastmod>2026-11-11</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lurixa.co.uk/chandeliers</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurixa.co.uk/ceiling-lights</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurixa.co.uk/garden-lights</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurixa.co.uk/fan-lights</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurixa.co.uk/sofas-and-beds</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurixa.co.uk/dining-and-chairs</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurixa.co.uk/garden-furniture</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurixa.co.uk/tv-and-storage</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurixa.co.uk/product/lmw6mfnue</loc>
+    <priority>0.6</priority>
   </url>
 </urlset>

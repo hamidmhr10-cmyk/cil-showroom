@@ -430,7 +430,7 @@
       '</div>' +
       '<div class="card__body">' +
         '<span class="badge">'+catLabel(p)+'</span>' +
-        '<h3 class="card__name">'+p.name+'</h3>' + stockHTML(p) +
+        '<h3 class="card__name">'+(p.image ? '<a href="/product/'+encodeURIComponent(p.id)+'">'+p.name+'</a>' : p.name)+'</h3>' + stockHTML(p) +
         '<p class="card__desc">'+p.desc+'</p>' +
         '<div class="card__foot">' +
           '<span class="card__price">'+priceLine+p.price+'</span>' +
@@ -455,9 +455,9 @@
       '<ul class="nav__links">' +
         '<li class="nav__item"><a class="nav__link" href="index.html"'+cur("home")+'>Home</a></li>' +
         '<li class="nav__item"><a class="nav__link" href="lighting.html"'+cur("lighting")+'>Lighting <span class="caret">▾</span></a>' +
-          '<div class="dropdown"><a href="lighting.html#chandeliers">Chandeliers</a><a href="lighting.html#ceiling">Ceiling Lights</a><a href="lighting.html#garden">Garden Lights</a><a href="lighting.html#fan">Fan + Lights</a></div></li>' +
+          '<div class="dropdown"><a href="chandeliers.html">Chandeliers</a><a href="ceiling-lights.html">Ceiling Lights</a><a href="garden-lights.html">Garden Lights</a><a href="fan-lights.html">Fan + Lights</a></div></li>' +
         '<li class="nav__item"><a class="nav__link" href="furniture.html"'+cur("furniture")+'>Furniture <span class="caret">▾</span></a>' +
-          '<div class="dropdown"><a href="furniture.html#sofas">Sofas & Beds</a><a href="furniture.html#dining">Dining & Chairs</a><a href="furniture.html#garden">Garden Furniture</a><a href="furniture.html#tv">TV & Storage</a></div></li>' +
+          '<div class="dropdown"><a href="sofas-and-beds.html">Sofas & Beds</a><a href="dining-and-chairs.html">Dining & Chairs</a><a href="garden-furniture.html">Garden Furniture</a><a href="tv-and-storage.html">TV & Storage</a></div></li>' +
         '<li class="nav__item"><a class="nav__link" href="about.html"'+cur("about")+'>About Us</a></li>' +
         '<li class="nav__item"><a class="nav__link" href="about.html#contact">Contact</a></li>' +
       '</ul>' +
@@ -467,15 +467,15 @@
     '<div class="mobile-menu" id="mobileMenu">' +
       '<a href="index.html">Home</a>' +
       '<a href="lighting.html">Lighting</a>' +
-      '<a class="sub" href="lighting.html#chandeliers">Chandeliers</a>' +
-      '<a class="sub" href="lighting.html#ceiling">Ceiling Lights</a>' +
-      '<a class="sub" href="lighting.html#garden">Garden Lights</a>' +
-      '<a class="sub" href="lighting.html#fan">Fan + Lights</a>' +
+      '<a class="sub" href="chandeliers.html">Chandeliers</a>' +
+      '<a class="sub" href="ceiling-lights.html">Ceiling Lights</a>' +
+      '<a class="sub" href="garden-lights.html">Garden Lights</a>' +
+      '<a class="sub" href="fan-lights.html">Fan + Lights</a>' +
       '<a href="furniture.html">Furniture</a>' +
-      '<a class="sub" href="furniture.html#sofas">Sofas & Beds</a>' +
-      '<a class="sub" href="furniture.html#dining">Dining & Chairs</a>' +
-      '<a class="sub" href="furniture.html#garden">Garden Furniture</a>' +
-      '<a class="sub" href="furniture.html#tv">TV & Storage</a>' +
+      '<a class="sub" href="sofas-and-beds.html">Sofas & Beds</a>' +
+      '<a class="sub" href="dining-and-chairs.html">Dining & Chairs</a>' +
+      '<a class="sub" href="garden-furniture.html">Garden Furniture</a>' +
+      '<a class="sub" href="tv-and-storage.html">TV & Storage</a>' +
       '<a href="about.html">About Us</a>' +
       '<a href="about.html#contact">Contact</a>' +
       '<a class="btn btn--gold" href="about.html#contact">Request a Quote</a>' +
@@ -494,7 +494,7 @@
         '</div>' +
       '</div>' +
       '<div><h4>Navigate</h4><a href="index.html">Home</a><a href="lighting.html">Lighting</a><a href="furniture.html">Furniture</a><a href="about.html">About Us</a><a href="about.html#contact">Contact</a></div>' +
-      '<div><h4>Collections</h4><a href="lighting.html#chandeliers">Chandeliers</a><a href="lighting.html#ceiling">Ceiling Lights</a><a href="lighting.html#garden">Garden Lights</a><a href="furniture.html#sofas">Sofas & Beds</a><a href="furniture.html#garden">Garden Furniture</a></div>' +
+      '<div><h4>Collections</h4><a href="chandeliers.html">Chandeliers</a><a href="ceiling-lights.html">Ceiling Lights</a><a href="garden-lights.html">Garden Lights</a><a href="sofas-and-beds.html">Sofas & Beds</a><a href="garden-furniture.html">Garden Furniture</a></div>' +
       '<div class="footer__contact"><h4>Contact</h4>' +
         '<ul>' +
           '<li><span class="ico">'+ICON.pin+'</span><span>'+CO.address+'</span></li>' +
@@ -695,6 +695,15 @@
     });
   }
 
+  /* Category landing pages (e.g. /chandeliers) set <body data-cat="chandeliers"> to open on that filter */
+  function presetFilter(barId) {
+    var key = document.body.getAttribute("data-cat");
+    if (!key) return;
+    var bar = document.getElementById(barId);
+    var btn = bar && bar.querySelector('[data-filter="'+key+'"]');
+    if (btn) btn.click();
+  }
+
   function filterFromHash(barId, items, gridId, light) {
     var h = location.hash.replace("#","");
     if (!h) return;
@@ -878,11 +887,13 @@
     if (page === "lighting") {
       renderGrid("lightGrid", LIGHTING, false);
       renderFilters("lightFilter", LIGHT_CATS, "lightGrid", LIGHTING, false);
+      presetFilter("lightFilter");
       filterFromHash("lightFilter", LIGHTING, "lightGrid", false);
     }
     if (page === "furniture") {
       renderGrid("furnGrid", FURNITURE, true);
       renderFilters("furnFilter", FURN_CATS, "furnGrid", FURNITURE, true);
+      presetFilter("furnFilter");
       filterFromHash("furnFilter", FURNITURE, "furnGrid", true);
     }
     initStagger();
