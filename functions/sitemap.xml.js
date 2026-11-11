@@ -12,3 +12,6 @@ export async function onRequestGet(context) {
     return context.next();
   }
 }
+
+// crawlers sometimes probe with HEAD
+export const onRequestHead = onRequestGet;
