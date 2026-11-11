@@ -912,7 +912,34 @@
         if (data && data.lighting && data.furniture) { LIGHTING = data.lighting; FURNITURE = data.furniture; applyCategories(data.categories); }
       })
       .catch(function () { /* keep fallback data */ })
-      .then(function () { renderData(page); });
+      .then(function () { renderData(page); injectProductLD(page); });
+  }
+
+
+  /* SEO: publish real products (those with a photo) as schema.org Product data so Google can show them */
+  function injectProductLD(page) {
+    try {
+      var list = page === "lighting" ? LIGHTING : page === "furniture" ? FURNITURE : null;
+      if (!list) return;
+      var items = [];
+      list.forEach(function (p) {
+        if (!p || !p.image || !p.name) return;
+        var m = String(p.price || "").match(/£\s*([\d,]+(?:\.\d+)?)/);
+        var imgs = [p.image].concat(Array.isArray(p.gallery) ? p.gallery : []).filter(Boolean).map(function (u) { return u.indexOf("http") === 0 ? u : "https://lurixa.co.uk" + (u.charAt(0) === "/" ? "" : "/") + u; });
+        var prod = { "@type": "Product", "name": p.name, "image": imgs, "description": p.desc || p.name, "sku": String(p.id), "brand": { "@type": "Brand", "name": "LURIXA" } };
+        if (m) {
+          var out = typeof p.stock === "number" && p.stock <= 0;
+          prod.offers = { "@type": "Offer", "priceCurrency": "GBP", "price": m[1].replace(/,/g, ""), "url": "https://lurixa.co.uk/" + page, "itemCondition": "https://schema.org/NewCondition",
+            "availability": out ? (p.incoming ? "https://schema.org/PreOrder" : "https://schema.org/OutOfStock") : "https://schema.org/InStock" };
+        }
+        items.push(prod);
+      });
+      if (!items.length) return;
+      var el = document.createElement("script");
+      el.type = "application/ld+json";
+      el.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": items });
+      document.head.appendChild(el);
+    } catch (e) { /* never break the page for SEO data */ }
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
