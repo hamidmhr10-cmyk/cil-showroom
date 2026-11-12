@@ -16,6 +16,10 @@
       {
         "key": "fan",
         "label": "Fan + Light"
+      },
+      {
+        "key": "outdoor-light",
+        "label": "Outdoor Light"
       }
     ],
     "furniture": [
@@ -239,6 +243,24 @@
       "video": "/images/ym6030-13-black-video-1794246604687.mp4",
       "stock": 1,
       "incoming": "Ordered on Demand"
+    },
+    {
+      "id": "lmwdiyl4p",
+      "name": "HN9015",
+      "cat": "outdoor-light",
+      "art": "chandelier",
+      "price": "£29",
+      "desc": "Outdoor Light",
+      "dims": "260x105x60",
+      "finishes": "Black, Gold",
+      "rooms": "Outdoor",
+      "stock": 11,
+      "incoming": "Ordered on Demand",
+      "unit": "per product",
+      "image": "/images/hn9015-1794486551940.jpeg",
+      "gallery": [
+        "/images/hn9015-2-1794486553918.jpeg"
+      ]
     }
   ],
   "furniture": [
