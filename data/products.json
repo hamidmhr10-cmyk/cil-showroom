@@ -261,6 +261,25 @@
       "gallery": [
         "/images/hn9015-2-1794486553918.jpeg"
       ]
+    },
+    {
+      "id": "lmwdj59bq",
+      "name": "XL-08",
+      "cat": "chandeliers",
+      "art": "chandelier",
+      "price": "£314",
+      "desc": "Crystal Halo Chandelier Diameter 60cm",
+      "dims": "60x60x14",
+      "finishes": "White",
+      "rooms": "Hallways, Dining Rooms",
+      "stock": 3,
+      "incoming": "Ordered on Demand",
+      "unit": "per product",
+      "image": "/images/xl-08-1794486863410.jpg",
+      "gallery": [
+        "/images/xl-08-2-1794486865243.jpg",
+        "/images/xl-08-3-1794486867159.jpg"
+      ]
     }
   ],
   "furniture": [
