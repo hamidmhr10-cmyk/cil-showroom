@@ -75,21 +75,21 @@
       .then(function(r){ if(!r.ok) return r.json().then(function(e){ throw { code:r.status, msg:e&&e.message }; }); return r.json(); })
       .then(function(j){ sha = j.content.sha; });
   }
-  /* Shrink big photos before upload (max 1800px, JPEG) so the site stays fast */
+  /* Only shrink very large photos (max 3200px, high-quality JPEG) so zooming on the site stays sharp */
   function prepImage(file){
     if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return Promise.resolve(file);
     return new Promise(function(res){
       var url = URL.createObjectURL(file), img = new Image();
       img.onload = function(){
-        var MAX = 1800, w = img.naturalWidth, h = img.naturalHeight, k = Math.min(1, MAX / Math.max(w, h));
-        if (k === 1 && file.size < 1.2*1024*1024){ URL.revokeObjectURL(url); return res(file); }
+        var MAX = 3200, w = img.naturalWidth, h = img.naturalHeight, k = Math.min(1, MAX / Math.max(w, h));
+        if (k === 1 && file.size < 3.5*1024*1024){ URL.revokeObjectURL(url); return res(file); }
         var c = document.createElement("canvas"); c.width = Math.round(w*k); c.height = Math.round(h*k);
-        var x = c.getContext("2d"); x.fillStyle = "#ffffff"; x.fillRect(0, 0, c.width, c.height); x.drawImage(img, 0, 0, c.width, c.height);
+        var x = c.getContext("2d"); x.fillStyle = "#ffffff"; x.fillRect(0, 0, c.width, c.height); x.imageSmoothingEnabled = true; x.imageSmoothingQuality = "high"; x.drawImage(img, 0, 0, c.width, c.height);
         URL.revokeObjectURL(url);
         c.toBlob(function(b){
           if (!b || b.size >= file.size) return res(file);
           res(new File([b], file.name.replace(/\.[^.]+$/, "") + ".jpg", { type: "image/jpeg" }));
-        }, "image/jpeg", 0.85);
+        }, "image/jpeg", 0.93);
       };
       img.onerror = function(){ URL.revokeObjectURL(url); res(file); };
       img.src = url;
@@ -250,7 +250,10 @@
         '<div class="field"><label>Dimensions</label><input id="mDims" placeholder="80cm diameter, 120cm drop"></div>' +
         '<div class="field"><label>Finishes / options</label><input id="mFin" placeholder="Chrome, Gold, Black"></div>' +
       '</div>' +
-      '<div class="field"><label>Suitable rooms</label><input id="mRooms" placeholder="Hallways, Dining Rooms"></div>' +
+      '<div class="row">' +
+        '<div class="field"><label>Suitable rooms</label><input id="mRooms" placeholder="Hallways, Dining Rooms"></div>' +
+        '<div class="field"><label>Watts <span class="hint">optional — leave blank to hide</span></label><input id="mWatts" placeholder="e.g. 40 or 12W LED"></div>' +
+      '</div>' +
       '<div class="field"><label>Main photo <span class="hint">shown on the product card</span></label>' +
         '<div class="photo-box"><div class="photo-preview" id="mPrev"><span class="ph">No photo</span></div>' +
         '<div class="photo-controls"><input type="file" id="mFile" accept="image/*"><div class="field" style="margin:.6rem 0 0">' +
@@ -330,6 +333,7 @@
     el("mDims").value = p.dims || "";
     el("mFin").value = p.finishes || "";
     el("mRooms").value = p.rooms || "";
+    el("mWatts").value = p.watts || "";
     setPreview(p.image || "");
     el("mFile").value = "";
     galleryItems = (p.gallery || []).map(function(src){ return { src: src }; });
@@ -437,6 +441,8 @@
     base.dims = el("mDims").value.trim();
     base.finishes = el("mFin").value.trim();
     base.rooms = el("mRooms").value.trim();
+    var wattsVal = el("mWatts").value.trim();
+    if (wattsVal) base.watts = wattsVal; else delete base.watts;
     delete base.ukca;
     if (el("mFrom").checked) base.from = true; else delete base.from;
     var stockVal = el("mStock").value.trim();

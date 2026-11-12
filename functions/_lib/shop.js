@@ -2,7 +2,7 @@
 // Data source of truth: /data/products.json (edited via /admin). Only products that have a real photo get a page.
 
 export const SITE = 'https://lurixa.co.uk';
-export const ASSET_V = '20261111f'; // keep in step with the ?v= used in the HTML pages
+export const ASSET_V = '20261112a'; // keep in step with the ?v= used in the HTML pages
 
 // category key -> landing page slug (must match the generated category pages)
 export const CAT_PAGES = {
@@ -97,7 +97,8 @@ export function renderProductPage(p, type, data) {
     ],
   };
 
-  const specs = [['Size', p.dims], ['Finish', p.finishes], ['Best for', p.rooms], ['Sold', p.unit]]
+  const wattsTxt = p.watts == null ? '' : (/^\d+(\.\d+)?$/.test(String(p.watts).trim()) ? String(p.watts).trim() + 'W' : String(p.watts).trim());
+  const specs = [['Size', p.dims], ['Power', wattsTxt], ['Finish', p.finishes], ['Best for', p.rooms], ['Sold', p.unit]]
     .filter(r => r[1]).map(r => `<div><dt>${r[0]}</dt><dd>${escapeHtml(r[1])}</dd></div>`).join('');
   const thumbs = images.slice(1).map(src => `<img src="${escapeHtml(src)}" alt="${escapeHtml(p.name)}" loading="lazy">`).join('');
   const video = p.video ? `<video src="${escapeHtml(p.video)}" controls playsinline preload="metadata" style="margin-top:.8rem"></video>` : '';

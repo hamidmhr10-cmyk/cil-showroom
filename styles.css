@@ -868,3 +868,38 @@ body[data-page="lighting"] .stock--out { color: #e07b6b; }
 .pdp__cta { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.2rem; }
 .pdp__note { margin-top: 1.4rem; font-size: 0.9rem; opacity: 0.8; line-height: 1.6; }
 @media (max-width: 800px) { .pdp__grid { grid-template-columns: 1fr; } }
+
+/* =================================================================
+   LIGHTBOX (click a product photo: full-screen, zoom + pan)
+   ================================================================= */
+.gallery__media:is(img), .pdp__media img { cursor: zoom-in; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 3000; background: rgba(8,5,3,.96);
+  opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s;
+}
+.lightbox.open { opacity: 1; visibility: visible; }
+.lightbox__stage {
+  position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden;
+  touch-action: none; user-select: none; -webkit-user-select: none; cursor: zoom-in;
+}
+.lightbox__stage.zoomed { cursor: grab; }
+.lightbox__stage.zoomed:active { cursor: grabbing; }
+.lightbox__stage img {
+  max-width: 100vw; max-height: 100vh; width: auto; height: auto; object-fit: contain;
+  transform-origin: center center; will-change: transform; image-rendering: auto;
+  -webkit-user-drag: none;
+}
+.lightbox__bar { position: absolute; top: 14px; right: 14px; display: flex; gap: 8px; z-index: 2; }
+.lightbox__bar button, .lightbox__nav {
+  height: 44px; min-width: 44px; padding: 0 .9rem; border-radius: 22px; border: 1px solid rgba(243,226,166,.35);
+  background: rgba(30,20,12,.75); color: #F3E2A6; font: 600 1.25rem/1 Inter, system-ui, sans-serif; cursor: pointer;
+  backdrop-filter: blur(4px); transition: background .2s ease;
+}
+.lightbox__bar button[data-lb="fit"] { font-size: .85rem; letter-spacing: .04em; }
+.lightbox__bar button:hover, .lightbox__nav:hover { background: rgba(60,40,20,.9); }
+.lightbox__nav { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; padding: 0; z-index: 2; font-size: 1.8rem; }
+.lightbox__nav--prev { left: 14px; } .lightbox__nav--next { right: 14px; }
+.lightbox.single .lightbox__nav, .lightbox.single .lightbox__count { display: none; }
+.lightbox__count { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 2; color: #F3E2A6; font: 600 .8rem Inter, sans-serif; background: rgba(30,20,12,.75); padding: .35rem .8rem; border-radius: 14px; }
+.lightbox__hint { position: absolute; left: 50%; top: 22px; transform: translateX(-50%); z-index: 2; color: #ECE3D0; font: .8rem Inter, sans-serif; background: rgba(30,20,12,.8); padding: .45rem .9rem; border-radius: 14px; pointer-events: none; transition: opacity .5s ease; white-space: nowrap; }
+@media (max-width: 600px) { .lightbox__hint { top: 66px; } .lightbox__nav { width: 40px; height: 40px; } }
