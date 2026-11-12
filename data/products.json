@@ -282,6 +282,25 @@
         "/images/xl-08-2-1794486865243.jpg",
         "/images/xl-08-3-1794486867159.jpg"
       ]
+    },
+    {
+      "id": "lmwdmp5en",
+      "name": "JB-07",
+      "cat": "chandeliers",
+      "art": "chandelier",
+      "price": "£139",
+      "desc": "LED Crystal Double-Ring Pendant, Warm White",
+      "dims": "43x43x16",
+      "finishes": "White",
+      "rooms": "Hallways, Dining Rooms",
+      "watts": "166W",
+      "stock": 8,
+      "incoming": "Ordered on Demand",
+      "unit": "per product",
+      "image": "/images/jb-07-1794492830376.jpeg",
+      "gallery": [
+        "/images/jb-07-2-1794492832868.jpeg"
+      ]
     }
   ],
   "furniture": [
