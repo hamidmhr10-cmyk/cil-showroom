@@ -301,6 +301,23 @@
       "gallery": [
         "/images/jb-07-2-1794492832868.jpeg"
       ]
+    },
+    {
+      "id": "lmwdr3vxe",
+      "name": "YM6030-13 Wood",
+      "cat": "fan",
+      "art": "chandelier",
+      "price": "£64",
+      "desc": "LED Ceiling Light + Fan",
+      "dims": "53 x 53 x 15 cm",
+      "finishes": "Wood",
+      "rooms": "Every Room",
+      "watts": "70W",
+      "stock": 10,
+      "incoming": "Ordered on Demand",
+      "unit": "per product",
+      "image": "/images/ym6030-13-wood-1794500236381.jpeg",
+      "video": "/images/ym6030-13-wood-video-1794500238544.mp4"
     }
   ],
   "furniture": [
