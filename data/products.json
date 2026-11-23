@@ -20,6 +20,14 @@
       {
         "key": "outdoor-light",
         "label": "Outdoor Light"
+      },
+      {
+        "key": "outdoor-wall",
+        "label": "Outdoor Wall Lights"
+      },
+      {
+        "key": "indoor-wall",
+        "label": "Indoor Wall Lights"
       }
     ],
     "furniture": [
@@ -318,6 +326,1119 @@
       "unit": "per product",
       "image": "/images/ym6030-13-wood-1794500236381.jpeg",
       "video": "/images/ym6030-13-wood-video-1794500238544.mp4"
+    },
+    {
+      "id": "black-square-led-outdoor-wall-light-jl-02",
+      "sku": "JL-02",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "Black Square LED Outdoor Wall Light",
+      "h1": "Black Square LED Outdoor Wall Light, Up & Down, 7W Warm White 3000K",
+      "seo_title": "Black Square LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "Black Square LED Outdoor Wall Light. Up and down beams add instant drama to any wall. £24 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£24",
+      "unit": "inc VAT",
+      "short": "Square black outdoor wall light with a concentric grille front and up-and-down scalloped beams.",
+      "desc": "A square contemporary outdoor wall light with a stepped, concentric front that glows softly from the centre, plus beams of light cast up and down the wall for an architectural effect. Integrated 7W LED in 3000K warm white, black finish. Looks sharp on rendered, brick or clad walls.",
+      "dims": "150 x 150 x 60 mm",
+      "finishes": "Black",
+      "rooms": "Front door, patio, garden wall, driveway wall",
+      "watts": "7W",
+      "features": [
+        "7W integrated LED, 3000K warm white",
+        "Square 150 x 150 mm design, 60 mm projection",
+        "Concentric grille front with glowing centre",
+        "Up and down light beams",
+        "Black aluminium and PC construction"
+      ],
+      "specs": {
+        "Colour temperature": "3000K (warm white)",
+        "Material": "Aluminium + PC",
+        "Light direction": "Front glow + up & down"
+      },
+      "image": "/images/products/jl-02-lit.webp",
+      "gallery": [
+        "/images/products/jl-02-unlit.webp"
+      ],
+      "thumb": "/images/products/jl-02-lit-card.webp",
+      "thumb2": "/images/products/jl-02-unlit-card.webp",
+      "alt": [
+        "Black Square LED Outdoor Wall Light switched on, showing the light beams",
+        "Black Square LED Outdoor Wall Light switched off"
+      ],
+      "stock": 100,
+      "showroom": true
+    },
+    {
+      "id": "slim-led-outdoor-wall-light-jl-07",
+      "sku": "JL-07",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "Slim LED Outdoor Wall Light",
+      "h1": "Slim LED Outdoor Wall Light, Up & Down, 7W Warm White 3000K",
+      "seo_title": "Slim LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "Slim LED Outdoor Wall Light: Up and down beams add instant drama to any wall. 7W, 3000K. £19 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£19",
+      "unit": "inc VAT",
+      "short": "Small up/down outdoor wall light with a slim lit front panel.",
+      "desc": "A small, neat up and down wall light for tight spaces. Slim body with a narrow lit front panel, and beams of warm light above and below. 7W integrated LED, 3000K. Only 155 mm tall, so it suits narrow walls, steps and low entrances.",
+      "dims": "155 x 70 x 45 mm",
+      "finishes": "",
+      "rooms": "Porch, steps, narrow walls, balcony",
+      "watts": "7W",
+      "features": [
+        "7W integrated LED, 3000K warm white",
+        "Compact 155 x 70 x 45 mm",
+        "Slim front panel with up and down beams",
+        "Aluminium and PC",
+        "Good for steps, porches and narrow walls"
+      ],
+      "specs": {
+        "Colour temperature": "3000K (warm white)",
+        "Material": "Aluminium + PC",
+        "Light direction": "Front glow + up & down"
+      },
+      "image": "/images/products/jl-07-lit.webp",
+      "gallery": [
+        "/images/products/jl-07-unlit.webp"
+      ],
+      "thumb": "/images/products/jl-07-lit-card.webp",
+      "thumb2": "/images/products/jl-07-unlit-card.webp",
+      "alt": [
+        "Slim LED Outdoor Wall Light switched on, showing the light beams",
+        "Slim LED Outdoor Wall Light switched off"
+      ],
+      "stock": 50,
+      "showroom": true
+    },
+    {
+      "id": "rectangular-led-outdoor-wall-light-jl-08",
+      "sku": "JL-08",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "Rectangular LED Outdoor Wall Light",
+      "h1": "Rectangular LED Outdoor Wall Light, Up & Down, 7W 3000K",
+      "seo_title": "Rectangular LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "Rectangular LED Outdoor Wall Light. Up and down beams add instant drama to any wall. £19 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£19",
+      "unit": "inc VAT",
+      "short": "Rectangular up/down outdoor wall light with a large front window.",
+      "desc": "A taller rectangular up and down fitting with a bright front panel and pointed beams that fan out above and below. 7W integrated LED, 3000K warm white, 220 x 105 x 48 mm. The slim projection keeps it tidy on narrow walls.",
+      "dims": "220 x 105 x 48 mm",
+      "finishes": "",
+      "rooms": "Front door, patio, garden wall",
+      "watts": "7W",
+      "features": [
+        "7W integrated LED, 3000K warm white",
+        "220 x 105 x 48 mm, slim 48 mm projection",
+        "Large lit front panel",
+        "Up and down beams",
+        "Aluminium and PC"
+      ],
+      "specs": {
+        "Colour temperature": "3000K (warm white)",
+        "Material": "Aluminium + PC",
+        "Light direction": "Front glow + up & down"
+      },
+      "image": "/images/products/jl-08-lit.webp",
+      "gallery": [
+        "/images/products/jl-08-unlit.webp"
+      ],
+      "thumb": "/images/products/jl-08-lit-card.webp",
+      "thumb2": "/images/products/jl-08-unlit-card.webp",
+      "alt": [
+        "Rectangular LED Outdoor Wall Light switched on, showing the light beams",
+        "Rectangular LED Outdoor Wall Light switched off"
+      ],
+      "stock": 100,
+      "showroom": true
+    },
+    {
+      "id": "black-crystal-effect-led-outdoor-wall-light-ll-06",
+      "sku": "LL-06",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "Black Crystal-Effect LED Outdoor Wall Light",
+      "h1": "Black Crystal-Effect LED Outdoor Wall Light, Up & Down, Style A",
+      "seo_title": "Black Crystal-Effect LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "Black Crystal-Effect LED Outdoor Wall Light: Up and down beams add instant drama to any wall. £34 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£34",
+      "unit": "inc VAT",
+      "short": "Black outdoor wall light with a faceted crystal-effect front panel and up/down beams.",
+      "desc": "A decorative outdoor wall light with a faceted crystal-effect front that sparkles when lit and beams that wash up and down. Black cap and base, aluminium and polycarbonate construction.",
+      "dims": "",
+      "finishes": "Black",
+      "rooms": "Entrance, patio, garden wall",
+      "features": [
+        "Faceted crystal-effect front panel",
+        "Up and down beams",
+        "Aluminium body with PC",
+        "Black cap and base",
+        "For entrances and garden walls"
+      ],
+      "specs": {
+        "Material": "Aluminium + PC",
+        "Light direction": "Front sparkle + up & down"
+      },
+      "image": "/images/products/ll-06-lit.webp",
+      "gallery": [
+        "/images/products/ll-06-unlit.webp"
+      ],
+      "thumb": "/images/products/ll-06-lit-card.webp",
+      "thumb2": "/images/products/ll-06-unlit-card.webp",
+      "alt": [
+        "Black Crystal-Effect LED Outdoor Wall Light switched on, showing the light beams",
+        "Black Crystal-Effect LED Outdoor Wall Light switched off"
+      ],
+      "stock": 20,
+      "showroom": true
+    },
+    {
+      "id": "glitter-led-outdoor-wall-light-ll-08",
+      "sku": "LL-08",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "Glitter LED Outdoor Wall Light",
+      "h1": "Glitter LED Outdoor Wall Light, Up & Down, Short",
+      "seo_title": "Glitter LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "Glitter LED Outdoor Wall Light: Up and down beams add instant drama to any wall. £24 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£24",
+      "unit": "inc VAT",
+      "short": "Waisted and glitter-effect wall light, short version, with beams up and down.",
+      "desc": "A waisted outdoor wall light with a sparkling glitter-effect face and bands. Beams shine up and down. Aluminium and polycarbonate. Short version of the range.",
+      "dims": "",
+      "finishes": "",
+      "rooms": "Entrance, patio, garden wall",
+      "features": [
+        "Glitter-effect face with bands",
+        "Up and down beams",
+        "Aluminium body with PC",
+        "Short version",
+        "For entrances and garden walls"
+      ],
+      "specs": {
+        "Material": "Aluminium + PC",
+        "Light direction": "Front sparkle + up & down"
+      },
+      "image": "/images/products/ll-08-lit.webp",
+      "gallery": [
+        "/images/products/ll-08-unlit.webp"
+      ],
+      "thumb": "/images/products/ll-08-lit-card.webp",
+      "thumb2": "/images/products/ll-08-unlit-card.webp",
+      "alt": [
+        "Glitter LED Outdoor Wall Light switched on, showing the light beams",
+        "Glitter LED Outdoor Wall Light switched off"
+      ],
+      "stock": 20,
+      "showroom": true
+    },
+    {
+      "id": "glitter-led-outdoor-wall-light-ll-09",
+      "sku": "LL-09",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "Glitter LED Outdoor Wall Light",
+      "h1": "Glitter LED Outdoor Wall Light, Up & Down, Long",
+      "seo_title": "Glitter LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "Glitter LED Outdoor Wall Light: Up and down beams add instant drama to any wall. £29 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£29",
+      "unit": "inc VAT",
+      "short": "Long version of the waisted glitter-effect up/down wall light.",
+      "desc": "A longer waisted outdoor wall light with a sparkling glitter face and bands, with beams shining up and down. Aluminium and polycarbonate construction. Long version of the range.",
+      "dims": "",
+      "finishes": "",
+      "rooms": "Entrance, patio, garden wall",
+      "features": [
+        "Glitter-effect face with bands",
+        "Up and down beams",
+        "Aluminium body with PC",
+        "Long version",
+        "For entrances and garden walls"
+      ],
+      "specs": {
+        "Material": "Aluminium + PC",
+        "Light direction": "Front sparkle + up & down"
+      },
+      "image": "/images/products/ll-09-lit.webp",
+      "gallery": [
+        "/images/products/ll-09-unlit.webp"
+      ],
+      "thumb": "/images/products/ll-09-lit-card.webp",
+      "thumb2": "/images/products/ll-09-unlit-card.webp",
+      "alt": [
+        "Glitter LED Outdoor Wall Light switched on, showing the light beams",
+        "Glitter LED Outdoor Wall Light switched off"
+      ],
+      "stock": 20,
+      "showroom": true
+    },
+    {
+      "id": "black-crystal-effect-led-outdoor-wall-light-ll-07",
+      "sku": "LL-07",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "Black Crystal-Effect LED Outdoor Wall Light",
+      "h1": "Black Crystal-Effect LED Outdoor Wall Light, Up & Down, Style B",
+      "seo_title": "Black Crystal-Effect LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "Black Crystal-Effect LED Outdoor Wall Light: Up and down beams add instant drama to any wall. £34 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£34",
+      "unit": "inc VAT",
+      "short": "Taller version of the crystal-effect black up/down outdoor wall light.",
+      "desc": "A taller crystal-effect outdoor wall light with a faceted front and beams up and down. Black cap and base, aluminium and polycarbonate. Sold alongside LL-06.",
+      "dims": "",
+      "finishes": "Black",
+      "rooms": "Entrance, patio, garden wall",
+      "features": [
+        "Faceted crystal-effect front panel",
+        "Up and down beams",
+        "Aluminium body with PC",
+        "Black cap and base",
+        "Taller than style A"
+      ],
+      "specs": {
+        "Material": "Aluminium + PC",
+        "Light direction": "Front sparkle + up & down"
+      },
+      "image": "/images/products/ll-07-lit.webp",
+      "gallery": [
+        "/images/products/ll-07-unlit.webp"
+      ],
+      "thumb": "/images/products/ll-07-lit-card.webp",
+      "thumb2": "/images/products/ll-07-unlit-card.webp",
+      "alt": [
+        "Black Crystal-Effect LED Outdoor Wall Light switched on, showing the light beams",
+        "Black Crystal-Effect LED Outdoor Wall Light switched off"
+      ],
+      "stock": 20,
+      "showroom": true
+    },
+    {
+      "id": "led-outdoor-wall-light-ll-02",
+      "sku": "LL-02",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "LED Outdoor Wall Light",
+      "h1": "LED Outdoor Wall Light, Rounded Loop Design",
+      "seo_title": "LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "LED Outdoor Wall Light: Modern outdoor wall light for porches, patios and entrances. £29 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£29",
+      "unit": "inc VAT",
+      "short": "Outdoor wall light with a glowing rounded-loop ring.",
+      "desc": "A contemporary outdoor wall light with a glowing rounded loop around a centre. The ring gives an even glow and a halo effect on the wall. Aluminium and polycarbonate construction, suited to balcony and garden walls.",
+      "dims": "",
+      "finishes": "",
+      "rooms": "Entrance, balcony, garden wall",
+      "features": [
+        "Glowing loop design",
+        "Aluminium body with PC diffuser",
+        "Halo glow on the wall",
+        "For balcony, garden and entrance walls"
+      ],
+      "specs": {
+        "Material": "Aluminium + PC",
+        "Light direction": "Front ring glow"
+      },
+      "image": "/images/products/ll-02-lit.webp",
+      "gallery": [
+        "/images/products/ll-02-unlit.webp"
+      ],
+      "thumb": "/images/products/ll-02-lit-card.webp",
+      "thumb2": "/images/products/ll-02-unlit-card.webp",
+      "alt": [
+        "LED Outdoor Wall Light switched on, showing the light beams",
+        "LED Outdoor Wall Light switched off"
+      ],
+      "stock": 30,
+      "showroom": true
+    },
+    {
+      "id": "led-up-down-wall-light-with-arabic-calligraphy-ll-05",
+      "sku": "LL-05",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "LED Up & Down Wall Light with Arabic Calligraphy",
+      "h1": "LED Up & Down Wall Light with Arabic Calligraphy, Large",
+      "seo_title": "LED Up & Down Wall Light with Arabic Calligraphy | LURIXA Luton",
+      "meta": "LED Up & Down Wall Light with Arabic Calligraphy: Elegant Arabic calligraphy wall light. £34 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£34",
+      "unit": "inc VAT",
+      "short": "Large oval wall light with calligraphy and four beams up and four down.",
+      "desc": "A large oval wall light with Arabic calligraphy on the front and a bright halo. Four decorative beams shine up and four down. Aluminium and polycarbonate. For entrances and balcony walls.",
+      "dims": "",
+      "finishes": "",
+      "rooms": "Entrance, balcony, garden wall",
+      "features": [
+        "Arabic calligraphy lit from within",
+        "4 beams up and 4 beams down",
+        "Aluminium body with PC diffuser",
+        "Large size; the small version is LL-10"
+      ],
+      "specs": {
+        "Material": "Aluminium + PC",
+        "Light direction": "Front glow + up & down (4+4)"
+      },
+      "image": "/images/products/ll-05-lit.webp",
+      "gallery": [
+        "/images/products/ll-05-unlit.webp"
+      ],
+      "thumb": "/images/products/ll-05-lit-card.webp",
+      "thumb2": "/images/products/ll-05-unlit-card.webp",
+      "alt": [
+        "LED Up & Down Wall Light with Arabic Calligraphy switched on, showing the light beams",
+        "LED Up & Down Wall Light with Arabic Calligraphy switched off"
+      ],
+      "stock": 150,
+      "showroom": true
+    },
+    {
+      "id": "led-outdoor-wall-light-ll-03",
+      "sku": "LL-03",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "LED Outdoor Wall Light",
+      "h1": "LED Outdoor Wall Light, U-Shaped Halo Design",
+      "seo_title": "LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "LED Outdoor Wall Light: Modern outdoor wall light for porches, patios and entrances. £29 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£29",
+      "unit": "inc VAT",
+      "short": "U-shaped outdoor wall light with a halo glow behind.",
+      "desc": "A bold U-shaped outdoor wall light that backlights the wall with a soft halo. Aluminium and polycarbonate construction for balcony and garden walls. A distinctive look for gate posts and entrances.",
+      "dims": "",
+      "finishes": "",
+      "rooms": "Entrance, gate pillar, garden wall",
+      "features": [
+        "U-shaped design",
+        "Back-lit halo effect",
+        "Aluminium body with PC diffuser",
+        "For entrances, balconies and garden walls"
+      ],
+      "specs": {
+        "Material": "Aluminium + PC",
+        "Light direction": "Halo (back glow)"
+      },
+      "image": "/images/products/ll-03-lit.webp",
+      "gallery": [
+        "/images/products/ll-03-unlit.webp"
+      ],
+      "thumb": "/images/products/ll-03-lit-card.webp",
+      "thumb2": "/images/products/ll-03-unlit-card.webp",
+      "alt": [
+        "LED Outdoor Wall Light switched on, showing the light beams",
+        "LED Outdoor Wall Light switched off"
+      ],
+      "stock": 30,
+      "showroom": true
+    },
+    {
+      "id": "led-up-down-outdoor-wall-light-jl-05",
+      "sku": "JL-05",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "LED Up & Down Outdoor Wall Light",
+      "h1": "LED Up & Down Outdoor Wall Light, 6W Warm White 3000K",
+      "seo_title": "LED Up & Down Outdoor Wall Light | LURIXA Luton",
+      "meta": "LED Up & Down Outdoor Wall Light: Up and down beams add instant drama to any wall. 6W, 3000K. £24 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£24",
+      "unit": "inc VAT",
+      "short": "Slim rectangular up/down wall light with a narrow front slot and strong top and bottom beams.",
+      "desc": "A slim contemporary up and down outdoor wall light. Twin beams of 3000K warm white light wash the wall above and below while a narrow vertical slot gives a soft front glow. 6W integrated LED. Ideal either side of a door or along a garden wall.",
+      "dims": "200 x 65 x 70 mm",
+      "finishes": "",
+      "rooms": "Either side of a door, garden wall, gate pillars",
+      "watts": "6W",
+      "features": [
+        "6W integrated LED, 3000K warm white",
+        "Up and down beams",
+        "200 x 65 x 70 mm",
+        "Aluminium and PC",
+        "Pair either side of a door or gate"
+      ],
+      "specs": {
+        "Colour temperature": "3000K (warm white)",
+        "Material": "Aluminium + PC",
+        "Light direction": "Up & down"
+      },
+      "image": "/images/products/jl-05-lit.webp",
+      "gallery": [
+        "/images/products/jl-05-unlit.webp"
+      ],
+      "thumb": "/images/products/jl-05-lit-card.webp",
+      "thumb2": "/images/products/jl-05-unlit-card.webp",
+      "alt": [
+        "LED Up & Down Outdoor Wall Light switched on, showing the light beams",
+        "LED Up & Down Outdoor Wall Light switched off"
+      ],
+      "stock": 50,
+      "showroom": true
+    },
+    {
+      "id": "led-up-down-outdoor-wall-light-ll-13",
+      "sku": "LL-13",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "LED Up & Down Outdoor Wall Light",
+      "h1": "LED Up & Down Outdoor Wall Light, Cylinder, Aluminium",
+      "seo_title": "LED Up & Down Outdoor Wall Light | LURIXA Luton",
+      "meta": "LED Up & Down Outdoor Wall Light: Up and down beams add instant drama to any wall. £24 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£24",
+      "unit": "inc VAT",
+      "short": "Cylinder up-and-down outdoor wall light with clear lens ends.",
+      "desc": "A classic cylindrical up and down wall light with clear lenses at both ends. Aluminium and polycarbonate construction. A versatile style for modern and traditional exteriors.",
+      "dims": "",
+      "finishes": "",
+      "rooms": "Entrance, patio, garden wall",
+      "features": [
+        "Cylinder up and down design",
+        "Clear lenses top and bottom",
+        "Aluminium body with PC",
+        "Fits modern or traditional exteriors"
+      ],
+      "specs": {
+        "Material": "Aluminium + PC",
+        "Light direction": "Up & down"
+      },
+      "image": "/images/products/ll-13-lit.webp",
+      "gallery": [
+        "/images/products/ll-13-unlit.webp"
+      ],
+      "thumb": "/images/products/ll-13-lit-card.webp",
+      "thumb2": "/images/products/ll-13-unlit-card.webp",
+      "alt": [
+        "LED Up & Down Outdoor Wall Light switched on, showing the light beams",
+        "LED Up & Down Outdoor Wall Light switched off"
+      ],
+      "stock": 50,
+      "showroom": true
+    },
+    {
+      "id": "led-up-down-outdoor-wall-light-jl-06",
+      "sku": "JL-06",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "LED Up & Down Outdoor Wall Light",
+      "h1": "LED Up & Down Outdoor Wall Light, 8W Warm White 3000K",
+      "seo_title": "LED Up & Down Outdoor Wall Light | LURIXA Luton",
+      "meta": "LED Up & Down Outdoor Wall Light: Up and down beams add instant drama to any wall. 8W, 3000K. £24 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£24",
+      "unit": "inc VAT",
+      "short": "Up/down outdoor wall light with an illuminated front window, 8W.",
+      "desc": "Same slim up and down profile as our 6W version but with a lit front window and a stronger 8W LED. Warm white 3000K, 200 x 65 x 70 mm. A good choice where you want a light you can see as well as a wash on the wall.",
+      "dims": "200 x 65 x 70 mm",
+      "finishes": "",
+      "rooms": "Entrance, patio, garden wall",
+      "watts": "8W",
+      "features": [
+        "8W integrated LED, 3000K warm white",
+        "Lit front window plus up and down beams",
+        "200 x 65 x 70 mm",
+        "Aluminium and PC",
+        "Matches the 6W JL-05 for a mixed scheme"
+      ],
+      "specs": {
+        "Colour temperature": "3000K (warm white)",
+        "Material": "Aluminium + PC",
+        "Light direction": "Front glow + up & down"
+      },
+      "image": "/images/products/jl-06-lit.webp",
+      "gallery": [
+        "/images/products/jl-06-unlit.webp"
+      ],
+      "thumb": "/images/products/jl-06-lit-card.webp",
+      "thumb2": "/images/products/jl-06-unlit-card.webp",
+      "alt": [
+        "LED Up & Down Outdoor Wall Light switched on, showing the light beams",
+        "LED Up & Down Outdoor Wall Light switched off"
+      ],
+      "stock": 50,
+      "showroom": true
+    },
+    {
+      "id": "copper-crystal-wall-light-qy-06",
+      "sku": "QY-06",
+      "cat": "indoor-wall",
+      "art": "chandelier",
+      "name": "Copper Crystal Wall Light",
+      "h1": "Copper Crystal Wall Light, Faceted Gem Shade, 5W LED 4000K",
+      "seo_title": "Copper Crystal Wall Light | LURIXA Luton",
+      "meta": "Copper Crystal Wall Light: Luxury crystal wall light for hallways and bedrooms. 5W, 4000K. £89 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£89",
+      "unit": "inc VAT",
+      "short": "Faceted bubble-crystal gem hanging from a curved copper arm.",
+      "desc": "A decorative indoor wall light with a faceted bubble-crystal gem on a copper-finish curved arm. 5W integrated LED in 4000K neutral white. Works in pairs either side of a bed or mirror. Indoor use only (IP20).",
+      "dims": "Dia 100 x H350 x 190 mm",
+      "finishes": "",
+      "rooms": "Bedside, mirror, hallway",
+      "watts": "5W",
+      "features": [
+        "5W integrated LED, 4000K, approx 600 lm",
+        "Faceted bubble-crystal gem shade",
+        "Copper natural finish",
+        "Dia 100 x H350 x 190 mm",
+        "Indoor use, IP20, 220-240V"
+      ],
+      "specs": {
+        "Colour temperature": "4000K (neutral white)",
+        "Light output": "600 lm",
+        "Material": "Iron, aluminium, crystal",
+        "Light direction": "Crystal glow",
+        "IP rating": "IP20 (indoor use only)",
+        "Voltage": "220-240V AC"
+      },
+      "image": "/images/products/qy-06-lit.webp",
+      "gallery": [
+        "/images/products/qy-06-unlit.webp"
+      ],
+      "thumb": "/images/products/qy-06-lit-card.webp",
+      "thumb2": "/images/products/qy-06-unlit-card.webp",
+      "alt": [
+        "Copper Crystal Wall Light switched on, showing the light beams",
+        "Copper Crystal Wall Light switched off"
+      ],
+      "stock": 6,
+      "showroom": true
+    },
+    {
+      "id": "rose-gold-black-crystal-led-wall-light-qy-02",
+      "sku": "QY-02",
+      "cat": "indoor-wall",
+      "art": "chandelier",
+      "name": "Rose Gold & Black Crystal LED Wall Light",
+      "h1": "Rose Gold & Black Crystal LED Wall Light, 18W Neutral White 4000K",
+      "seo_title": "Rose Gold & Black Crystal LED Wall Light | LURIXA Luton",
+      "meta": "Rose Gold & Black Crystal LED Wall Light. £139 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£139",
+      "unit": "inc VAT",
+      "short": "Three-tube crystal wall light on a black bar with rose-gold collars.",
+      "desc": "A statement indoor wall light with three bubble-crystal tubes of different heights on a black backplate with rose-gold collars. 18W integrated LED in 4000K neutral white. Suited to hallways, living rooms, bedrooms and staircases. Indoor use only (IP20).",
+      "dims": "250 x 470 x 85 mm",
+      "finishes": "Black",
+      "rooms": "Hallway, living room, staircase, bedroom",
+      "watts": "18W",
+      "features": [
+        "18W integrated LED, 4000K, approx 2,160 lm",
+        "Three bubble-crystal tubes",
+        "Rose gold and black finish",
+        "250 x 470 x 85 mm",
+        "Indoor use, IP20, 220-240V"
+      ],
+      "specs": {
+        "Colour temperature": "4000K (neutral white)",
+        "Light output": "2,160 lm",
+        "Material": "Iron, aluminium, crystal",
+        "Light direction": "Crystal glow",
+        "IP rating": "IP20 (indoor use only)",
+        "Voltage": "220-240V AC"
+      },
+      "image": "/images/products/qy-02-lit.webp",
+      "gallery": [
+        "/images/products/qy-02-unlit.webp"
+      ],
+      "thumb": "/images/products/qy-02-lit-card.webp",
+      "thumb2": "/images/products/qy-02-unlit-card.webp",
+      "alt": [
+        "Rose Gold & Black Crystal LED Wall Light switched on, showing the light beams",
+        "Rose Gold & Black Crystal LED Wall Light switched off"
+      ],
+      "stock": 6,
+      "showroom": true
+    },
+    {
+      "id": "copper-bubble-crystal-wall-light-qy-07",
+      "sku": "QY-07",
+      "cat": "indoor-wall",
+      "art": "chandelier",
+      "name": "Copper Bubble Crystal Wall Light",
+      "h1": "Copper Bubble Crystal Wall Light, Torch Style, 5W LED 4000K",
+      "seo_title": "Copper Bubble Crystal Wall Light | LURIXA Luton",
+      "meta": "Copper Bubble Crystal Wall Light. Luxury crystal wall light for hallways and bedrooms. £69 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£69",
+      "unit": "inc VAT",
+      "short": "Copper torch-style wall light topped with a faceted bubble-crystal.",
+      "desc": "A torch-style indoor wall light: tapered copper stem on a round backplate, topped with a bubble-crystal. 5W integrated LED, 4000K neutral white. 100 x 320 x 120 mm. Indoor use only (IP20).",
+      "dims": "100 x H320 x 120 mm",
+      "finishes": "",
+      "rooms": "Bedside, hallway, dining room",
+      "watts": "5W",
+      "features": [
+        "5W integrated LED, 4000K, approx 600 lm",
+        "Bubble-crystal top",
+        "Copper natural finish",
+        "100 x H320 x 120 mm",
+        "Indoor use, IP20, 220-240V"
+      ],
+      "specs": {
+        "Colour temperature": "4000K (neutral white)",
+        "Light output": "600 lm",
+        "Material": "Iron, aluminium, crystal",
+        "Light direction": "Crystal glow",
+        "IP rating": "IP20 (indoor use only)",
+        "Voltage": "220-240V AC"
+      },
+      "image": "/images/products/qy-07-lit.webp",
+      "gallery": [
+        "/images/products/qy-07-unlit.webp"
+      ],
+      "thumb": "/images/products/qy-07-lit-card.webp",
+      "thumb2": "/images/products/qy-07-unlit-card.webp",
+      "alt": [
+        "Copper Bubble Crystal Wall Light switched on, showing the light beams",
+        "Copper Bubble Crystal Wall Light switched off"
+      ],
+      "stock": 6,
+      "showroom": true
+    },
+    {
+      "id": "french-gold-crystal-wall-light-with-glass-droplets-qy-09",
+      "sku": "QY-09",
+      "cat": "indoor-wall",
+      "art": "chandelier",
+      "name": "French Gold Crystal Wall Light with Glass Droplets",
+      "h1": "French Gold Crystal Wall Light with Glass Droplets, 6W LED 4000K",
+      "seo_title": "French Gold Crystal Wall Light with Glass Droplets | LURIXA Luton",
+      "meta": "French Gold Crystal Wall Light with Glass Droplets. £89 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£89",
+      "unit": "inc VAT",
+      "short": "French gold wall light with a crystal rod and a crown of glass droplets.",
+      "desc": "A classic indoor wall light in French gold. A bubble-crystal rod carries a spray of crystal droplets on gold wire. 6W integrated LED, 4000K neutral white. Elegant in bedrooms, dining rooms and hallways. Indoor use only (IP20).",
+      "dims": "130 x H390 x 180 mm",
+      "finishes": "",
+      "rooms": "Bedroom, dining room, hallway",
+      "watts": "6W",
+      "features": [
+        "6W integrated LED, 4000K, approx 720 lm",
+        "Crystal rod with droplet spray",
+        "French gold finish",
+        "Indoor use, IP20, 220-240V"
+      ],
+      "specs": {
+        "Colour temperature": "4000K (neutral white)",
+        "Light output": "720 lm",
+        "Material": "Iron, aluminium, crystal",
+        "Light direction": "Crystal glow",
+        "IP rating": "IP20 (indoor use only)",
+        "Voltage": "220-240V AC"
+      },
+      "image": "/images/products/qy-09-lit.webp",
+      "gallery": [
+        "/images/products/qy-09-unlit.webp"
+      ],
+      "thumb": "/images/products/qy-09-lit-card.webp",
+      "thumb2": "/images/products/qy-09-unlit-card.webp",
+      "alt": [
+        "French Gold Crystal Wall Light with Glass Droplets switched on, showing the light beams",
+        "French Gold Crystal Wall Light with Glass Droplets switched off"
+      ],
+      "stock": 6,
+      "showroom": true
+    },
+    {
+      "id": "led-up-down-wall-light-with-arabic-calligraphy-ll-10",
+      "sku": "LL-10",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "LED Up & Down Wall Light with Arabic Calligraphy",
+      "h1": "LED Up & Down Wall Light with Arabic Calligraphy, Small",
+      "seo_title": "LED Up & Down Wall Light with Arabic Calligraphy | LURIXA Luton",
+      "meta": "LED Up & Down Wall Light with Arabic Calligraphy: Elegant Arabic calligraphy wall light. £24 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£24",
+      "unit": "inc VAT",
+      "short": "Small oval wall light with calligraphy and three beams up and three down.",
+      "desc": "A compact oval wall light with Arabic calligraphy on the front and a soft halo. Three decorative beams shine up and three down. Aluminium and polycarbonate. For entrances and balconies.",
+      "dims": "",
+      "finishes": "",
+      "rooms": "Entrance, balcony, garden wall",
+      "features": [
+        "Arabic calligraphy lit from within",
+        "3 beams up and 3 beams down",
+        "Aluminium body with PC diffuser",
+        "Small size; the large version is LL-05"
+      ],
+      "specs": {
+        "Material": "Aluminium + PC",
+        "Light direction": "Front glow + up & down (3+3)"
+      },
+      "image": "/images/products/ll-10-lit.webp",
+      "gallery": [
+        "/images/products/ll-10-unlit.webp"
+      ],
+      "thumb": "/images/products/ll-10-lit-card.webp",
+      "thumb2": "/images/products/ll-10-unlit-card.webp",
+      "alt": [
+        "LED Up & Down Wall Light with Arabic Calligraphy switched on, showing the light beams",
+        "LED Up & Down Wall Light with Arabic Calligraphy switched off"
+      ],
+      "stock": 150,
+      "showroom": true
+    },
+    {
+      "id": "rectangular-led-outdoor-wall-light-jl-03",
+      "sku": "JL-03",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "Rectangular LED Outdoor Wall Light",
+      "h1": "Rectangular LED Outdoor Wall Light, 11W Warm White 3000K",
+      "seo_title": "Rectangular LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "Rectangular LED Outdoor Wall Light. £24 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£24",
+      "unit": "inc VAT",
+      "short": "Bold rectangular outdoor wall light with a large glowing front panel and up/down wall wash.",
+      "desc": "A substantial rectangular outdoor wall light with a large frosted front panel and light washing up and down the wall either side of it. 11W integrated LED in 3000K warm white. A strong choice for the main entrance or to frame a doorway.",
+      "dims": "200 x 100 x 60 mm",
+      "finishes": "",
+      "rooms": "Main entrance, garage, garden wall",
+      "watts": "11W",
+      "features": [
+        "11W integrated LED, 3000K warm white",
+        "Large frosted front panel",
+        "200 x 100 x 60 mm",
+        "Wall-washing up and down glow",
+        "Aluminium and PC body"
+      ],
+      "specs": {
+        "Colour temperature": "3000K (warm white)",
+        "Material": "Aluminium + PC",
+        "Light direction": "Front glow + up & down"
+      },
+      "image": "/images/products/jl-03-lit.webp",
+      "gallery": [
+        "/images/products/jl-03-unlit.webp"
+      ],
+      "thumb": "/images/products/jl-03-lit-card.webp",
+      "thumb2": "/images/products/jl-03-unlit-card.webp",
+      "alt": [
+        "Rectangular LED Outdoor Wall Light switched on, showing the light beams",
+        "Rectangular LED Outdoor Wall Light switched off"
+      ],
+      "stock": 50,
+      "showroom": true
+    },
+    {
+      "id": "half-round-led-outdoor-wall-light-jl-01",
+      "sku": "JL-01",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "Half-Round LED Outdoor Wall Light",
+      "h1": "Half-Round LED Outdoor Wall Light, 7W Warm White 3000K",
+      "seo_title": "Half-Round LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "Half-Round LED Outdoor Wall Light. £19 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£19",
+      "unit": "inc VAT",
+      "short": "Compact half-round outdoor wall light with a soft frosted front panel and a downward accent beam.",
+      "desc": "A neat, low-profile outdoor wall light in a durable finish. The curved frosted diffuser gives a soft warm-white glow across the front, while the underside throws a decorative beam down the wall. Integrated 7W LED in 3000K warm white. Small enough for porches, side doors and narrow walls.",
+      "dims": "150 x 75 x 47 mm",
+      "finishes": "",
+      "rooms": "Porch, front door, side entrance, garden wall",
+      "watts": "7W",
+      "features": [
+        "7W integrated LED, 3000K warm white",
+        "Aluminium body with polycarbonate diffuser",
+        "Compact 150 x 75 x 47 mm profile",
+        "Soft front glow plus downward accent beam",
+        "Suited to porches, doorways and garden walls"
+      ],
+      "specs": {
+        "Colour temperature": "3000K (warm white)",
+        "Material": "Aluminium + PC",
+        "Light direction": "Front glow + down"
+      },
+      "image": "/images/products/jl-01-lit.webp",
+      "gallery": [
+        "/images/products/jl-01-unlit.webp"
+      ],
+      "thumb": "/images/products/jl-01-lit-card.webp",
+      "thumb2": "/images/products/jl-01-unlit-card.webp",
+      "alt": [
+        "Half-Round LED Outdoor Wall Light switched on, showing the light beams",
+        "Half-Round LED Outdoor Wall Light switched off"
+      ],
+      "stock": 50,
+      "showroom": true
+    },
+    {
+      "id": "30cm-led-outdoor-wall-light-ll-11",
+      "sku": "LL-11",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "30cm LED Outdoor Wall Light",
+      "h1": "30cm LED Outdoor Wall Light, Crystal Bar",
+      "seo_title": "30cm LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "30cm LED Outdoor Wall Light: Sparkling crystal look for your entrance. £49 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£49",
+      "unit": "inc VAT",
+      "short": "30 cm slim vertical wall light with a sparkling crystal bar.",
+      "desc": "A slim 30 cm outdoor wall light with a crystal bar down the centre that glitters when lit. Aluminium and crystal construction. Looks best in pairs either side of a doorway.",
+      "dims": "Approx 300 mm long (from model no.)",
+      "finishes": "",
+      "rooms": "Doorway, patio, garden wall",
+      "features": [
+        "300 mm slim bar design",
+        "Crystal bar glows when lit",
+        "Aluminium body with crystal",
+        "Pair either side of a door"
+      ],
+      "specs": {
+        "Material": "Aluminium + crystal",
+        "Light direction": "Front glow"
+      },
+      "image": "/images/products/ll-11-lit.webp",
+      "gallery": [
+        "/images/products/ll-11-unlit.webp"
+      ],
+      "thumb": "/images/products/ll-11-lit-card.webp",
+      "thumb2": "/images/products/ll-11-unlit-card.webp",
+      "alt": [
+        "30cm LED Outdoor Wall Light switched on, showing the light beams",
+        "30cm LED Outdoor Wall Light switched off"
+      ],
+      "stock": 20,
+      "showroom": true
+    },
+    {
+      "id": "crystal-led-outdoor-wall-light-jl-12",
+      "sku": "JL-12",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "Crystal LED Outdoor Wall Light",
+      "h1": "Crystal LED Outdoor Wall Light, Up & Down, 11W",
+      "seo_title": "Crystal LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "Crystal LED Outdoor Wall Light: Sparkling crystal look for your entrance. 11W, 3000K. £30 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£30",
+      "unit": "inc VAT",
+      "short": "Outdoor wall light with a bubble-crystal tube and beams that shine up and down.",
+      "desc": "A decorative outdoor wall light with a glittering bubble-crystal tube, a curved back plate and light beams cast above and below. 11W integrated LED, 3000K warm white. 260 x 105 x 60 mm. Gives an upscale look at an entrance.",
+      "dims": "260 x 105 x 60 mm",
+      "finishes": "",
+      "rooms": "Entrance, porch, patio",
+      "watts": "11W",
+      "features": [
+        "11W integrated LED, 3000K warm white",
+        "Bubble-crystal tube",
+        "260 x 105 x 60 mm",
+        "Aluminium back with crystal",
+        "Up and down beams"
+      ],
+      "specs": {
+        "Colour temperature": "3000K (warm white)",
+        "Material": "Aluminium + crystal",
+        "Light direction": "Crystal glow + up & down"
+      },
+      "image": "/images/products/jl-12-lit.webp",
+      "gallery": [
+        "/images/products/jl-12-unlit.webp"
+      ],
+      "thumb": "/images/products/jl-12-lit-card.webp",
+      "thumb2": "/images/products/jl-12-unlit-card.webp",
+      "alt": [
+        "Crystal LED Outdoor Wall Light switched on, showing the light beams",
+        "Crystal LED Outdoor Wall Light switched off"
+      ],
+      "stock": 20,
+      "showroom": true
+    },
+    {
+      "id": "60cm-led-outdoor-wall-light-ll-12",
+      "sku": "LL-12",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "60cm LED Outdoor Wall Light",
+      "h1": "60cm LED Outdoor Wall Light, Crystal Bar",
+      "seo_title": "60cm LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "60cm LED Outdoor Wall Light: Sparkling crystal look for your entrance. £84 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£84",
+      "unit": "inc VAT",
+      "short": "60 cm slim vertical wall light with a sparkling crystal bar.",
+      "desc": "A 60 cm outdoor wall light with a crystal bar down the centre. Aluminium and crystal construction. The taller version of the LL-11.",
+      "dims": "Approx 600 mm long (from model no.)",
+      "finishes": "",
+      "rooms": "Doorway, tall wall, patio",
+      "features": [
+        "600 mm slim bar design",
+        "Crystal bar glows when lit",
+        "Aluminium body with crystal",
+        "Taller version of the LL-11"
+      ],
+      "specs": {
+        "Material": "Aluminium + crystal",
+        "Light direction": "Front glow"
+      },
+      "image": "/images/products/ll-12-lit.webp",
+      "gallery": [
+        "/images/products/ll-12-unlit.webp"
+      ],
+      "thumb": "/images/products/ll-12-lit-card.webp",
+      "thumb2": "/images/products/ll-12-unlit-card.webp",
+      "alt": [
+        "60cm LED Outdoor Wall Light switched on, showing the light beams",
+        "60cm LED Outdoor Wall Light switched off"
+      ],
+      "stock": 20,
+      "showroom": true
+    },
+    {
+      "id": "round-led-outdoor-wall-light-jl-09",
+      "sku": "JL-09",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "Round LED Outdoor Wall Light",
+      "h1": "Round LED Outdoor Wall Light, Downlight Style, 5W Warm White 3000K",
+      "seo_title": "Round LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "Round LED Outdoor Wall Light. Modern outdoor wall light for porches, patios and entrances. £19 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£19",
+      "unit": "inc VAT",
+      "short": "Hooded outdoor wall light with a downward-facing round lens, 5W.",
+      "desc": "A modern hooded outdoor wall light with a round lens facing down and a clear band around the base. It puts a focused pool of 3000K warm white light on the ground below, ideal over a door, step or gate. 5W integrated LED.",
+      "dims": "140 x 120 x 105 mm",
+      "finishes": "",
+      "rooms": "Over door, steps, gate, garage",
+      "watts": "5W",
+      "features": [
+        "5W integrated LED, 3000K warm white",
+        "Hooded design with downward round lens",
+        "140 x 120 x 105 mm",
+        "Aluminium and PC",
+        "Focused light for doors, steps and gates"
+      ],
+      "specs": {
+        "Colour temperature": "3000K (warm white)",
+        "Material": "Aluminium + PC",
+        "Light direction": "Downward"
+      },
+      "image": "/images/products/jl-09-lit.webp",
+      "gallery": [
+        "/images/products/jl-09-unlit.webp"
+      ],
+      "thumb": "/images/products/jl-09-lit-card.webp",
+      "thumb2": "/images/products/jl-09-unlit-card.webp",
+      "alt": [
+        "Round LED Outdoor Wall Light switched on, showing the light beams",
+        "Round LED Outdoor Wall Light switched off"
+      ],
+      "stock": 100,
+      "showroom": true
+    },
+    {
+      "id": "led-outdoor-wall-light-with-sensor-ll-01",
+      "sku": "LL-01",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "LED Outdoor Wall Light with Sensor",
+      "h1": "LED Outdoor Wall Light with Sensor, Aluminium & PC",
+      "seo_title": "LED Outdoor Wall Light with Sensor | LURIXA Luton",
+      "meta": "LED Outdoor Wall Light with Sensor: Built-in sensor for hands-free light. £39 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£39",
+      "unit": "inc VAT",
+      "short": "Rectangular outdoor wall light with a built-in sensor under a bright frosted panel.",
+      "desc": "A practical rectangular outdoor wall light with a wide frosted panel and an integrated sensor in the base. Aluminium body with a polycarbonate diffuser, made for balcony and garden walls. Good for back doors, side passages and gates.",
+      "dims": "",
+      "finishes": "",
+      "rooms": "Back door, side passage, gate",
+      "features": [
+        "Built-in sensor (type to confirm: motion or dusk-to-dawn)",
+        "Wide frosted LED panel",
+        "Aluminium body with PC diffuser",
+        "For balcony, garden and entrance walls"
+      ],
+      "specs": {
+        "Material": "Aluminium + PC",
+        "Light direction": "Front glow"
+      },
+      "image": "/images/products/ll-01-lit.webp",
+      "gallery": [
+        "/images/products/ll-01-unlit.webp"
+      ],
+      "thumb": "/images/products/ll-01-lit-card.webp",
+      "thumb2": "/images/products/ll-01-unlit-card.webp",
+      "alt": [
+        "LED Outdoor Wall Light with Sensor switched on, showing the light beams",
+        "LED Outdoor Wall Light with Sensor switched off"
+      ],
+      "stock": 30,
+      "showroom": true
+    },
+    {
+      "id": "curved-led-outdoor-wall-light-jl-11",
+      "sku": "JL-11",
+      "cat": "outdoor-wall",
+      "art": "chandelier",
+      "name": "Curved LED Outdoor Wall Light",
+      "h1": "Curved LED Outdoor Wall Light, 12W Warm White 3000K",
+      "seo_title": "Curved LED Outdoor Wall Light | LURIXA Luton",
+      "meta": "Curved LED Outdoor Wall Light. Modern outdoor wall light for porches, patios and entrances. £24 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£24",
+      "unit": "inc VAT",
+      "short": "Curved-face outdoor wall light with a frosted diffuser, 12W.",
+      "desc": "A curved-face outdoor wall light with a large frosted diffuser that spreads an even warm light. 12W integrated LED, 3000K. 200 x 100 x 70 mm. A good match for the JL-10 when you want the same output in a softer shape.",
+      "dims": "200 x 100 x 70 mm",
+      "finishes": "",
+      "rooms": "Entrance, garage, patio",
+      "watts": "12W",
+      "features": [
+        "12W integrated LED, 3000K warm white",
+        "Curved front with large frosted diffuser",
+        "200 x 100 x 70 mm",
+        "Aluminium and PC",
+        "Even, glare-free front light"
+      ],
+      "specs": {
+        "Colour temperature": "3000K (warm white)",
+        "Material": "Aluminium + PC",
+        "Light direction": "Front glow"
+      },
+      "image": "/images/products/jl-11-lit.webp",
+      "gallery": [
+        "/images/products/jl-11-unlit.webp"
+      ],
+      "thumb": "/images/products/jl-11-lit-card.webp",
+      "thumb2": "/images/products/jl-11-unlit-card.webp",
+      "alt": [
+        "Curved LED Outdoor Wall Light switched on, showing the light beams",
+        "Curved LED Outdoor Wall Light switched off"
+      ],
+      "stock": 50,
+      "showroom": true
+    },
+    {
+      "id": "100cm-black-led-garden-bollard-light-jl-04",
+      "sku": "JL-04",
+      "cat": "garden",
+      "art": "chandelier",
+      "name": "100cm Black LED Garden Bollard Light",
+      "h1": "100cm Black LED Garden Bollard Light, 12W Warm White 3000K",
+      "seo_title": "100cm Black LED Garden Bollard Light | LURIXA Luton",
+      "meta": "100cm Black LED Garden Bollard Light: Light up paths, drives and borders. 12W, 3000K. £54 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£54",
+      "unit": "inc VAT",
+      "short": "Tall 1 metre black open-frame LED bollard for paths, driveways and borders.",
+      "desc": "A modern 1 metre outdoor post light with an open rectangular frame and a lit head, finished in black. 12W integrated LED in 3000K warm white lights paths, drives, steps and borders. Stands 1000 mm tall on a 170 x 120 mm footprint.",
+      "dims": "1000 (H) x 170 x 120 mm",
+      "finishes": "Black",
+      "rooms": "Garden path, driveway, borders, patio edge",
+      "watts": "12W",
+      "features": [
+        "12W integrated LED, 3000K warm white",
+        "1000 mm tall, 170 x 120 mm footprint",
+        "Open-frame contemporary design",
+        "Black aluminium and PC construction",
+        "For paths, driveways and garden borders"
+      ],
+      "specs": {
+        "Colour temperature": "3000K (warm white)",
+        "Material": "Aluminium + PC",
+        "Light direction": "Downward"
+      },
+      "image": "/images/products/jl-04-lit.webp",
+      "gallery": [
+        "/images/products/jl-04-unlit.webp"
+      ],
+      "thumb": "/images/products/jl-04-lit-card.webp",
+      "thumb2": "/images/products/jl-04-unlit-card.webp",
+      "alt": [
+        "100cm Black LED Garden Bollard Light switched on, showing the light beams",
+        "100cm Black LED Garden Bollard Light switched off"
+      ],
+      "stock": 20,
+      "showroom": true
     }
   ],
   "furniture": [

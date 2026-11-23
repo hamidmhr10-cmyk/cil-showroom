@@ -2,11 +2,11 @@
 // Data source of truth: /data/products.json (edited via /admin). Only products that have a real photo get a page.
 
 export const SITE = 'https://lurixa.co.uk';
-export const ASSET_V = '20261112a'; // keep in step with the ?v= used in the HTML pages
+export const ASSET_V = '20261123a'; // keep in step with the ?v= used in the HTML pages
 
 // category key -> landing page slug (must match the generated category pages)
 export const CAT_PAGES = {
-  lighting: { chandeliers: 'chandeliers', ceiling: 'ceiling-lights', garden: 'garden-lights', fan: 'fan-lights' },
+  lighting: { chandeliers: 'chandeliers', ceiling: 'ceiling-lights', garden: 'garden-lights', fan: 'fan-lights', 'outdoor-wall': 'outdoor-wall-lights', 'indoor-wall': 'indoor-wall-lights' },
   furniture: { sofas: 'sofas-and-beds', dining: 'dining-and-chairs', garden: 'garden-furniture', tv: 'tv-and-storage' },
 };
 const TYPE_LABEL = { lighting: 'Lighting', furniture: 'Furniture' };
@@ -70,14 +70,17 @@ export function renderProductPage(p, type, data) {
   const label = catLabel(data, type, p.cat);
   const cUrl = catUrl(type, p.cat);
   const images = [p.image].concat(Array.isArray(p.gallery) ? p.gallery : []).filter(Boolean);
-  const title = `${p.name} | ${label} | LURIXA`;
-  const desc = trimDesc(`${p.name}: ${p.desc || label}. Delivered across the UK from Luton, or see it in our showroom by appointment.`, 158);
+  const title = p.seo_title || `${p.name} | ${label} | LURIXA`;
+  const desc = p.meta ? trimDesc(p.meta, 160) : trimDesc(`${p.name}: ${p.desc || label}. Delivered across the UK from Luton, or see it in our showroom by appointment.`, 158);
+  const alts = Array.isArray(p.alt) ? p.alt : [];
+  const h1 = p.h1 || p.name;
+  const vatIncl = !!(p.unit && /^inc/i.test(p.unit));
   const priceMatch = String(p.price || '').match(/£\s*([\d,]+(?:\.\d+)?)/);
   const st = stockInfo(p);
 
   const product = {
     '@type': 'Product', '@id': url + '#product', name: p.name, image: images.map(abs),
-    description: p.desc || p.name, sku: String(p.id), brand: { '@type': 'Brand', name: 'LURIXA' }, url,
+    description: p.desc || p.name, sku: String(p.sku || p.id), brand: { '@type': 'Brand', name: 'LURIXA' }, url,
   };
   if (priceMatch) {
     const out = typeof p.stock === 'number' && p.stock <= 0;
@@ -87,6 +90,7 @@ export function renderProductPage(p, type, data) {
       availability: out ? (p.incoming ? 'https://schema.org/PreOrder' : 'https://schema.org/OutOfStock') : 'https://schema.org/InStock',
       seller: { '@id': SITE + '/#business' },
     };
+    if (vatIncl) product.offers.priceSpecification = { '@type': 'PriceSpecification', price: priceMatch[1].replace(/,/g, ''), priceCurrency: 'GBP', valueAddedTaxIncluded: true };
   }
   const crumbs = {
     '@type': 'BreadcrumbList', itemListElement: [
@@ -98,11 +102,14 @@ export function renderProductPage(p, type, data) {
   };
 
   const wattsTxt = p.watts == null ? '' : (/^\d+(\.\d+)?$/.test(String(p.watts).trim()) ? String(p.watts).trim() + 'W' : String(p.watts).trim());
-  const specs = [['Size', p.dims], ['Power', wattsTxt], ['Finish', p.finishes], ['Best for', p.rooms], ['Sold', p.unit]]
+  const extra = p.specs && typeof p.specs === 'object' ? Object.keys(p.specs).map(k => [k, p.specs[k]]) : [];
+  const specs = [['Product code', p.sku], ['Size', p.dims], ['Power', wattsTxt]].concat(extra, [['Finish', p.finishes], ['Best for', p.rooms], ['Sold', vatIncl ? '' : p.unit]])
     .filter(r => r[1]).map(r => `<div><dt>${r[0]}</dt><dd>${escapeHtml(r[1])}</dd></div>`).join('');
-  const thumbs = images.slice(1).map(src => `<img src="${escapeHtml(src)}" alt="${escapeHtml(p.name)}" loading="lazy">`).join('');
+  const thumbs = images.slice(1).map((src, i) => `<img src="${escapeHtml(src)}" alt="${escapeHtml(alts[i + 1] || p.name)}" width="1600" height="2000" loading="lazy">`).join('');
+  const feats = Array.isArray(p.features) && p.features.length ? `<ul class="pdp__features">${p.features.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>` : '';
   const video = p.video ? `<video src="${escapeHtml(p.video)}" controls playsinline preload="metadata" style="margin-top:.8rem"></video>` : '';
   const price = p.price ? `<p class="pdp__price">${escapeHtml(p.price)}${p.unit ? `<small>${escapeHtml(p.unit)}</small>` : ''}</p>` : '';
+  const showroom = p.showroom ? '<p class="pdp__note">See it lit in our Luton showroom, by appointment.</p>' : '';
   const stock = st ? `<span class="stock stock--${st.cls}">${escapeHtml(st.text)}</span>` : '';
   const isLight = type === 'furniture' ? 1 : 0;
 
@@ -148,21 +155,23 @@ export function renderProductPage(p, type, data) {
       <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="${type}.html">${TYPE_LABEL[type]}</a><span aria-hidden="true">/</span><a href="${cUrl.slice(1)}.html">${escapeHtml(label)}</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(p.name)}</span></nav>
       <div class="pdp__grid">
         <div class="pdp__media">
-          <img src="${escapeHtml(images[0])}" alt="${escapeHtml(p.name)}" width="800" height="800">
+          <img src="${escapeHtml(images[0])}" alt="${escapeHtml(alts[0] || p.name)}" width="1600" height="2000">
           ${thumbs ? `<div class="pdp__thumbs">${thumbs}</div>` : ''}
           ${video}
         </div>
         <div class="pdp__info">
           <span class="pdp__cat">${escapeHtml(label)}</span>
-          <h1>${escapeHtml(p.name)}</h1>
+          <h1>${escapeHtml(h1)}</h1>
           ${price}
           ${stock}
           <p class="pdp__desc">${escapeHtml(p.desc || '')}</p>
+          ${feats}
           ${specs ? `<dl class="pdp__specs">${specs}</dl>` : ''}
           <div class="pdp__cta">
             <button class="btn btn--gold btn--lg" data-enquire="${escapeHtml(p.id)}" data-light="${isLight}">Enquire About This Product</button>
             <a class="btn btn--ghost btn--lg" href="${cUrl.slice(1)}.html">More ${escapeHtml(label)}</a>
           </div>
+          ${showroom}
           <p class="pdp__note">Delivered across the UK from our Luton warehouse. You are welcome to see pieces in person at our Luton showroom, by appointment.</p>
         </div>
       </div>

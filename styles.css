@@ -903,3 +903,16 @@ body[data-page="lighting"] .stock--out { color: #e07b6b; }
 .lightbox__count { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 2; color: #F3E2A6; font: 600 .8rem Inter, sans-serif; background: rgba(30,20,12,.75); padding: .35rem .8rem; border-radius: 14px; }
 .lightbox__hint { position: absolute; left: 50%; top: 22px; transform: translateX(-50%); z-index: 2; color: #ECE3D0; font: .8rem Inter, sans-serif; background: rgba(30,20,12,.8); padding: .45rem .9rem; border-radius: 14px; pointer-events: none; transition: opacity .5s ease; white-space: nowrap; }
 @media (max-width: 600px) { .lightbox__hint { top: 66px; } .lightbox__nav { width: 40px; height: 40px; } }
+
+/* =================================================================
+   PRODUCT CARDS WITH PHOTOS: hover shows the second (switched-off) photo; SKU tag; modal extras
+   ================================================================= */
+.card__img--alt { opacity: 0; transition: opacity .45s ease, transform .6s cubic-bezier(0.22,0.61,0.36,1); }
+@media (hover: hover) { .card:hover .card__img--alt { opacity: 1; } }
+.card__sku { display: block; font-size: .68rem; letter-spacing: .08em; opacity: .55; margin-top: .35rem; }
+.modal__features { margin: .6rem 0 .2rem 1.1rem; padding: 0; font-size: .84rem; }
+.modal__features li { margin: .15rem 0; }
+.modal__showroom { margin-top: .8rem; font-size: .82rem; font-style: italic; color: var(--gold); }
+.card__price small:last-child { margin-top: .1rem; }
+.pdp__features { margin: 1rem 0 0 1.1rem; padding: 0; line-height: 1.7; font-size: .98rem; }
+.pdp__features li { margin: .2rem 0; }

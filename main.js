@@ -350,7 +350,11 @@
   }
   /* Visual = a real photo if one was uploaded, else the styled SVG placeholder */
   function productVisual(p, light) {
-    if (p.image) return '<img class="card__img" src="'+p.image+'" alt="'+escapeHTML(p.name)+'" loading="lazy">';
+    if (p.image) {
+      var alt = (p.alt && p.alt[0]) || p.name;
+      return '<img class="card__img" src="'+(p.thumb || p.image)+'" alt="'+escapeHTML(alt)+'" width="640" height="800" loading="lazy">' +
+        (p.thumb2 ? '<img class="card__img card__img--alt" src="'+p.thumb2+'" alt="" width="640" height="800" loading="lazy" aria-hidden="true">' : '');
+    }
     return ART[artKey(p, light)]();
   }
   function visualBg(p, light) { return p.image ? "#0d0d0d" : (BG[artKey(p, light)] || "#111"); }
@@ -358,8 +362,8 @@
   /* All media for a product: main photo, extra photos, then the video */
   function mediaList(p) {
     var m = [];
-    if (p.image) m.push({ t:"img", src:p.image });
-    (p.gallery || []).forEach(function(src){ if (src) m.push({ t:"img", src:src }); });
+    if (p.image) m.push({ t:"img", src:p.image, alt:(p.alt && p.alt[0]) || "" });
+    (p.gallery || []).forEach(function(src, i){ if (src) m.push({ t:"img", src:src, alt:(p.alt && p.alt[i+1]) || "" }); });
     if (p.video) m.push({ t:"video", src:p.video });
     return m;
   }
@@ -384,6 +388,18 @@
     if (!w) return "";
     return /^\d+(\.\d+)?$/.test(w) ? w + "W" : w;
   }
+  function specRow(label, val) {
+    return val ? '<dt>'+label+'</dt><dd>'+escapeHTML(val)+'</dd>' : '';
+  }
+  function extraSpecRows(p) {
+    var h = "", k, sp = p.specs || {};
+    for (k in sp) if (Object.prototype.hasOwnProperty.call(sp, k)) h += specRow(k, sp[k]);
+    return h;
+  }
+  function featuresHTML(p) {
+    var f = (p.features || []).filter(Boolean);
+    return f.length ? '<ul class="modal__features">'+f.map(function(x){ return '<li>'+escapeHTML(x)+'</li>'; }).join("")+'</ul>' : '';
+  }
   function wattsRow(p, label) {
     var w = wattsText(p);
     return w ? '<dt>'+label+'</dt><dd>'+escapeHTML(w)+'</dd>' : '';
@@ -397,7 +413,7 @@
   function stageHTML(item, p) {
     if (item.t === "video")
       return '<video class="gallery__media" src="'+escapeHTML(item.src)+'" controls playsinline preload="metadata"></video>';
-    return '<img class="gallery__media" src="'+escapeHTML(item.src)+'" alt="'+escapeHTML(p.name)+'" title="Click to enlarge and zoom">';
+    return '<img class="gallery__media" src="'+escapeHTML(item.src)+'" alt="'+escapeHTML(item.alt || p.name)+'" title="Click to enlarge and zoom">';
   }
   function galleryHTML(p, light) {
     var m = mediaList(p);
@@ -433,7 +449,9 @@
   function cardHTML(p, light) {
     var theme = light ? "card--light" : "card--dark";
     var btnClass = light ? "btn--navy" : "btn--gold";
-    var priceLine = (p.from ? '<small>from</small>' : (p.unit ? '<small>'+p.unit+'</small>' : '')) ;
+    var vat = p.unit && /^inc/i.test(p.unit);
+    var priceLine = (p.from ? '<small>from</small>' : (p.unit && !vat ? '<small>'+p.unit+'</small>' : '')) ;
+    var priceTail = vat ? '<small>'+escapeHTML(p.unit)+'</small>' : '';
     return '<article class="card '+theme+' reveal" data-cat="'+p.cat+'" data-id="'+p.id+'">' +
       '<div class="card__visual" style="background:'+visualBg(p, light)+'">' + productVisual(p, light) + mediaBadge(p) +
         '<div class="card__overlay"><button class="btn '+btnClass+' btn--sm" data-detail="'+p.id+'" data-light="'+(light?1:0)+'">View Details</button></div>' +
@@ -441,9 +459,9 @@
       '<div class="card__body">' +
         '<span class="badge">'+catLabel(p)+'</span>' +
         '<h3 class="card__name">'+(p.image ? '<a href="/product/'+encodeURIComponent(p.id)+'">'+p.name+'</a>' : p.name)+'</h3>' + stockHTML(p) +
-        '<p class="card__desc">'+p.desc+'</p>' +
+        '<p class="card__desc">'+(p.short || p.desc)+'</p>' + (p.sku ? '<span class="card__sku">'+escapeHTML(p.sku)+'</span>' : '') +
         '<div class="card__foot">' +
-          '<span class="card__price">'+priceLine+p.price+'</span>' +
+          '<span class="card__price">'+priceLine+p.price+priceTail+'</span>' +
           '<button class="btn '+btnClass+' btn--sm" data-enquire="'+p.id+'" data-light="'+(light?1:0)+'">Enquire Now</button>' +
         '</div>' +
       '</div>' +
@@ -465,7 +483,7 @@
       '<ul class="nav__links">' +
         '<li class="nav__item"><a class="nav__link" href="index.html"'+cur("home")+'>Home</a></li>' +
         '<li class="nav__item"><a class="nav__link" href="lighting.html"'+cur("lighting")+'>Lighting <span class="caret">▾</span></a>' +
-          '<div class="dropdown"><a href="chandeliers.html">Chandeliers</a><a href="ceiling-lights.html">Ceiling Lights</a><a href="garden-lights.html">Garden Lights</a><a href="fan-lights.html">Fan + Lights</a></div></li>' +
+          '<div class="dropdown"><a href="chandeliers.html">Chandeliers</a><a href="ceiling-lights.html">Ceiling Lights</a><a href="garden-lights.html">Garden Lights</a><a href="fan-lights.html">Fan + Lights</a><a href="outdoor-wall-lights.html">Outdoor Wall Lights</a><a href="indoor-wall-lights.html">Indoor Wall Lights</a></div></li>' +
         '<li class="nav__item"><a class="nav__link" href="furniture.html"'+cur("furniture")+'>Furniture <span class="caret">▾</span></a>' +
           '<div class="dropdown"><a href="sofas-and-beds.html">Sofas & Beds</a><a href="dining-and-chairs.html">Dining & Chairs</a><a href="garden-furniture.html">Garden Furniture</a><a href="tv-and-storage.html">TV & Storage</a></div></li>' +
         '<li class="nav__item"><a class="nav__link" href="about.html"'+cur("about")+'>About Us</a></li>' +
@@ -481,6 +499,8 @@
       '<a class="sub" href="ceiling-lights.html">Ceiling Lights</a>' +
       '<a class="sub" href="garden-lights.html">Garden Lights</a>' +
       '<a class="sub" href="fan-lights.html">Fan + Lights</a>' +
+      '<a class="sub" href="outdoor-wall-lights.html">Outdoor Wall Lights</a>' +
+      '<a class="sub" href="indoor-wall-lights.html">Indoor Wall Lights</a>' +
       '<a href="furniture.html">Furniture</a>' +
       '<a class="sub" href="sofas-and-beds.html">Sofas & Beds</a>' +
       '<a class="sub" href="dining-and-chairs.html">Dining & Chairs</a>' +
@@ -504,7 +524,7 @@
         '</div>' +
       '</div>' +
       '<div><h4>Navigate</h4><a href="index.html">Home</a><a href="lighting.html">Lighting</a><a href="furniture.html">Furniture</a><a href="about.html">About Us</a><a href="about.html#contact">Contact</a></div>' +
-      '<div><h4>Collections</h4><a href="chandeliers.html">Chandeliers</a><a href="ceiling-lights.html">Ceiling Lights</a><a href="garden-lights.html">Garden Lights</a><a href="sofas-and-beds.html">Sofas & Beds</a><a href="garden-furniture.html">Garden Furniture</a></div>' +
+      '<div><h4>Collections</h4><a href="chandeliers.html">Chandeliers</a><a href="ceiling-lights.html">Ceiling Lights</a><a href="garden-lights.html">Garden Lights</a><a href="outdoor-wall-lights.html">Outdoor Wall Lights</a><a href="indoor-wall-lights.html">Indoor Wall Lights</a><a href="sofas-and-beds.html">Sofas & Beds</a><a href="garden-furniture.html">Garden Furniture</a></div>' +
       '<div class="footer__contact"><h4>Contact</h4>' +
         '<ul>' +
           '<li><span class="ico">'+ICON.pin+'</span><span>'+CO.address+'</span></li>' +
@@ -565,10 +585,11 @@
     return '<div class="modal__head"><span class="eyebrow">Enquiry</span><h3 id="modalTitle">'+(p?p.name:"Request a Quote")+'</h3></div>' +
       (p ? '<div class="modal__detail">'+p.desc+'<dl>' +
             '<dt>Price</dt><dd>'+(p.from?"from ":"")+p.price+(p.unit?" "+p.unit:"")+'</dd>' +
-            '<dt>Dimensions</dt><dd>'+p.dims+'</dd>' +
+            specRow('Product code', p.sku) +
+            specRow('Dimensions', p.dims) +
             wattsRow(p, 'Power') +
-            '<dt>Finishes</dt><dd>'+p.finishes+'</dd>' +
-            '<dt>Suitable for</dt><dd>'+p.rooms+'</dd>' +
+            specRow('Finishes', p.finishes) +
+            specRow('Suitable for', p.rooms) +
           '</dl></div>' : '') +
       '<form id="enqForm" novalidate>' +
         '<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
@@ -586,14 +607,16 @@
     var btnClass = light ? "btn--navy" : "btn--gold";
     return '<div class="modal__head"><span class="eyebrow">'+catLabel(p)+'</span><h3 id="modalTitle">'+p.name+'</h3></div>' +
       galleryHTML(p, light) +
-      '<div class="modal__detail">'+p.desc+'<dl>' +
+      '<div class="modal__detail">'+p.desc+featuresHTML(p)+'<dl>' +
         '<dt>Price</dt><dd>'+(p.from?"from ":"")+p.price+(p.unit?" "+p.unit:"")+(p.note?" ("+p.note+")":"")+'</dd>' +
         (stockInfo(p) ? '<dt>Availability</dt><dd>'+stockHTML(p)+'</dd>' : '') +
-        '<dt>Dimensions</dt><dd>'+p.dims+'</dd>' +
+        specRow('Product code', p.sku) +
+        specRow('Dimensions', p.dims) +
         wattsRow(p, 'Power') +
-        '<dt>Finishes</dt><dd>'+p.finishes+'</dd>' +
-        '<dt>Suitable rooms</dt><dd>'+p.rooms+'</dd>' +
-      '</dl></div>' +
+        extraSpecRows(p) +
+        specRow('Finishes', p.finishes) +
+        specRow('Suitable rooms', p.rooms) +
+      '</dl>' + (p.showroom ? '<p class="modal__showroom">See it lit in our Luton showroom, by appointment.</p>' : '') + '</div>' +
       '<button class="btn '+btnClass+' btn--block btn--lg" data-enquire="'+p.id+'" data-light="'+(light?1:0)+'">Enquire About This Product</button>';
   }
 
@@ -823,7 +846,8 @@
   function renderGrid(targetId, items, light) {
     var el = document.getElementById(targetId);
     if (!el) return;
-    el.innerHTML = items.map(function(p){ return cardHTML(p, light); }).join("");
+    var ordered = items.filter(function(p){ return p.image; }).concat(items.filter(function(p){ return !p.image; }));
+    el.innerHTML = ordered.map(function(p){ return cardHTML(p, light); }).join("");
   }
 
   function renderFilters(barId, cats, gridId, items, light) {
@@ -866,6 +890,14 @@
     var el = document.getElementById("featuredCarousel");
     if (!el) return;
     var picks = [LIGHTING[0],LIGHTING[12],LIGHTING[3],LIGHTING[8],FURNITURE[0],FURNITURE[4],FURNITURE[8],FURNITURE[6]];
+    var real = LIGHTING.concat(FURNITURE).filter(function(p){ return p && p.image && p.thumb; });
+    if (real.length >= 4) {
+      /* one photo product per category first (variety), then fill up to 8 */
+      var chosen = [], seenCat = {};
+      real.forEach(function(p){ if (chosen.length < 8 && !seenCat[p.cat]) { seenCat[p.cat] = 1; chosen.push(p); } });
+      real.forEach(function(p){ if (chosen.length < 8 && chosen.indexOf(p) < 0) chosen.push(p); });
+      picks = chosen;
+    }
     el.innerHTML = picks.map(function(p){
       var light = FURNITURE.indexOf(p) > -1;
       return cardHTML(p, light);
@@ -1087,7 +1119,7 @@
         if (!p || !p.image || !p.name) return;
         var m = String(p.price || "").match(/£\s*([\d,]+(?:\.\d+)?)/);
         var imgs = [p.image].concat(Array.isArray(p.gallery) ? p.gallery : []).filter(Boolean).map(function (u) { return u.indexOf("http") === 0 ? u : "https://lurixa.co.uk" + (u.charAt(0) === "/" ? "" : "/") + u; });
-        var prod = { "@type": "Product", "name": p.name, "image": imgs, "description": p.desc || p.name, "sku": String(p.id), "brand": { "@type": "Brand", "name": "LURIXA" } };
+        var prod = { "@type": "Product", "name": p.name, "image": imgs, "description": p.desc || p.name, "sku": String(p.sku || p.id), "brand": { "@type": "Brand", "name": "LURIXA" } };
         if (m) {
           var out = typeof p.stock === "number" && p.stock <= 0;
           prod.offers = { "@type": "Offer", "priceCurrency": "GBP", "price": m[1].replace(/,/g, ""), "url": "https://lurixa.co.uk/" + page, "itemCondition": "https://schema.org/NewCondition",
