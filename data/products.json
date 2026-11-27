@@ -113,18 +113,6 @@
       "unit": "per set of 4"
     },
     {
-      "id": "l12",
-      "cat": "garden",
-      "art": "festoon",
-      "image": "",
-      "name": "String Festoon Lights 10m",
-      "price": "£55",
-      "desc": "10m festoon string lights, 20 × E27 warm white globes, IP44, mains powered.",
-      "dims": "10m length",
-      "finishes": "Black cable",
-      "rooms": "Patios, Gardens, Events"
-    },
-    {
       "id": "l13",
       "cat": "fan",
       "art": "fan",
