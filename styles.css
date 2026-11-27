@@ -916,3 +916,14 @@ body[data-page="lighting"] .stock--out { color: #e07b6b; }
 .card__price small:last-child { margin-top: .1rem; }
 .pdp__features { margin: 1rem 0 0 1.1rem; padding: 0; line-height: 1.7; font-size: .98rem; }
 .pdp__features li { margin: .2rem 0; }
+
+/* =================================================================
+   LIGHTING PAGE: grouped sections in the "All" view
+   ================================================================= */
+.lgroups { display: block; }
+.lgroup { margin-bottom: 3.6rem; scroll-margin-top: calc(var(--nav-h, 80px) + 70px); }
+.lgroup:last-child { margin-bottom: 0; }
+.lgroup__head { margin-bottom: 1.4rem; padding-bottom: .8rem; border-bottom: 1px solid rgba(201,168,76,.28); }
+.lgroup__head h2 { font-family: var(--font-head); font-size: clamp(1.5rem, 2.6vw, 2rem); color: var(--gold); display: flex; align-items: baseline; gap: .6rem; }
+.lgroup__count { font-family: var(--font-body); font-size: .8rem; font-weight: 600; letter-spacing: .06em; opacity: .7; border: 1px solid rgba(201,168,76,.45); border-radius: 20px; padding: .1rem .55rem; }
+.lgroup__head p { margin-top: .35rem; font-size: .92rem; opacity: .8; }

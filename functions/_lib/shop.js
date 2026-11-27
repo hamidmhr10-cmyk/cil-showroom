@@ -2,7 +2,7 @@
 // Data source of truth: /data/products.json (edited via /admin). Only products that have a real photo get a page.
 
 export const SITE = 'https://lurixa.co.uk';
-export const ASSET_V = '20261123a'; // keep in step with the ?v= used in the HTML pages
+export const ASSET_V = '20261127a'; // keep in step with the ?v= used in the HTML pages
 
 // category key -> landing page slug (must match the generated category pages)
 export const CAT_PAGES = {

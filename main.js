@@ -843,11 +843,40 @@
   /* =================================================================
      PAGE RENDERERS
      ================================================================= */
+  /* Lighting "All" view is split into sections (real photos first inside each) */
+  var LIGHT_GROUPS = [
+    { id:"chandeliers", title:"Chandeliers & Pendants", sub:"Statement crystal and LED pieces for hallways, living and dining rooms.", cats:["chandeliers"] },
+    { id:"fan-lights", title:"Fan + Lights", sub:"A light and a cooling fan in one ceiling fitting.", cats:["fan"] },
+    { id:"outdoor", title:"Outdoor Lights", sub:"Wall, garden and bollard lights for outside your home.", cats:["outdoor-wall", "garden", "outdoor-light"] },
+    { id:"indoor", title:"Indoor Wall & Ceiling Lights", sub:"Ceiling and wall lights for every room indoors.", cats:["ceiling", "indoor-wall"] }
+  ];
+  function photosFirst(items) {
+    return items.filter(function(p){ return p.image; }).concat(items.filter(function(p){ return !p.image; }));
+  }
   function renderGrid(targetId, items, light) {
     var el = document.getElementById(targetId);
     if (!el) return;
-    var ordered = items.filter(function(p){ return p.image; }).concat(items.filter(function(p){ return !p.image; }));
-    el.innerHTML = ordered.map(function(p){ return cardHTML(p, light); }).join("");
+    var grouped = targetId === "lightGrid" && items === LIGHTING;
+    if (!grouped) {
+      el.className = "grid";
+      el.innerHTML = photosFirst(items).map(function(p){ return cardHTML(p, light); }).join("");
+      return;
+    }
+    var used = {}, groups = LIGHT_GROUPS.map(function(g){
+      var list = items.filter(function(p){ return g.cats.indexOf(p.cat) > -1; });
+      list.forEach(function(p){ used[p.id] = 1; });
+      return { g:g, list:list };
+    });
+    var rest = items.filter(function(p){ return !used[p.id]; });
+    if (rest.length) groups.push({ g:{ id:"more", title:"More Lighting", sub:"" }, list:rest });
+    el.className = "lgroups";
+    el.innerHTML = groups.filter(function(x){ return x.list.length; }).map(function(x){
+      return '<section class="lgroup" id="group-'+x.g.id+'" aria-labelledby="lg-'+x.g.id+'">' +
+        '<div class="lgroup__head"><h2 id="lg-'+x.g.id+'">'+x.g.title+' <span class="lgroup__count">'+x.list.length+'</span></h2>' +
+        (x.g.sub ? '<p>'+x.g.sub+'</p>' : '') + '</div>' +
+        '<div class="grid">'+photosFirst(x.list).map(function(p){ return cardHTML(p, light); }).join("")+'</div>' +
+      '</section>';
+    }).join("");
   }
 
   function renderFilters(barId, cats, gridId, items, light) {
