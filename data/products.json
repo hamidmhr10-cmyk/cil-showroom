@@ -88,19 +88,6 @@
       "unit": "per pair"
     },
     {
-      "id": "l11",
-      "cat": "garden",
-      "art": "spike",
-      "image": "",
-      "name": "Spike Garden Spotlight",
-      "price": "£79",
-      "desc": "Low-voltage spike-mount garden spotlight, warm white 3W LED, IP67, fully waterproof.",
-      "dims": "Spike mount",
-      "finishes": "Black",
-      "rooms": "Borders, Trees, Features",
-      "unit": "per set of 4"
-    },
-    {
       "id": "l14",
       "cat": "fan",
       "art": "fan",
