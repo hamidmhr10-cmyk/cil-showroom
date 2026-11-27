@@ -113,18 +113,6 @@
       "unit": "per set of 4"
     },
     {
-      "id": "l13",
-      "cat": "fan",
-      "art": "fan",
-      "image": "",
-      "name": "Breeze Master Ceiling Fan Light",
-      "price": "£285",
-      "desc": "52-inch 5-blade fan with integrated 3-colour LED kit. Remote + wall switch, ultra-quiet DC motor.",
-      "dims": "52-inch span",
-      "finishes": "White, Black, Brushed Nickel",
-      "rooms": "Living Rooms, Bedrooms"
-    },
-    {
       "id": "l14",
       "cat": "fan",
       "art": "fan",
