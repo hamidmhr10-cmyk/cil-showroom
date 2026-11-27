@@ -51,18 +51,6 @@
   },
   "lighting": [
     {
-      "id": "l14",
-      "cat": "fan",
-      "art": "fan",
-      "image": "",
-      "name": "Industrial Barn Fan Light",
-      "price": "£245",
-      "desc": "48-inch 3-blade fan with Edison bulb cage light and exposed motor housing in antique bronze.",
-      "dims": "48-inch span",
-      "finishes": "Antique Bronze",
-      "rooms": "Loft Spaces, Restaurants"
-    },
-    {
       "id": "lmw6mfnue",
       "name": "Round Black Ceiling Fan Light",
       "cat": "fan",
