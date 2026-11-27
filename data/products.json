@@ -51,18 +51,6 @@
   },
   "lighting": [
     {
-      "id": "l3",
-      "cat": "chandeliers",
-      "art": "ring",
-      "image": "",
-      "name": "Nordic Ring Chandelier",
-      "price": "£275",
-      "desc": "Minimalist circular ring in matte black with integrated, dimmable 40W LED.",
-      "dims": "60cm diameter",
-      "finishes": "Matte Black",
-      "rooms": "Kitchens, Dining Rooms, Loft Apartments"
-    },
-    {
       "id": "l4",
       "cat": "chandeliers",
       "art": "sputnik",
