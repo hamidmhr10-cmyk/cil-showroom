@@ -479,6 +479,12 @@
                  .then(function(path){ base.video = path; videoItem = { src: path }; });
     } else if (videoItem) base.video = videoItem.src; else delete base.video;
     work.then(function(){
+      // Photos changed? Drop the small card thumbnails made from the old photos (cards then use the new main photo),
+      // and the old photo descriptions, so the site never shows a stale picture.
+      var before = index >= 0 ? products[section][index] : {};
+      var oldGal0 = (before.gallery || [])[0] || "", newGal0 = (base.gallery || [])[0] || "";
+      if ((before.image || "") !== (base.image || "")) { delete base.thumb; delete base.alt; }
+      if (oldGal0 !== newGal0) { delete base.thumb2; delete base.alt; }
       if (index >= 0) products[section][index] = base;
       else products[section].push(base);
       return commitProducts((index>=0?"Update":"Add")+" product: "+name);
