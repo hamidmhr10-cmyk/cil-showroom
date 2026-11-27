@@ -51,18 +51,6 @@
   },
   "lighting": [
     {
-      "id": "l7",
-      "cat": "ceiling",
-      "art": "hexagon",
-      "image": "",
-      "name": "Geometric Hexagon Panel",
-      "price": "£110",
-      "desc": "Honeycomb geometric surface-mount panel, 48W LED, IP20 — crisp, modern light.",
-      "dims": "50cm x 50cm",
-      "finishes": "White / Black trim",
-      "rooms": "Home Offices, Kitchens"
-    },
-    {
       "id": "l14",
       "cat": "fan",
       "art": "fan",
