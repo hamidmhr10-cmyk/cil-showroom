@@ -235,15 +235,15 @@
     },
     {
       "id": "lmw6mfnue",
-      "name": "YM6030-13 Black",
+      "name": "Round Black Ceiling Fan Light",
       "cat": "fan",
-      "art": "chandelier",
+      "art": "fan",
       "price": "£64",
-      "desc": "LED Ceiling Light + Fan",
-      "dims": "53 x 53 x 15 cm (Box/Measurement)",
+      "desc": "A round fan light with a crisp black trim. A wide glowing disc lights the room, and the fan is tucked into a slim central panel with no exposed blades, so you get good light and a cooling breeze from one fitting. The same design is also available in white or with a wood-effect trim.",
+      "dims": "53 x 53 x 15 cm (boxed size)",
       "finishes": "Black",
-      "rooms": "Every Room",
-      "unit": "per product",
+      "rooms": "Bedrooms, living rooms, kitchens",
+      "unit": "inc VAT",
       "image": "/images/ym6030-13-black-1794069124223.jpeg",
       "gallery": [
         "/images/ym6030-13-black-2-1794246235922.jpg"
@@ -251,81 +251,138 @@
       "video": "/images/ym6030-13-black-video-1794246604687.mp4",
       "stock": 1,
       "incoming": "Ordered on Demand",
-      "watts": "70W"
-    },
-    {
-      "id": "lmwdiyl4p",
-      "name": "HN9015",
-      "cat": "outdoor-light",
-      "art": "chandelier",
-      "price": "£29",
-      "desc": "Outdoor Crystal LED Wall Light 11W",
-      "dims": "260x105x60",
-      "finishes": "Black, Gold",
-      "rooms": "Outdoor",
-      "stock": 11,
-      "incoming": "Ordered on Demand",
-      "unit": "per product",
-      "image": "/images/hn9015-1794486551940.jpeg",
-      "gallery": [
-        "/images/hn9015-2-1794486553918.jpeg"
+      "watts": "70W",
+      "sku": "YM-05",
+      "h1": "Round Black Ceiling Fan Light with Built-in Fan, 70W",
+      "seo_title": "Round Black Ceiling Fan Light | LURIXA Luton",
+      "meta": "Round black ceiling fan light with a wide glowing disc and a built-in fan, no exposed blades. £64 inc VAT. See it lit in our Luton showroom.",
+      "short": "Round fan light with a crisp black trim, a wide glowing disc and a built-in fan.",
+      "features": [
+        "Light and fan in one ceiling fitting",
+        "Wide round light panel with a black trim",
+        "Built-in fan in a slim central panel, no exposed blades",
+        "70W",
+        "Also available in white (YM-01) or wood-effect (YM-04)"
       ],
-      "watts": "11W"
+      "alt": [
+        "Round Black Ceiling Fan Light switched on",
+        "Round Black Ceiling Fan Light, close-up"
+      ],
+      "showroom": true,
+      "thumb": "/images/products/ym-05-a-card.webp",
+      "thumb2": "/images/products/ym-05-b-card.webp"
     },
     {
       "id": "lmwdj59bq",
-      "name": "XL-08",
+      "name": "Crystal Halo Chandelier, 60cm",
       "cat": "chandeliers",
       "art": "chandelier",
       "price": "£314",
-      "desc": "Crystal Halo Chandelier Diameter 60cm",
-      "dims": "60x60x14",
+      "desc": "A single ring of sparkling crystal, 60cm across, that hangs like a halo of light. Switched on, it throws a soft sparkle across the ceiling and walls; switched off, it is still a striking piece of jewellery for the room. A true statement for a hallway, dining room or living room.",
+      "dims": "60 x 60 x 14 cm",
       "finishes": "White",
-      "rooms": "Hallways, Dining Rooms",
+      "rooms": "Hallways, dining rooms, living rooms",
       "stock": 3,
       "incoming": "Ordered on Demand",
-      "unit": "per product",
+      "unit": "inc VAT",
       "image": "/images/xl-08-1794486863410.jpg",
       "gallery": [
         "/images/xl-08-2-1794486865243.jpg",
         "/images/xl-08-3-1794486867159.jpg"
-      ]
+      ],
+      "sku": "XL-08",
+      "h1": "Crystal Halo Ring Chandelier, 60cm Diameter",
+      "seo_title": "Crystal Halo Ring Chandelier 60cm | LURIXA Luton",
+      "meta": "Crystal halo ring chandelier, 60cm across, that scatters sparkle across the room. £314 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "short": "A 60cm ring of sparkling crystal that hangs like a glowing halo.",
+      "features": [
+        "60cm ring of sparkling crystal",
+        "Casts a soft sparkle across the ceiling and walls",
+        "Suspended on fine wires",
+        "Statement piece for hallways and dining rooms"
+      ],
+      "specs": {
+        "Bulb fitting": "E14"
+      },
+      "alt": [
+        "Crystal Halo Chandelier switched on",
+        "Crystal Halo Chandelier, another view",
+        "Crystal Halo Chandelier, close-up"
+      ],
+      "showroom": true,
+      "thumb": "/images/products/xl-08-a-card.webp",
+      "thumb2": "/images/products/xl-08-b-card.webp"
     },
     {
       "id": "lmwdmp5en",
-      "name": "JB-07",
+      "name": "Crystal Double-Ring LED Pendant",
       "cat": "chandeliers",
       "art": "chandelier",
       "price": "£139",
-      "desc": "LED Crystal Double-Ring Pendant, Warm White",
-      "dims": "43x43x16",
+      "desc": "Two tiers of crystal-trimmed rings, finished with a glowing globe beneath, give this pendant a layered, jewel-like look. Integrated LED in warm white casts a soft, flattering light, ideal over a dining table or in a hallway.",
+      "dims": "43 x 43 x 16 cm",
       "finishes": "White",
-      "rooms": "Hallways, Dining Rooms",
+      "rooms": "Hallways, dining rooms, living rooms",
       "watts": "166W",
       "stock": 8,
       "incoming": "Ordered on Demand",
-      "unit": "per product",
+      "unit": "inc VAT",
       "image": "/images/jb-07-1794492830376.jpeg",
       "gallery": [
         "/images/jb-07-2-1794492832868.jpeg"
-      ]
+      ],
+      "sku": "JB-07",
+      "h1": "Crystal Double-Ring LED Pendant Light, Warm White",
+      "seo_title": "Crystal Double-Ring LED Pendant | LURIXA Luton",
+      "meta": "Crystal double-ring LED pendant in warm white, with a glowing globe beneath. £139 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "short": "Two tiers of crystal-trimmed rings with a glowing globe, in warm white LED.",
+      "features": [
+        "Two tiers of crystal-trimmed rings",
+        "Glowing globe beneath",
+        "Integrated LED, warm white",
+        "Hangs from a round ceiling plate on fine wires"
+      ],
+      "alt": [
+        "Crystal Double-Ring LED Pendant switched on",
+        "Crystal Double-Ring LED Pendant, another view"
+      ],
+      "showroom": true,
+      "thumb": "/images/products/jb-07-a-card.webp",
+      "thumb2": "/images/products/jb-07-b-card.webp"
     },
     {
       "id": "lmwdr3vxe",
-      "name": "YM6030-13 Wood",
+      "name": "Round Wood-Effect Ceiling Fan Light",
       "cat": "fan",
-      "art": "chandelier",
+      "art": "fan",
       "price": "£64",
-      "desc": "LED Ceiling Light + Fan",
-      "dims": "53 x 53 x 15 cm",
-      "finishes": "Wood",
-      "rooms": "Every Room",
+      "desc": "A round fan light with a warm wood-effect trim that softens a modern room. A wide glowing disc lights the space, and the fan is tucked into a slim central panel with no exposed blades, giving you light and a cooling breeze from one fitting. Also available in white or black.",
+      "dims": "53 x 53 x 15 cm (boxed size)",
+      "finishes": "Wood effect",
+      "rooms": "Bedrooms, living rooms, kitchens",
       "watts": "70W",
       "stock": 8,
       "incoming": "Ordered on Demand",
-      "unit": "per product",
+      "unit": "inc VAT",
       "image": "/images/ym6030-13-wood-1794500236381.jpeg",
-      "video": "/images/ym6030-13-wood-video-1794500238544.mp4"
+      "video": "/images/ym6030-13-wood-video-1794500238544.mp4",
+      "sku": "YM-04",
+      "h1": "Round Wood-Effect Ceiling Fan Light with Built-in Fan, 70W",
+      "seo_title": "Round Wood-Effect Ceiling Fan Light | LURIXA Luton",
+      "meta": "Round ceiling fan light with a warm wood-effect trim, a glowing disc and a built-in fan. £64 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "short": "Round fan light with a warm wood-effect trim, a wide glowing disc and a built-in fan.",
+      "features": [
+        "Light and fan in one ceiling fitting",
+        "Warm wood-effect trim",
+        "Built-in fan in a slim central panel, no exposed blades",
+        "70W",
+        "Also available in white (YM-01) or black (YM-05)"
+      ],
+      "alt": [
+        "Round Wood-Effect Ceiling Fan Light switched on"
+      ],
+      "showroom": true,
+      "thumb": "/images/products/ym-04-a-card.webp"
     },
     {
       "id": "black-square-led-outdoor-wall-light-jl-02",
@@ -1208,7 +1265,7 @@
       "short": "Outdoor wall light with a bubble-crystal tube and beams that shine up and down.",
       "desc": "A decorative outdoor wall light with a glittering bubble-crystal tube, a curved back plate and light beams cast above and below. 11W integrated LED, 3000K warm white. 260 x 105 x 60 mm. Gives an upscale look at an entrance.",
       "dims": "260 x 105 x 60 mm",
-      "finishes": "",
+      "finishes": "Black, Gold",
       "rooms": "Entrance, porch, patio",
       "watts": "11W",
       "features": [
@@ -1225,16 +1282,24 @@
       },
       "image": "/images/products/jl-12-lit.webp",
       "gallery": [
-        "/images/products/jl-12-unlit.webp"
+        "/images/products/jl-12-unlit.webp",
+        "/images/hn9015-1794486551940.jpeg",
+        "/images/hn9015-2-1794486553918.jpeg"
       ],
       "thumb": "/images/products/jl-12-lit-card.webp",
       "thumb2": "/images/products/jl-12-unlit-card.webp",
       "alt": [
         "Crystal LED Outdoor Wall Light switched on, showing the light beams",
-        "Crystal LED Outdoor Wall Light switched off"
+        "Crystal LED Outdoor Wall Light switched off",
+        "Crystal LED Outdoor Wall Light in black, switched on",
+        "Crystal LED Outdoor Wall Light in black, switched off"
       ],
-      "stock": 20,
-      "showroom": true
+      "stock": 11,
+      "showroom": true,
+      "incoming": "Ordered on Demand",
+      "aliases": [
+        "lmwdiyl4p"
+      ]
     },
     {
       "id": "60cm-led-outdoor-wall-light-ll-12",
@@ -1638,7 +1703,7 @@
       "unit": "inc VAT",
       "short": "Clean, round white fan light with a wide glowing disc and a built-in fan.",
       "desc": "A clean, round fan light in white. A wide glowing disc lights the room, and the fan is tucked into a slim central panel with no exposed blades. The same design is also available with a black or wood-effect trim.",
-      "dims": "",
+      "dims": "53 x 53 x 15 cm (boxed size)",
       "finishes": "White",
       "rooms": "Bedrooms, living rooms, kitchens",
       "watts": "70W",
@@ -1647,7 +1712,7 @@
         "Wide round light panel",
         "Built-in fan in a slim central panel, no exposed blades",
         "White finish",
-        "Also available with black or wood-effect trim"
+        "Also available in black (YM-05) or wood-effect (YM-04)"
       ],
       "image": "/images/products/ym-01-lit.webp",
       "gallery": [
