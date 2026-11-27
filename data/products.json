@@ -75,19 +75,6 @@
       "rooms": "Home Offices, Kitchens"
     },
     {
-      "id": "l9",
-      "cat": "garden",
-      "art": "lantern",
-      "image": "",
-      "name": "Solar Pillar Lantern Set",
-      "price": "£175",
-      "desc": "Set of 2 solar-powered cast aluminium post lanterns, IP65, automatic dusk-to-dawn sensor.",
-      "dims": "Height: 120cm",
-      "finishes": "Black",
-      "rooms": "Driveways, Patios, Pathways",
-      "unit": "per pair"
-    },
-    {
       "id": "l14",
       "cat": "fan",
       "art": "fan",
