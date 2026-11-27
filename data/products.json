@@ -51,18 +51,6 @@
   },
   "lighting": [
     {
-      "id": "l2",
-      "cat": "chandeliers",
-      "art": "chandelier",
-      "image": "",
-      "name": "Blossom Flower Chandelier",
-      "price": "£320",
-      "desc": "Petal-shaped arms in antique brass with frosted glass shades. 8-light, softly diffused.",
-      "dims": "65cm diameter, 90cm drop",
-      "finishes": "Antique Brass",
-      "rooms": "Living Rooms, Bedrooms"
-    },
-    {
       "id": "l3",
       "cat": "chandeliers",
       "art": "ring",
