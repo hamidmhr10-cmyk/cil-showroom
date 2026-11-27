@@ -927,3 +927,40 @@ body[data-page="lighting"] .stock--out { color: #e07b6b; }
 .lgroup__head h2 { font-family: var(--font-head); font-size: clamp(1.5rem, 2.6vw, 2rem); color: var(--gold); display: flex; align-items: baseline; gap: .6rem; }
 .lgroup__count { font-family: var(--font-body); font-size: .8rem; font-weight: 600; letter-spacing: .06em; opacity: .7; border: 1px solid rgba(201,168,76,.45); border-radius: 20px; padding: .1rem .55rem; }
 .lgroup__head p { margin-top: .35rem; font-size: .92rem; opacity: .8; }
+
+/* =================================================================
+   PRODUCT PAGE (Amazon-style): big photo + thumbnail strip, and a moving "You may also like" row
+   ================================================================= */
+.card--link { cursor: pointer; }
+.pdp__stage { position: relative; aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden; background: #0d0d0d; border: 1px solid var(--card-border); }
+.pdp__stage img, .pdp__stage video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; border: 0; border-radius: 0; background: #0d0d0d; }
+.pdp__media { position: sticky; top: calc(var(--nav-h) + 1rem); }
+.pdp__thumbs { display: flex; gap: .6rem; margin-top: .8rem; overflow-x: auto; padding-bottom: .3rem; grid-template-columns: none; }
+.pdp__thumb { position: relative; flex: 0 0 78px; height: 98px; border-radius: 10px; overflow: hidden; border: 2px solid transparent; background: #0d0d0d; cursor: pointer; padding: 0; opacity: .75; transition: opacity .2s ease, border-color .2s ease; }
+.pdp__thumb:hover { opacity: 1; }
+.pdp__thumb.is-active { border-color: var(--gold); opacity: 1; }
+.pdp__thumb img, .pdp__thumb video { width: 100%; height: 100%; object-fit: cover; display: block; border: 0; border-radius: 0; pointer-events: none; }
+.pdp__play { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-size: 1.3rem; text-shadow: 0 1px 6px rgba(0,0,0,.7); background: rgba(0,0,0,.25); }
+@media (max-width: 800px) { .pdp__media { position: static; } }
+
+.similar { margin-top: 4.5rem; padding-top: 2.6rem; border-top: 1px solid var(--card-border); }
+.similar h2 { font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2.1rem); color: var(--ink); margin-bottom: 1.4rem; }
+.similar__viewport { overflow-x: auto; padding: 0 0 1rem; scrollbar-width: thin; }
+.similar__viewport.is-moving { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+.similar__track { display: flex; gap: 1.2rem; width: max-content; padding: 0 clamp(1rem, 4vw, 2rem); }
+.similar__viewport.is-moving .similar__track { animation: simScroll var(--sim-dur, 50s) linear infinite; }
+.similar__viewport.is-moving:hover .similar__track, .similar__viewport.is-moving:focus-within .similar__track { animation-play-state: paused; }
+@keyframes simScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.sim { flex: 0 0 210px; display: flex; flex-direction: column; text-decoration: none; color: var(--ink); border-radius: 14px; overflow: hidden; background: var(--surface); border: 1px solid var(--card-border); transition: transform .3s ease, box-shadow .3s ease; }
+.sim:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(42,26,14,.18); }
+.sim__img { display: block; aspect-ratio: 4 / 5; background: #0d0d0d; overflow: hidden; }
+.sim__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.sim:hover .sim__img img { transform: scale(1.05); }
+.sim__name { padding: .75rem .85rem .25rem; font-family: var(--font-head); font-size: .98rem; line-height: 1.3; }
+.sim__price { padding: 0 .85rem .85rem; color: var(--gold); font-weight: 600; font-size: .95rem; }
+.sim__price small { color: var(--ink); opacity: .55; font-weight: 400; font-size: .72rem; }
+@media (prefers-reduced-motion: reduce) {
+  .similar__viewport.is-moving { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .similar__viewport.is-moving .similar__track { animation: none; }
+}
+@media (max-width: 600px) { .sim { flex-basis: 160px; } }

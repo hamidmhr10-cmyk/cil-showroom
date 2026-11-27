@@ -452,9 +452,13 @@
     var vat = p.unit && /^inc/i.test(p.unit);
     var priceLine = (p.from ? '<small>from</small>' : (p.unit && !vat ? '<small>'+p.unit+'</small>' : '')) ;
     var priceTail = vat ? '<small>'+escapeHTML(p.unit)+'</small>' : '';
-    return '<article class="card '+theme+' reveal" data-cat="'+p.cat+'" data-id="'+p.id+'">' +
+    var page = p.image ? '/product/'+encodeURIComponent(p.id) : '';
+    var detailBtn = page
+      ? '<a class="btn '+btnClass+' btn--sm" href="'+page+'">View Details</a>'
+      : '<button class="btn '+btnClass+' btn--sm" data-detail="'+p.id+'" data-light="'+(light?1:0)+'">View Details</button>';
+    return '<article class="card '+theme+' reveal'+(page ? ' card--link' : '')+'" data-cat="'+p.cat+'" data-id="'+p.id+'"'+(page ? ' data-href="'+page+'"' : '')+'>' +
       '<div class="card__visual" style="background:'+visualBg(p, light)+'">' + productVisual(p, light) + mediaBadge(p) +
-        '<div class="card__overlay"><button class="btn '+btnClass+' btn--sm" data-detail="'+p.id+'" data-light="'+(light?1:0)+'">View Details</button></div>' +
+        '<div class="card__overlay">'+detailBtn+'</div>' +
       '</div>' +
       '<div class="card__body">' +
         '<span class="badge">'+catLabel(p)+'</span>' +
@@ -760,17 +764,40 @@
       lbOpen(list, i < 0 ? 0 : i); return true;
     }
     var box = img.closest(".pdp__media"); if (!box) return false;
-    var imgs = [].slice.call(box.querySelectorAll("img")).map(function(x){ return x.getAttribute("src"); });
+    if (img.closest(".pdp__thumb")) return false;
+    var imgs = [].slice.call(box.querySelectorAll('.pdp__thumb[data-type="img"]')).map(function(x){ return x.getAttribute("data-src"); });
+    if (!imgs.length) imgs = [img.getAttribute("src")];
     var j = imgs.indexOf(img.getAttribute("src"));
     lbOpen(imgs, j < 0 ? 0 : j); return true;
   }
+
+  /* Product page: clicking a thumbnail shows that photo (or the video) in the big frame */
+  function pdpShow(btn) {
+    var stage = document.getElementById("pdpStage"); if (!stage) return;
+    var src = btn.getAttribute("data-src"), alt = btn.getAttribute("data-alt") || "";
+    stage.querySelectorAll("video").forEach(function(v){ try { v.pause(); } catch (x) {} });
+    stage.innerHTML = btn.getAttribute("data-type") === "video"
+      ? '<video src="'+escapeHTML(src)+'" controls autoplay playsinline></video>'
+      : '<img src="'+escapeHTML(src)+'" alt="'+escapeHTML(alt)+'" title="Click to enlarge and zoom">';
+    document.querySelectorAll(".pdp__thumb").forEach(function(t){ t.classList.toggle("is-active", t === btn); });
+  }
+  /* Product cards: a click anywhere on a card with its own page opens that page (buttons/links keep their own job) */
+  document.addEventListener("click", function(e) {
+    var card = e.target.closest(".card--link[data-href]");
+    if (!card || e.defaultPrevented) return;
+    if (e.target.closest("a, button, input, select, textarea, video")) return;
+    if (e.ctrlKey || e.metaKey || e.button === 1) { window.open(card.getAttribute("data-href"), "_blank"); return; }
+    location.href = card.getAttribute("data-href");
+  });
 
   /* delegate clicks for enquire / detail buttons */
   document.addEventListener("click", function(e) {
     var enq = e.target.closest("[data-enquire]");
     var det = e.target.closest("[data-detail]");
     var gt = e.target.closest("[data-gidx],[data-gstep]");
-    var zoomImg = e.target.closest(".gallery__media, .pdp__media img");
+    var pt = e.target.closest(".pdp__thumb");
+    if (pt) { pdpShow(pt); return; }
+    var zoomImg = e.target.closest(".gallery__media, .pdp__stage img");
     if (zoomImg && zoomImg.tagName === "IMG" && !gt && lbFromClick(zoomImg)) return;
     if (gt) {
       var g = gt.closest(".gallery");

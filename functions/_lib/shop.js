@@ -2,7 +2,7 @@
 // Data source of truth: /data/products.json (edited via /admin). Only products that have a real photo get a page.
 
 export const SITE = 'https://lurixa.co.uk';
-export const ASSET_V = '20261127a'; // keep in step with the ?v= used in the HTML pages
+export const ASSET_V = '20261127c'; // keep in step with the ?v= used in the HTML pages
 
 // category key -> landing page slug (must match the generated category pages)
 export const CAT_PAGES = {
@@ -105,9 +105,14 @@ export function renderProductPage(p, type, data) {
   const extra = p.specs && typeof p.specs === 'object' ? Object.keys(p.specs).map(k => [k, p.specs[k]]) : [];
   const specs = [['Product code', p.sku], ['Size', p.dims], ['Power', wattsTxt]].concat(extra, [['Finish', p.finishes], ['Best for', p.rooms], ['Sold', vatIncl ? '' : p.unit]])
     .filter(r => r[1]).map(r => `<div><dt>${r[0]}</dt><dd>${escapeHtml(r[1])}</dd></div>`).join('');
-  const thumbs = images.slice(1).map((src, i) => `<img src="${escapeHtml(src)}" alt="${escapeHtml(alts[i + 1] || p.name)}" width="1600" height="2000" loading="lazy">`).join('');
+  // gallery thumbnails: every photo + the video; small card images are reused for the first two when we have them
+  const small = [p.thumb, p.thumb2];
+  const media = images.map((src, i) => ({ type: 'img', src, alt: alts[i] || p.name, tn: small[i] || src }));
+  if (p.video) media.push({ type: 'video', src: p.video, alt: p.name + ' video', tn: '' });
+  const thumbs = media.length > 1 ? media.map((m, i) => `<button type="button" class="pdp__thumb${i === 0 ? ' is-active' : ''}" data-type="${m.type}" data-src="${escapeHtml(m.src)}" data-alt="${escapeHtml(m.alt)}" aria-label="${m.type === 'video' ? 'Play video' : 'Show photo ' + (i + 1)}">` +
+    (m.type === 'video' ? `<video src="${escapeHtml(m.src)}#t=0.5" muted playsinline preload="metadata"></video><span class="pdp__play" aria-hidden="true">&#9654;</span>` : `<img src="${escapeHtml(m.tn)}" alt="" loading="lazy">`) + `</button>`).join('') : '';
   const feats = Array.isArray(p.features) && p.features.length ? `<ul class="pdp__features">${p.features.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>` : '';
-  const video = p.video ? `<video src="${escapeHtml(p.video)}" controls playsinline preload="metadata" style="margin-top:.8rem"></video>` : '';
+  const similar = renderSimilar(p, type, data);
   const price = p.price ? `<p class="pdp__price">${escapeHtml(p.price)}${p.unit ? `<small>${escapeHtml(p.unit)}</small>` : ''}</p>` : '';
   const showroom = p.showroom ? '<p class="pdp__note">See it lit in our Luton showroom, by appointment.</p>' : '';
   const stock = st ? `<span class="stock stock--${st.cls}">${escapeHtml(st.text)}</span>` : '';
@@ -155,9 +160,8 @@ export function renderProductPage(p, type, data) {
       <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="${type}.html">${TYPE_LABEL[type]}</a><span aria-hidden="true">/</span><a href="${cUrl.slice(1)}.html">${escapeHtml(label)}</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(p.name)}</span></nav>
       <div class="pdp__grid">
         <div class="pdp__media">
-          <img src="${escapeHtml(images[0])}" alt="${escapeHtml(alts[0] || p.name)}" width="1600" height="2000">
+          <div class="pdp__stage" id="pdpStage"><img src="${escapeHtml(images[0])}" alt="${escapeHtml(alts[0] || p.name)}" width="1600" height="2000" title="Click to enlarge and zoom"></div>
           ${thumbs ? `<div class="pdp__thumbs">${thumbs}</div>` : ''}
-          ${video}
         </div>
         <div class="pdp__info">
           <span class="pdp__cat">${escapeHtml(label)}</span>
@@ -176,6 +180,7 @@ export function renderProductPage(p, type, data) {
         </div>
       </div>
     </div>
+    ${similar}
   </main>
 
   <div id="site-footer"></div>
@@ -183,6 +188,29 @@ export function renderProductPage(p, type, data) {
 </body>
 </html>
 `;
+}
+
+// "You may also like": same category first, then the rest of the same section (lighting / furniture); only products with photos
+function pickSimilar(p, type, data, max) {
+  const pool = listPublished(data).filter(x => x.p.id !== p.id);
+  const same = pool.filter(x => x.type === type && x.p.cat === p.cat);
+  const rest = pool.filter(x => x.type === type && x.p.cat !== p.cat);
+  const other = pool.filter(x => x.type !== type);
+  return same.concat(rest, other).slice(0, max).map(x => x.p);
+}
+function renderSimilar(p, type, data) {
+  const list = pickSimilar(p, type, data, 14);
+  if (!list.length) return '';
+  const item = (x, hidden) => `<a class="sim" href="/product/${encodeURIComponent(x.id)}"${hidden ? ' tabindex="-1" aria-hidden="true"' : ''}>` +
+    `<span class="sim__img"><img src="${escapeHtml(x.thumb || x.image)}" alt="${hidden ? '' : escapeHtml(x.name)}" loading="lazy" width="640" height="800"></span>` +
+    `<span class="sim__name">${escapeHtml(x.name)}</span>` +
+    `<span class="sim__price">${escapeHtml(x.price || '')}${x.unit ? ` <small>${escapeHtml(x.unit)}</small>` : ''}</span></a>`;
+  const moving = list.length >= 4;
+  const track = list.map(x => item(x, false)).join('') + (moving ? list.map(x => item(x, true)).join('') : '');
+  return `<section class="similar" aria-labelledby="similarTitle">
+      <div class="container"><h2 id="similarTitle">You may also like</h2></div>
+      <div class="similar__viewport${moving ? ' is-moving' : ''}"><div class="similar__track" style="--sim-dur:${list.length * 4}s">${track}</div></div>
+    </section>`;
 }
 
 export function renderSitemap(data) {
