@@ -1631,12 +1631,13 @@
       "price": "£69",
       "unit": "inc VAT",
       "short": "A ring of rose-pink crystal drops above a frilled glass shade.",
-      "desc": "A pretty, feminine pendant. A ring of rose-pink crystal drops sparkles above a frilled clear-glass shade, and both glow softly when the light is on. A charming finishing touch for a girl’s bedroom, a dressing room or a hallway.",
+      "desc": "A pretty, feminine pendant. A ring of rose-pink crystal drops sparkles above a frilled clear-glass shade, and both glow softly when the light is on. A charming finishing touch for a girl’s bedroom, a dressing room or a hallway. Choose from three light colours, warm, natural or cool white, to suit the mood of the room.",
       "dims": "",
       "finishes": "Pink crystal, clear glass",
       "rooms": "Bedrooms, dressing rooms, hallways",
       "features": [
         "Ring of rose-pink crystal drops",
+        "Switch between 3 light colours: warm, natural or cool white",
         "Frilled clear-glass shade beneath",
         "Glows softly when lit",
         "Hangs on fine wires from a round ceiling plate"
@@ -1656,7 +1657,10 @@
         "Pink Crystal Ring Pendant with Glass Shade switched off, another view"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "3 colours: warm white, natural white and cool white"
+      }
     },
     {
       "id": "crystal-multi-ring-led-chandelier-jb-01",
@@ -1670,12 +1674,13 @@
       "price": "£194",
       "unit": "inc VAT",
       "short": "Interlocking rings edged in sparkling crystal, lit by integrated LED.",
-      "desc": "Several rings of crystal-edged light are set at different angles, so the chandelier looks different from every side of the room. Integrated LED lights each ring from within, and the crystal edging throws a soft sparkle across the ceiling. A real statement for a double-height hallway, a living room or over a dining table.",
+      "desc": "Several rings of crystal-edged light are set at different angles, so the chandelier looks different from every side of the room. Integrated LED lights each ring from within, and the crystal edging throws a soft sparkle across the ceiling. A real statement for a double-height hallway, a living room or over a dining table. Choose from three light colours, warm, natural or cool white, to suit the mood of the room.",
       "dims": "",
       "finishes": "White with crystal",
       "rooms": "Hallways, living rooms, dining rooms",
       "features": [
         "Interlocking rings at different angles",
+        "Switch between 3 light colours: warm, natural or cool white",
         "Edged in sparkling crystal",
         "Integrated LED in every ring",
         "Statement size for hallways and living rooms"
@@ -1695,7 +1700,10 @@
         "Crystal Multi-Ring LED Chandelier switched off, another view"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "3 colours: warm white, natural white and cool white"
+      }
     },
     {
       "id": "crystal-ring-led-pendant-with-inner-halo-jb-03",
@@ -1709,15 +1717,15 @@
       "price": "£104",
       "unit": "inc VAT",
       "short": "A crystal-trimmed ring with a smooth inner halo of LED light.",
-      "desc": "A crystal-trimmed outer ring frames a smooth inner halo of LED light, with a small crystal drum at the centre. Lit, the two rings glow together for a soft, layered look; unlit, the crystal still catches the light. Elegant in a bedroom, a hallway or a dining room.",
+      "desc": "A crystal-trimmed outer ring frames a smooth inner halo of LED light, with a small crystal drum at the centre. Lit, the two rings glow together for a soft, layered look; unlit, the crystal still catches the light. Elegant in a bedroom, a hallway or a dining room. Choose from three light colours, warm, natural or cool white, to suit the mood of the room.",
       "dims": "",
       "finishes": "White with crystal",
       "rooms": "Bedrooms, hallways, dining rooms",
       "features": [
         "Crystal-trimmed outer ring",
+        "Switch between 3 light colours: warm, natural or cool white",
         "Smooth inner halo of LED light",
-        "Small crystal drum at the centre",
-        "Integrated LED"
+        "Small crystal drum at the centre"
       ],
       "image": "/images/products/jb-03-1.webp",
       "gallery": [
@@ -1734,7 +1742,10 @@
         "Crystal Ring LED Pendant with Inner Halo switched off, another view"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "3 colours: warm white, natural white and cool white"
+      }
     },
     {
       "id": "black-and-crystal-3-ring-led-chandelier-jb-02",
@@ -1748,15 +1759,15 @@
       "price": "£314",
       "unit": "inc VAT",
       "short": "Three wide crystal-filled rings edged in black, set at bold angles.",
-      "desc": "Three wide rings, filled with crystal-effect light and edged in black, cross at bold angles for a dramatic, contemporary centrepiece. Integrated LED makes each band glow evenly from end to end. Made for open-plan living rooms, high ceilings and stairwells.",
+      "desc": "Three wide rings, filled with crystal-effect light and edged in black, cross at bold angles for a dramatic, contemporary centrepiece. Integrated LED makes each band glow evenly from end to end. Made for open-plan living rooms, high ceilings and stairwells. Choose from three light colours, warm, natural or cool white, to suit the mood of the room.",
       "dims": "",
       "finishes": "Black with crystal effect",
       "rooms": "Living rooms, stairwells, high ceilings",
       "features": [
         "Three wide rings set at bold angles",
+        "Switch between 3 light colours: warm, natural or cool white",
         "Crystal-effect bands that glow evenly",
         "Black edging for a modern contrast",
-        "Integrated LED",
         "Statement size for high ceilings"
       ],
       "image": "/images/products/jb-02-1.webp",
@@ -1772,7 +1783,10 @@
         "Black and Crystal 3-Ring LED Chandelier switched off"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "3 colours: warm white, natural white and cool white"
+      }
     },
     {
       "id": "black-ribbon-led-pendant-with-glass-shades-jb-06",
@@ -1786,15 +1800,15 @@
       "price": "£124",
       "unit": "inc VAT",
       "short": "Curling black LED ribbons around three textured glass shades.",
-      "desc": "Curling black ribbons with a glowing LED edge loop around three textured glass shades, each softly lit from within. Playful and modern, it brings a sculptural touch to a dining table, a kitchen or a living room.",
+      "desc": "Curling black ribbons with a glowing LED edge loop around three textured glass shades, each softly lit from within. Playful and modern, it brings a sculptural touch to a dining table, a kitchen or a living room. Choose from three light colours, warm, natural or cool white, to suit the mood of the room.",
       "dims": "",
       "finishes": "Black with textured glass",
       "rooms": "Dining rooms, kitchens, living rooms",
       "features": [
         "Curling black ribbons with glowing LED edges",
+        "Switch between 3 light colours: warm, natural or cool white",
         "Three textured glass shades",
-        "Sculptural, modern design",
-        "Integrated LED"
+        "Sculptural, modern design"
       ],
       "image": "/images/products/jb-06-1.webp",
       "gallery": [
@@ -1809,7 +1823,10 @@
         "Black Ribbon LED Pendant with Glass Shades switched off"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "3 colours: warm white, natural white and cool white"
+      }
     },
     {
       "id": "orbit-crystal-led-chandelier-jb-08",
@@ -1823,15 +1840,15 @@
       "price": "£159",
       "unit": "inc VAT",
       "short": "Three interlocking rings in orbit around a crystal ball centre.",
-      "desc": "Three rings orbit around a sparkling crystal ball, each with a black outer edge and a glowing crystal-effect inner band. It looks different from every angle and makes a striking centrepiece in a hallway, living room or stairwell.",
+      "desc": "Three rings orbit around a sparkling crystal ball, each with a black outer edge and a glowing crystal-effect inner band. It looks different from every angle and makes a striking centrepiece in a hallway, living room or stairwell. Choose from three light colours, warm, natural or cool white, to suit the mood of the room.",
       "dims": "",
       "finishes": "Black with crystal effect",
       "rooms": "Hallways, living rooms, stairwells",
       "features": [
         "Three interlocking rings in orbit",
+        "Switch between 3 light colours: warm, natural or cool white",
         "Crystal ball at the centre",
-        "Black outer edge with a glowing crystal-effect band",
-        "Integrated LED"
+        "Black outer edge with a glowing crystal-effect band"
       ],
       "image": "/images/products/jb-08-1.webp",
       "gallery": [
@@ -1848,7 +1865,10 @@
         "Orbit Crystal LED Chandelier switched off, another view"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "3 colours: warm white, natural white and cool white"
+      }
     },
     {
       "id": "twisted-ribbon-led-chandelier-jb-04",
@@ -1862,15 +1882,15 @@
       "price": "£139",
       "unit": "inc VAT",
       "short": "A long sweeping arc wrapped in coils of glowing LED ribbon.",
-      "desc": "A long, sweeping arc wrapped in coils of glowing ribbon, with a black outer edge and a bright LED face. Its linear shape makes it ideal above a dining table or kitchen island, where it lights the length of the table and becomes the talking point of the room.",
+      "desc": "A long, sweeping arc wrapped in coils of glowing ribbon, with a black outer edge and a bright LED face. Its linear shape makes it ideal above a dining table or kitchen island, where it lights the length of the table and becomes the talking point of the room. Choose from three light colours, warm, natural or cool white, to suit the mood of the room.",
       "dims": "",
       "finishes": "Black and white",
       "rooms": "Dining rooms, kitchen islands, living rooms",
       "features": [
         "Long sweeping arc with coiled ribbons",
+        "Switch between 3 light colours: warm, natural or cool white",
         "Black outer edge, glowing LED face",
-        "Linear shape for dining tables and islands",
-        "Integrated LED"
+        "Linear shape for dining tables and islands"
       ],
       "image": "/images/products/jb-04-1.webp",
       "gallery": [
@@ -1883,7 +1903,10 @@
         "Twisted Ribbon LED Chandelier switched on, another view"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "3 colours: warm white, natural white and cool white"
+      }
     }
   ],
   "furniture": [
