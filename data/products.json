@@ -51,18 +51,6 @@
   },
   "lighting": [
     {
-      "id": "l4",
-      "cat": "chandeliers",
-      "art": "sputnik",
-      "image": "",
-      "name": "Royal Sputnik Burst",
-      "price": "£395",
-      "desc": "Mid-century modern starburst, 18 arms, E14 bulbs in brushed gold — a true statement piece.",
-      "dims": "75cm diameter",
-      "finishes": "Brushed Gold",
-      "rooms": "Feature Rooms, Hotels"
-    },
-    {
       "id": "l6",
       "cat": "ceiling",
       "art": "saturn",
