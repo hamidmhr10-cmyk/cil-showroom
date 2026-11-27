@@ -63,18 +63,6 @@
       "rooms": "Feature Rooms, Hotels"
     },
     {
-      "id": "l5",
-      "cat": "ceiling",
-      "art": "cloud",
-      "image": "",
-      "name": "Cloud Flush Mount LED",
-      "price": "£89",
-      "desc": "Soft white acrylic cloud-shaped flush fitting. Integrated 24W LED, 4000K, IP44 bathroom safe.",
-      "dims": "Surface mount",
-      "finishes": "White Acrylic",
-      "rooms": "Bedrooms, Bathrooms"
-    },
-    {
       "id": "l6",
       "cat": "ceiling",
       "art": "saturn",
