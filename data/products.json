@@ -56,7 +56,7 @@
       "cat": "fan",
       "art": "fan",
       "price": "£64",
-      "desc": "A round fan light with a crisp black trim. A wide glowing disc lights the room, and the fan is tucked into a slim central panel with no exposed blades, so you get good light and a cooling breeze from one fitting. The same design is also available in white or with a wood-effect trim.",
+      "desc": "A round fan light with a crisp black trim. A wide glowing disc lights the room, and the fan is tucked into a slim central panel with no exposed blades, so you get good light and a cooling breeze from one fitting. The same design is also available in white or with a wood-effect trim. Everything works from the remote control: dim the light from low to high, move the light colour anywhere from warm white to cool white, and choose from six fan speeds.",
       "dims": "53 x 53 x 15 cm (boxed size)",
       "finishes": "Black",
       "rooms": "Bedrooms, living rooms, kitchens",
@@ -76,6 +76,10 @@
       "short": "Round fan light with a crisp black trim, a wide glowing disc and a built-in fan.",
       "features": [
         "Light and fan in one ceiling fitting",
+        "Remote control for the light and the fan",
+        "Dimmable light, from low to high",
+        "Light colour adjusts from warm white to cool white",
+        "6 fan speeds",
         "Wide round light panel with a black trim",
         "Built-in fan in a slim central panel, no exposed blades",
         "70W",
@@ -87,7 +91,13 @@
       ],
       "showroom": true,
       "thumb": "/images/products/ym-05-a-card.webp",
-      "thumb2": "/images/products/ym-05-b-card.webp"
+      "thumb2": "/images/products/ym-05-b-card.webp",
+      "specs": {
+        "Light colour": "Adjustable from warm white to cool white",
+        "Brightness": "Dimmable, low to high",
+        "Fan speeds": "6 speeds",
+        "Control": "Remote control"
+      }
     },
     {
       "id": "lmwdj59bq",
@@ -173,7 +183,7 @@
       "cat": "fan",
       "art": "fan",
       "price": "£64",
-      "desc": "A round fan light with a warm wood-effect trim that softens a modern room. A wide glowing disc lights the space, and the fan is tucked into a slim central panel with no exposed blades, giving you light and a cooling breeze from one fitting. Also available in white or black.",
+      "desc": "A round fan light with a warm wood-effect trim that softens a modern room. A wide glowing disc lights the space, and the fan is tucked into a slim central panel with no exposed blades, giving you light and a cooling breeze from one fitting. Also available in white or black. Everything works from the remote control: dim the light from low to high, move the light colour anywhere from warm white to cool white, and choose from six fan speeds.",
       "dims": "53 x 53 x 15 cm (boxed size)",
       "finishes": "Wood effect",
       "rooms": "Bedrooms, living rooms, kitchens",
@@ -190,6 +200,10 @@
       "short": "Round fan light with a warm wood-effect trim, a wide glowing disc and a built-in fan.",
       "features": [
         "Light and fan in one ceiling fitting",
+        "Remote control for the light and the fan",
+        "Dimmable light, from low to high",
+        "Light colour adjusts from warm white to cool white",
+        "6 fan speeds",
         "Warm wood-effect trim",
         "Built-in fan in a slim central panel, no exposed blades",
         "70W",
@@ -199,7 +213,13 @@
         "Round Wood-Effect Ceiling Fan Light switched on"
       ],
       "showroom": true,
-      "thumb": "/images/products/ym-04-a-card.webp"
+      "thumb": "/images/products/ym-04-a-card.webp",
+      "specs": {
+        "Light colour": "Adjustable from warm white to cool white",
+        "Brightness": "Dimmable, low to high",
+        "Fan speeds": "6 speeds",
+        "Control": "Remote control"
+      }
     },
     {
       "id": "black-square-led-outdoor-wall-light-jl-02",
@@ -1334,12 +1354,16 @@
       "price": "£59",
       "unit": "inc VAT",
       "short": "Round fan light with a sky-blue centre, a glowing halo ring and an enclosed fan.",
-      "desc": "Cool air and soft light from a single fitting. A slim halo ring glows around a calm sky-blue centre, while the fan sits behind a grille with no exposed blades, so it suits children’s bedrooms and playrooms as well as grown-up spaces. It sits close to the ceiling for a neat, uncluttered look.",
+      "desc": "Cool air and soft light from a single fitting. A slim halo ring glows around a calm sky-blue centre, while the fan sits behind a grille with no exposed blades, so it suits children’s bedrooms and playrooms as well as grown-up spaces. It sits close to the ceiling for a neat, uncluttered look. Everything works from the remote control: dim the light from low to high, move the light colour anywhere from warm white to cool white, and choose from six fan speeds.",
       "dims": "",
       "finishes": "Blue and white",
       "rooms": "Children’s bedrooms, nurseries, playrooms",
       "features": [
         "Light and fan in one ceiling fitting",
+        "Remote control for the light and the fan",
+        "Dimmable light, from low to high",
+        "Light colour adjusts from warm white to cool white",
+        "6 fan speeds",
         "Fan enclosed behind a grille, no exposed blades",
         "Glowing halo ring around a sky-blue centre",
         "Sits close to the ceiling",
@@ -1357,7 +1381,13 @@
         "Sky Blue Round Ceiling Fan Light switched off"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "Adjustable from warm white to cool white",
+        "Brightness": "Dimmable, low to high",
+        "Fan speeds": "6 speeds",
+        "Control": "Remote control"
+      }
     },
     {
       "id": "blush-pink-round-ceiling-fan-light-ym-08",
@@ -1371,12 +1401,16 @@
       "price": "£59",
       "unit": "inc VAT",
       "short": "Round fan light with a blush-pink centre, a glowing halo ring and an enclosed fan.",
-      "desc": "Cool air and soft light from a single fitting. A slim halo ring glows around a warm blush-pink centre, while the fan sits behind a grille with no exposed blades, making it a lovely choice for a child’s bedroom or nursery. It sits close to the ceiling for a neat, uncluttered look.",
+      "desc": "Cool air and soft light from a single fitting. A slim halo ring glows around a warm blush-pink centre, while the fan sits behind a grille with no exposed blades, making it a lovely choice for a child’s bedroom or nursery. It sits close to the ceiling for a neat, uncluttered look. Everything works from the remote control: dim the light from low to high, move the light colour anywhere from warm white to cool white, and choose from six fan speeds.",
       "dims": "",
       "finishes": "Pink and white",
       "rooms": "Children’s bedrooms, nurseries, playrooms",
       "features": [
         "Light and fan in one ceiling fitting",
+        "Remote control for the light and the fan",
+        "Dimmable light, from low to high",
+        "Light colour adjusts from warm white to cool white",
+        "6 fan speeds",
         "Fan enclosed behind a grille, no exposed blades",
         "Glowing halo ring around a blush-pink centre",
         "Sits close to the ceiling",
@@ -1394,7 +1428,13 @@
         "Blush Pink Round Ceiling Fan Light switched off"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "Adjustable from warm white to cool white",
+        "Brightness": "Dimmable, low to high",
+        "Fan speeds": "6 speeds",
+        "Control": "Remote control"
+      }
     },
     {
       "id": "pink-cloud-bunny-ceiling-fan-light-ym-09",
@@ -1408,12 +1448,16 @@
       "price": "£59",
       "unit": "inc VAT",
       "short": "A sleeping bunny on a pink cloud inside a glowing ring, with a built-in fan.",
-      "desc": "A playful centrepiece for a child’s room. A sleeping bunny curls up on a soft pink cloud inside a glowing ring, with a built-in fan tucked into the base. It lights the room and keeps the air moving on warm nights, with no exposed blades.",
+      "desc": "A playful centrepiece for a child’s room. A sleeping bunny curls up on a soft pink cloud inside a glowing ring, with a built-in fan tucked into the base. It lights the room and keeps the air moving on warm nights, with no exposed blades. Everything works from the remote control: dim the light from low to high, move the light colour anywhere from warm white to cool white, and choose from six fan speeds.",
       "dims": "",
       "finishes": "Pink and white",
       "rooms": "Children’s bedrooms, nurseries",
       "features": [
         "Light and fan in one ceiling fitting",
+        "Remote control for the light and the fan",
+        "Dimmable light, from low to high",
+        "Light colour adjusts from warm white to cool white",
+        "6 fan speeds",
         "Sleeping bunny on a pink cloud",
         "Glowing outer ring",
         "Built-in fan, no exposed blades",
@@ -1431,7 +1475,13 @@
         "Pink Cloud Bunny Ceiling Fan Light switched off"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "Adjustable from warm white to cool white",
+        "Brightness": "Dimmable, low to high",
+        "Fan speeds": "6 speeds",
+        "Control": "Remote control"
+      }
     },
     {
       "id": "starry-square-ceiling-fan-light-ym-10",
@@ -1445,12 +1495,16 @@
       "price": "£59",
       "unit": "inc VAT",
       "short": "Square fan light with a scatter of stars, a glowing edge and touch controls.",
-      "desc": "A square fan light with a scatter of stars that sparkle when the light is on. The fan sits in a neat central housing with no exposed blades, a row of touch controls sits on the panel, and the soft-edged frame glows all the way round.",
+      "desc": "A square fan light with a scatter of stars that sparkle when the light is on. The fan sits in a neat central housing with no exposed blades, a row of touch controls sits on the panel, and the soft-edged frame glows all the way round. Everything works from the remote control: dim the light from low to high, move the light colour anywhere from warm white to cool white, and choose from six fan speeds.",
       "dims": "",
       "finishes": "White with grey trim",
       "rooms": "Bedrooms, children’s rooms, living rooms",
       "features": [
         "Light and fan in one ceiling fitting",
+        "Remote control for the light and the fan",
+        "Dimmable light, from low to high",
+        "Light colour adjusts from warm white to cool white",
+        "6 fan speeds",
         "Star pattern that lights up",
         "Touch control panel on the fitting",
         "Fan enclosed in the centre, no exposed blades",
@@ -1468,7 +1522,13 @@
         "Starry Square Ceiling Fan Light switched off"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "Adjustable from warm white to cool white",
+        "Brightness": "Dimmable, low to high",
+        "Fan speeds": "6 speeds",
+        "Control": "Remote control"
+      }
     },
     {
       "id": "white-halo-ceiling-fan-light-ym-13",
@@ -1482,12 +1542,16 @@
       "price": "£64",
       "unit": "inc VAT",
       "short": "Rounded white fan light with two curved light windows and an enclosed fan.",
-      "desc": "Soft, rounded lines and a deep white frame give this fan light a calm, modern look. Two curved light windows sit either side of the enclosed fan, and the whole frame glows when the light is on. A fan and a light in one fitting, with no exposed blades.",
+      "desc": "Soft, rounded lines and a deep white frame give this fan light a calm, modern look. Two curved light windows sit either side of the enclosed fan, and the whole frame glows when the light is on. A fan and a light in one fitting, with no exposed blades. Everything works from the remote control: dim the light from low to high, move the light colour anywhere from warm white to cool white, and choose from six fan speeds.",
       "dims": "",
       "finishes": "White",
       "rooms": "Bedrooms, living rooms, home offices",
       "features": [
         "Light and fan in one ceiling fitting",
+        "Remote control for the light and the fan",
+        "Dimmable light, from low to high",
+        "Light colour adjusts from warm white to cool white",
+        "6 fan speeds",
         "Deep rounded white frame that glows",
         "Two curved light windows",
         "Fan enclosed behind a grille, no exposed blades",
@@ -1505,7 +1569,13 @@
         "White Halo Ceiling Fan Light switched off"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "Adjustable from warm white to cool white",
+        "Brightness": "Dimmable, low to high",
+        "Fan speeds": "6 speeds",
+        "Control": "Remote control"
+      }
     },
     {
       "id": "round-white-ceiling-fan-light-ym-01",
@@ -1519,13 +1589,17 @@
       "price": "£59",
       "unit": "inc VAT",
       "short": "Clean, round white fan light with a wide glowing disc and a built-in fan.",
-      "desc": "A clean, round fan light in white. A wide glowing disc lights the room, and the fan is tucked into a slim central panel with no exposed blades. The same design is also available with a black or wood-effect trim.",
+      "desc": "A clean, round fan light in white. A wide glowing disc lights the room, and the fan is tucked into a slim central panel with no exposed blades. The same design is also available with a black or wood-effect trim. Everything works from the remote control: dim the light from low to high, move the light colour anywhere from warm white to cool white, and choose from six fan speeds.",
       "dims": "53 x 53 x 15 cm (boxed size)",
       "finishes": "White",
       "rooms": "Bedrooms, living rooms, kitchens",
       "watts": "70W",
       "features": [
         "Light and fan in one ceiling fitting",
+        "Remote control for the light and the fan",
+        "Dimmable light, from low to high",
+        "Light colour adjusts from warm white to cool white",
+        "6 fan speeds",
         "Wide round light panel",
         "Built-in fan in a slim central panel, no exposed blades",
         "White finish",
@@ -1543,7 +1617,13 @@
         "Round White Ceiling Fan Light switched off"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "Adjustable from warm white to cool white",
+        "Brightness": "Dimmable, low to high",
+        "Fan speeds": "6 speeds",
+        "Control": "Remote control"
+      }
     },
     {
       "id": "large-rectangular-ceiling-fan-light-ym-15",
@@ -1557,12 +1637,16 @@
       "price": "£124",
       "unit": "inc VAT",
       "short": "Our largest fan light: layered glowing frames around a long enclosed fan.",
-      "desc": "Our largest fan light, made for bigger rooms. Layered rectangular frames glow around a long central fan, giving a bold, architectural look on the ceiling, while the fan keeps the air moving with no exposed blades.",
+      "desc": "Our largest fan light, made for bigger rooms. Layered rectangular frames glow around a long central fan, giving a bold, architectural look on the ceiling, while the fan keeps the air moving with no exposed blades. Everything works from the remote control: dim the light from low to high, move the light colour anywhere from warm white to cool white, and choose from six fan speeds.",
       "dims": "",
       "finishes": "White",
       "rooms": "Living rooms, open-plan spaces, large bedrooms",
       "features": [
         "Light and fan in one ceiling fitting",
+        "Remote control for the light and the fan",
+        "Dimmable light, from low to high",
+        "Light colour adjusts from warm white to cool white",
+        "6 fan speeds",
         "Our largest fan light",
         "Layered rectangular light frames",
         "Long enclosed fan, no exposed blades",
@@ -1580,7 +1664,13 @@
         "Large Rectangular Ceiling Fan Light switched off"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "Adjustable from warm white to cool white",
+        "Brightness": "Dimmable, low to high",
+        "Fan speeds": "6 speeds",
+        "Control": "Remote control"
+      }
     },
     {
       "id": "square-white-twin-panel-ceiling-fan-light-ym-03",
@@ -1594,12 +1684,16 @@
       "price": "£59",
       "unit": "inc VAT",
       "short": "Crisp square fan light with two wide light panels and a slim central fan.",
-      "desc": "A crisp, square fan light with two wide light panels either side of a slim central fan. Clean and understated, it suits modern bedrooms, studies and kitchens, giving you light and a gentle breeze from one fitting with no exposed blades.",
+      "desc": "A crisp, square fan light with two wide light panels either side of a slim central fan. Clean and understated, it suits modern bedrooms, studies and kitchens, giving you light and a gentle breeze from one fitting with no exposed blades. Everything works from the remote control: dim the light from low to high, move the light colour anywhere from warm white to cool white, and choose from six fan speeds.",
       "dims": "",
       "finishes": "White",
       "rooms": "Bedrooms, studies, kitchens",
       "features": [
         "Light and fan in one ceiling fitting",
+        "Remote control for the light and the fan",
+        "Dimmable light, from low to high",
+        "Light colour adjusts from warm white to cool white",
+        "6 fan speeds",
         "Two wide light panels",
         "Slim central fan, no exposed blades",
         "Square white design",
@@ -1617,7 +1711,13 @@
         "Square White Twin-Panel Ceiling Fan Light switched off"
       ],
       "stock": 10,
-      "showroom": true
+      "showroom": true,
+      "specs": {
+        "Light colour": "Adjustable from warm white to cool white",
+        "Brightness": "Dimmable, low to high",
+        "Fan speeds": "6 speeds",
+        "Control": "Remote control"
+      }
     },
     {
       "id": "pink-crystal-ring-pendant-with-glass-shade-jb-05",
