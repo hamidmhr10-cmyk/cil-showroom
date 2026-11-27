@@ -51,18 +51,6 @@
   },
   "lighting": [
     {
-      "id": "l6",
-      "cat": "ceiling",
-      "art": "saturn",
-      "image": "",
-      "name": "Saturn Ring Semi-Flush",
-      "price": "£145",
-      "desc": "Concentric rings in brushed nickel with a warm integrated LED strip. 36W, dimmable, 3000K.",
-      "dims": "Semi-flush",
-      "finishes": "Brushed Nickel",
-      "rooms": "Living Rooms, Hallways"
-    },
-    {
       "id": "l7",
       "cat": "ceiling",
       "art": "hexagon",
