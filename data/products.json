@@ -100,18 +100,6 @@
       "rooms": "Loft Spaces, Restaurants"
     },
     {
-      "id": "l15",
-      "cat": "fan",
-      "art": "fan",
-      "image": "",
-      "name": "Tropical Rattan Fan Light",
-      "price": "£195",
-      "desc": "42-inch fan with natural rattan blade covers, Boho style, warm LED integrated. Remote control.",
-      "dims": "42-inch span",
-      "finishes": "Natural Rattan",
-      "rooms": "Bedrooms, Conservatories"
-    },
-    {
       "id": "l16",
       "cat": "fan",
       "art": "fan",
