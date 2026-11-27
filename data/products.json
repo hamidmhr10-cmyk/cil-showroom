@@ -1618,6 +1618,272 @@
       ],
       "stock": 10,
       "showroom": true
+    },
+    {
+      "id": "pink-crystal-ring-pendant-with-glass-shade-jb-05",
+      "sku": "JB-05",
+      "cat": "chandeliers",
+      "art": "chandelier",
+      "name": "Pink Crystal Ring Pendant with Glass Shade",
+      "h1": "Pink Crystal Ring LED Pendant with Frilled Glass Shade",
+      "seo_title": "Pink Crystal Ring Pendant with Glass Shade | LURIXA Luton",
+      "meta": "Pink crystal ring pendant light with a frilled glass shade, perfect for bedrooms and dressing rooms. £69 inc VAT. See it lit in our Luton showroom.",
+      "price": "£69",
+      "unit": "inc VAT",
+      "short": "A ring of rose-pink crystal drops above a frilled glass shade.",
+      "desc": "A pretty, feminine pendant. A ring of rose-pink crystal drops sparkles above a frilled clear-glass shade, and both glow softly when the light is on. A charming finishing touch for a girl’s bedroom, a dressing room or a hallway.",
+      "dims": "",
+      "finishes": "Pink crystal, clear glass",
+      "rooms": "Bedrooms, dressing rooms, hallways",
+      "features": [
+        "Ring of rose-pink crystal drops",
+        "Frilled clear-glass shade beneath",
+        "Glows softly when lit",
+        "Hangs on fine wires from a round ceiling plate"
+      ],
+      "image": "/images/products/jb-05-1.webp",
+      "gallery": [
+        "/images/products/jb-05-2.webp",
+        "/images/products/jb-05-3.webp",
+        "/images/products/jb-05-4.webp"
+      ],
+      "thumb": "/images/products/jb-05-card.webp",
+      "thumb2": "/images/products/jb-05-card2.webp",
+      "alt": [
+        "Pink Crystal Ring Pendant with Glass Shade switched on",
+        "Pink Crystal Ring Pendant with Glass Shade switched on, another view",
+        "Pink Crystal Ring Pendant with Glass Shade switched off",
+        "Pink Crystal Ring Pendant with Glass Shade switched off, another view"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "crystal-multi-ring-led-chandelier-jb-01",
+      "sku": "JB-01",
+      "cat": "chandeliers",
+      "art": "chandelier",
+      "name": "Crystal Multi-Ring LED Chandelier",
+      "h1": "Crystal Multi-Ring LED Chandelier with Interlocking Rings",
+      "seo_title": "Crystal Multi-Ring LED Chandelier | LURIXA Luton",
+      "meta": "Crystal multi-ring LED chandelier with interlocking crystal-edged rings, a statement for hallways. £194 inc VAT. See it lit in our Luton showroom.",
+      "price": "£194",
+      "unit": "inc VAT",
+      "short": "Interlocking rings edged in sparkling crystal, lit by integrated LED.",
+      "desc": "Several rings of crystal-edged light are set at different angles, so the chandelier looks different from every side of the room. Integrated LED lights each ring from within, and the crystal edging throws a soft sparkle across the ceiling. A real statement for a double-height hallway, a living room or over a dining table.",
+      "dims": "",
+      "finishes": "White with crystal",
+      "rooms": "Hallways, living rooms, dining rooms",
+      "features": [
+        "Interlocking rings at different angles",
+        "Edged in sparkling crystal",
+        "Integrated LED in every ring",
+        "Statement size for hallways and living rooms"
+      ],
+      "image": "/images/products/jb-01-1.webp",
+      "gallery": [
+        "/images/products/jb-01-2.webp",
+        "/images/products/jb-01-3.webp",
+        "/images/products/jb-01-4.webp"
+      ],
+      "thumb": "/images/products/jb-01-card.webp",
+      "thumb2": "/images/products/jb-01-card2.webp",
+      "alt": [
+        "Crystal Multi-Ring LED Chandelier switched on",
+        "Crystal Multi-Ring LED Chandelier switched on, another view",
+        "Crystal Multi-Ring LED Chandelier switched off",
+        "Crystal Multi-Ring LED Chandelier switched off, another view"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "crystal-ring-led-pendant-with-inner-halo-jb-03",
+      "sku": "JB-03",
+      "cat": "chandeliers",
+      "art": "chandelier",
+      "name": "Crystal Ring LED Pendant with Inner Halo",
+      "h1": "Crystal Ring LED Pendant with Inner Halo Ring",
+      "seo_title": "Crystal Ring LED Pendant with Inner Halo | LURIXA Luton",
+      "meta": "Crystal ring LED pendant with an inner halo ring and crystal centre. Elegant for bedrooms and hallways. £104 inc VAT. See it lit in our Luton showroom.",
+      "price": "£104",
+      "unit": "inc VAT",
+      "short": "A crystal-trimmed ring with a smooth inner halo of LED light.",
+      "desc": "A crystal-trimmed outer ring frames a smooth inner halo of LED light, with a small crystal drum at the centre. Lit, the two rings glow together for a soft, layered look; unlit, the crystal still catches the light. Elegant in a bedroom, a hallway or a dining room.",
+      "dims": "",
+      "finishes": "White with crystal",
+      "rooms": "Bedrooms, hallways, dining rooms",
+      "features": [
+        "Crystal-trimmed outer ring",
+        "Smooth inner halo of LED light",
+        "Small crystal drum at the centre",
+        "Integrated LED"
+      ],
+      "image": "/images/products/jb-03-1.webp",
+      "gallery": [
+        "/images/products/jb-03-2.webp",
+        "/images/products/jb-03-3.webp",
+        "/images/products/jb-03-4.webp"
+      ],
+      "thumb": "/images/products/jb-03-card.webp",
+      "thumb2": "/images/products/jb-03-card2.webp",
+      "alt": [
+        "Crystal Ring LED Pendant with Inner Halo switched on",
+        "Crystal Ring LED Pendant with Inner Halo switched on, another view",
+        "Crystal Ring LED Pendant with Inner Halo switched off",
+        "Crystal Ring LED Pendant with Inner Halo switched off, another view"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "black-and-crystal-3-ring-led-chandelier-jb-02",
+      "sku": "JB-02",
+      "cat": "chandeliers",
+      "art": "chandelier",
+      "name": "Black and Crystal 3-Ring LED Chandelier",
+      "h1": "Black and Crystal 3-Ring LED Chandelier",
+      "seo_title": "Black and Crystal 3-Ring LED Chandelier | LURIXA Luton",
+      "meta": "Black and crystal 3-ring LED chandelier with wide glowing bands at bold angles, for high ceilings. £314 inc VAT. See it lit in our Luton showroom.",
+      "price": "£314",
+      "unit": "inc VAT",
+      "short": "Three wide crystal-filled rings edged in black, set at bold angles.",
+      "desc": "Three wide rings, filled with crystal-effect light and edged in black, cross at bold angles for a dramatic, contemporary centrepiece. Integrated LED makes each band glow evenly from end to end. Made for open-plan living rooms, high ceilings and stairwells.",
+      "dims": "",
+      "finishes": "Black with crystal effect",
+      "rooms": "Living rooms, stairwells, high ceilings",
+      "features": [
+        "Three wide rings set at bold angles",
+        "Crystal-effect bands that glow evenly",
+        "Black edging for a modern contrast",
+        "Integrated LED",
+        "Statement size for high ceilings"
+      ],
+      "image": "/images/products/jb-02-1.webp",
+      "gallery": [
+        "/images/products/jb-02-2.webp",
+        "/images/products/jb-02-3.webp"
+      ],
+      "thumb": "/images/products/jb-02-card.webp",
+      "thumb2": "/images/products/jb-02-card2.webp",
+      "alt": [
+        "Black and Crystal 3-Ring LED Chandelier switched on",
+        "Black and Crystal 3-Ring LED Chandelier switched on, another view",
+        "Black and Crystal 3-Ring LED Chandelier switched off"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "black-ribbon-led-pendant-with-glass-shades-jb-06",
+      "sku": "JB-06",
+      "cat": "chandeliers",
+      "art": "chandelier",
+      "name": "Black Ribbon LED Pendant with Glass Shades",
+      "h1": "Black Ribbon LED Pendant with Textured Glass Shades",
+      "seo_title": "Black Ribbon LED Pendant with Glass Shades | LURIXA Luton",
+      "meta": "Black ribbon LED pendant with three textured glass shades, a sculptural light for dining rooms and kitchens. £124 inc VAT. See it lit in our Luton showroom.",
+      "price": "£124",
+      "unit": "inc VAT",
+      "short": "Curling black LED ribbons around three textured glass shades.",
+      "desc": "Curling black ribbons with a glowing LED edge loop around three textured glass shades, each softly lit from within. Playful and modern, it brings a sculptural touch to a dining table, a kitchen or a living room.",
+      "dims": "",
+      "finishes": "Black with textured glass",
+      "rooms": "Dining rooms, kitchens, living rooms",
+      "features": [
+        "Curling black ribbons with glowing LED edges",
+        "Three textured glass shades",
+        "Sculptural, modern design",
+        "Integrated LED"
+      ],
+      "image": "/images/products/jb-06-1.webp",
+      "gallery": [
+        "/images/products/jb-06-2.webp",
+        "/images/products/jb-06-3.webp"
+      ],
+      "thumb": "/images/products/jb-06-card.webp",
+      "thumb2": "/images/products/jb-06-card2.webp",
+      "alt": [
+        "Black Ribbon LED Pendant with Glass Shades switched on",
+        "Black Ribbon LED Pendant with Glass Shades switched on, another view",
+        "Black Ribbon LED Pendant with Glass Shades switched off"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "orbit-crystal-led-chandelier-jb-08",
+      "sku": "JB-08",
+      "cat": "chandeliers",
+      "art": "chandelier",
+      "name": "Orbit Crystal LED Chandelier",
+      "h1": "Orbit Crystal LED Chandelier with Three Interlocking Rings",
+      "seo_title": "Orbit Crystal LED Chandelier | LURIXA Luton",
+      "meta": "Orbit crystal LED chandelier with three interlocking rings around a crystal ball. A striking centrepiece. £159 inc VAT. See it lit in our Luton showroom.",
+      "price": "£159",
+      "unit": "inc VAT",
+      "short": "Three interlocking rings in orbit around a crystal ball centre.",
+      "desc": "Three rings orbit around a sparkling crystal ball, each with a black outer edge and a glowing crystal-effect inner band. It looks different from every angle and makes a striking centrepiece in a hallway, living room or stairwell.",
+      "dims": "",
+      "finishes": "Black with crystal effect",
+      "rooms": "Hallways, living rooms, stairwells",
+      "features": [
+        "Three interlocking rings in orbit",
+        "Crystal ball at the centre",
+        "Black outer edge with a glowing crystal-effect band",
+        "Integrated LED"
+      ],
+      "image": "/images/products/jb-08-1.webp",
+      "gallery": [
+        "/images/products/jb-08-2.webp",
+        "/images/products/jb-08-3.webp",
+        "/images/products/jb-08-4.webp"
+      ],
+      "thumb": "/images/products/jb-08-card.webp",
+      "thumb2": "/images/products/jb-08-card2.webp",
+      "alt": [
+        "Orbit Crystal LED Chandelier switched on",
+        "Orbit Crystal LED Chandelier switched on, another view",
+        "Orbit Crystal LED Chandelier switched off",
+        "Orbit Crystal LED Chandelier switched off, another view"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "twisted-ribbon-led-chandelier-jb-04",
+      "sku": "JB-04",
+      "cat": "chandeliers",
+      "art": "chandelier",
+      "name": "Twisted Ribbon LED Chandelier",
+      "h1": "Twisted Ribbon LED Chandelier for Dining Tables and Islands",
+      "seo_title": "Twisted Ribbon LED Chandelier | LURIXA Luton",
+      "meta": "Twisted ribbon LED chandelier with coiled glowing bands, ideal over dining tables and kitchen islands. £139 inc VAT. See it lit in our Luton showroom.",
+      "price": "£139",
+      "unit": "inc VAT",
+      "short": "A long sweeping arc wrapped in coils of glowing LED ribbon.",
+      "desc": "A long, sweeping arc wrapped in coils of glowing ribbon, with a black outer edge and a bright LED face. Its linear shape makes it ideal above a dining table or kitchen island, where it lights the length of the table and becomes the talking point of the room.",
+      "dims": "",
+      "finishes": "Black and white",
+      "rooms": "Dining rooms, kitchen islands, living rooms",
+      "features": [
+        "Long sweeping arc with coiled ribbons",
+        "Black outer edge, glowing LED face",
+        "Linear shape for dining tables and islands",
+        "Integrated LED"
+      ],
+      "image": "/images/products/jb-04-1.webp",
+      "gallery": [
+        "/images/products/jb-04-2.webp"
+      ],
+      "thumb": "/images/products/jb-04-card.webp",
+      "thumb2": "/images/products/jb-04-card2.webp",
+      "alt": [
+        "Twisted Ribbon LED Chandelier switched on",
+        "Twisted Ribbon LED Chandelier switched on, another view"
+      ],
+      "stock": 10,
+      "showroom": true
     }
   ],
   "furniture": [
