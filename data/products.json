@@ -87,18 +87,6 @@
       "rooms": "Home Offices, Kitchens"
     },
     {
-      "id": "l8",
-      "cat": "ceiling",
-      "art": "cage",
-      "image": "",
-      "name": "Vintage Industrial Cage",
-      "price": "£65",
-      "desc": "Exposed cage fitting with Edison bulb (E27 included) in wrought iron, antique finish.",
-      "dims": "Surface mount",
-      "finishes": "Antique Iron",
-      "rooms": "Kitchens, Bars, Studies"
-    },
-    {
       "id": "l9",
       "cat": "garden",
       "art": "lantern",
