@@ -100,19 +100,6 @@
       "unit": "per pair"
     },
     {
-      "id": "l10",
-      "cat": "garden",
-      "art": "coach",
-      "image": "",
-      "name": "Wall Mounted Coach Light",
-      "price": "£55",
-      "desc": "Traditional Victorian coach lantern wall light, IP44, E27 fitting, powder-coated steel.",
-      "dims": "Wall mount",
-      "finishes": "Black, Antique Bronze",
-      "rooms": "Porches, Exterior Walls",
-      "unit": "each"
-    },
-    {
       "id": "l11",
       "cat": "garden",
       "art": "spike",
