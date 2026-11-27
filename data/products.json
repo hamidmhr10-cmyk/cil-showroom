@@ -1439,6 +1439,303 @@
       ],
       "stock": 20,
       "showroom": true
+    },
+    {
+      "id": "sky-blue-round-ceiling-fan-light-ym-07",
+      "sku": "YM-07",
+      "cat": "fan",
+      "art": "fan",
+      "name": "Sky Blue Round Ceiling Fan Light",
+      "h1": "Sky Blue Round Ceiling Fan Light with Glowing Halo Ring",
+      "seo_title": "Sky Blue Round Ceiling Fan Light | LURIXA Luton",
+      "meta": "Sky blue round ceiling fan light with a glowing halo ring and an enclosed fan, ideal for kids’ rooms. £59 inc VAT. See it lit in our Luton showroom.",
+      "price": "£59",
+      "unit": "inc VAT",
+      "short": "Round fan light with a sky-blue centre, a glowing halo ring and an enclosed fan.",
+      "desc": "Cool air and soft light from a single fitting. A slim halo ring glows around a calm sky-blue centre, while the fan sits behind a grille with no exposed blades, so it suits children’s bedrooms and playrooms as well as grown-up spaces. It sits close to the ceiling for a neat, uncluttered look.",
+      "dims": "",
+      "finishes": "Blue and white",
+      "rooms": "Children’s bedrooms, nurseries, playrooms",
+      "features": [
+        "Light and fan in one ceiling fitting",
+        "Fan enclosed behind a grille, no exposed blades",
+        "Glowing halo ring around a sky-blue centre",
+        "Sits close to the ceiling",
+        "Also available in blush pink (YM-08)"
+      ],
+      "image": "/images/products/ym-07-lit.webp",
+      "gallery": [
+        "/images/products/ym-07-unlit.webp"
+      ],
+      "video": "/images/products/ym-07-video.mp4",
+      "thumb": "/images/products/ym-07-lit-card.webp",
+      "thumb2": "/images/products/ym-07-unlit-card.webp",
+      "alt": [
+        "Sky Blue Round Ceiling Fan Light switched on",
+        "Sky Blue Round Ceiling Fan Light switched off"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "blush-pink-round-ceiling-fan-light-ym-08",
+      "sku": "YM-08",
+      "cat": "fan",
+      "art": "fan",
+      "name": "Blush Pink Round Ceiling Fan Light",
+      "h1": "Blush Pink Round Ceiling Fan Light with Glowing Halo Ring",
+      "seo_title": "Blush Pink Round Ceiling Fan Light | LURIXA Luton",
+      "meta": "Blush pink round ceiling fan light with a glowing halo ring and an enclosed fan, made for kids’ rooms. £59 inc VAT. See it lit in our Luton showroom.",
+      "price": "£59",
+      "unit": "inc VAT",
+      "short": "Round fan light with a blush-pink centre, a glowing halo ring and an enclosed fan.",
+      "desc": "Cool air and soft light from a single fitting. A slim halo ring glows around a warm blush-pink centre, while the fan sits behind a grille with no exposed blades, making it a lovely choice for a child’s bedroom or nursery. It sits close to the ceiling for a neat, uncluttered look.",
+      "dims": "",
+      "finishes": "Pink and white",
+      "rooms": "Children’s bedrooms, nurseries, playrooms",
+      "features": [
+        "Light and fan in one ceiling fitting",
+        "Fan enclosed behind a grille, no exposed blades",
+        "Glowing halo ring around a blush-pink centre",
+        "Sits close to the ceiling",
+        "Also available in sky blue (YM-07)"
+      ],
+      "image": "/images/products/ym-08-lit.webp",
+      "gallery": [
+        "/images/products/ym-08-unlit.webp"
+      ],
+      "video": "/images/products/ym-08-video.mp4",
+      "thumb": "/images/products/ym-08-lit-card.webp",
+      "thumb2": "/images/products/ym-08-unlit-card.webp",
+      "alt": [
+        "Blush Pink Round Ceiling Fan Light switched on",
+        "Blush Pink Round Ceiling Fan Light switched off"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "pink-cloud-bunny-ceiling-fan-light-ym-09",
+      "sku": "YM-09",
+      "cat": "fan",
+      "art": "fan",
+      "name": "Pink Cloud Bunny Ceiling Fan Light",
+      "h1": "Pink Cloud Bunny Ceiling Fan Light for Children’s Rooms",
+      "seo_title": "Pink Cloud Bunny Ceiling Fan Light | LURIXA Luton",
+      "meta": "Pink cloud bunny ceiling fan light: a sleeping bunny, a glowing ring and a built-in fan for kids’ rooms. £59 inc VAT. See it lit in our Luton showroom.",
+      "price": "£59",
+      "unit": "inc VAT",
+      "short": "A sleeping bunny on a pink cloud inside a glowing ring, with a built-in fan.",
+      "desc": "A playful centrepiece for a child’s room. A sleeping bunny curls up on a soft pink cloud inside a glowing ring, with a built-in fan tucked into the base. It lights the room and keeps the air moving on warm nights, with no exposed blades.",
+      "dims": "",
+      "finishes": "Pink and white",
+      "rooms": "Children’s bedrooms, nurseries",
+      "features": [
+        "Light and fan in one ceiling fitting",
+        "Sleeping bunny on a pink cloud",
+        "Glowing outer ring",
+        "Built-in fan, no exposed blades",
+        "Made for children’s bedrooms and nurseries"
+      ],
+      "image": "/images/products/ym-09-lit.webp",
+      "gallery": [
+        "/images/products/ym-09-unlit.webp"
+      ],
+      "video": "/images/products/ym-09-video.mp4",
+      "thumb": "/images/products/ym-09-lit-card.webp",
+      "thumb2": "/images/products/ym-09-unlit-card.webp",
+      "alt": [
+        "Pink Cloud Bunny Ceiling Fan Light switched on",
+        "Pink Cloud Bunny Ceiling Fan Light switched off"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "starry-square-ceiling-fan-light-ym-10",
+      "sku": "YM-10",
+      "cat": "fan",
+      "art": "fan",
+      "name": "Starry Square Ceiling Fan Light",
+      "h1": "Starry Square Ceiling Fan Light with Touch Panel",
+      "seo_title": "Starry Square Ceiling Fan Light | LURIXA Luton",
+      "meta": "Starry square ceiling fan light with a glowing edge, touch panel and enclosed fan. £59 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£59",
+      "unit": "inc VAT",
+      "short": "Square fan light with a scatter of stars, a glowing edge and touch controls.",
+      "desc": "A square fan light with a scatter of stars that sparkle when the light is on. The fan sits in a neat central housing with no exposed blades, a row of touch controls sits on the panel, and the soft-edged frame glows all the way round.",
+      "dims": "",
+      "finishes": "White with grey trim",
+      "rooms": "Bedrooms, children’s rooms, living rooms",
+      "features": [
+        "Light and fan in one ceiling fitting",
+        "Star pattern that lights up",
+        "Touch control panel on the fitting",
+        "Fan enclosed in the centre, no exposed blades",
+        "Square frame with a glowing edge"
+      ],
+      "image": "/images/products/ym-10-lit.webp",
+      "gallery": [
+        "/images/products/ym-10-unlit.webp"
+      ],
+      "video": "/images/products/ym-10-video.mp4",
+      "thumb": "/images/products/ym-10-lit-card.webp",
+      "thumb2": "/images/products/ym-10-unlit-card.webp",
+      "alt": [
+        "Starry Square Ceiling Fan Light switched on",
+        "Starry Square Ceiling Fan Light switched off"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "white-halo-ceiling-fan-light-ym-13",
+      "sku": "YM-13",
+      "cat": "fan",
+      "art": "fan",
+      "name": "White Halo Ceiling Fan Light",
+      "h1": "White Halo Ceiling Fan Light with Rounded Frame",
+      "seo_title": "White Halo Ceiling Fan Light | LURIXA Luton",
+      "meta": "White halo ceiling fan light with a deep rounded frame and enclosed fan. A light and a fan in one. £64 inc VAT. See it lit in our Luton showroom.",
+      "price": "£64",
+      "unit": "inc VAT",
+      "short": "Rounded white fan light with two curved light windows and an enclosed fan.",
+      "desc": "Soft, rounded lines and a deep white frame give this fan light a calm, modern look. Two curved light windows sit either side of the enclosed fan, and the whole frame glows when the light is on. A fan and a light in one fitting, with no exposed blades.",
+      "dims": "",
+      "finishes": "White",
+      "rooms": "Bedrooms, living rooms, home offices",
+      "features": [
+        "Light and fan in one ceiling fitting",
+        "Deep rounded white frame that glows",
+        "Two curved light windows",
+        "Fan enclosed behind a grille, no exposed blades",
+        "Calm, modern design"
+      ],
+      "image": "/images/products/ym-13-lit.webp",
+      "gallery": [
+        "/images/products/ym-13-unlit.webp"
+      ],
+      "video": "/images/products/ym-13-video.mp4",
+      "thumb": "/images/products/ym-13-lit-card.webp",
+      "thumb2": "/images/products/ym-13-unlit-card.webp",
+      "alt": [
+        "White Halo Ceiling Fan Light switched on",
+        "White Halo Ceiling Fan Light switched off"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "round-white-ceiling-fan-light-ym-01",
+      "sku": "YM-01",
+      "cat": "fan",
+      "art": "fan",
+      "name": "Round White Ceiling Fan Light",
+      "h1": "Round White Ceiling Fan Light with Built-in Fan",
+      "seo_title": "Round White Ceiling Fan Light | LURIXA Luton",
+      "meta": "Round white ceiling fan light with a wide glowing disc and a built-in fan, no exposed blades. £59 inc VAT. See it lit in our Luton showroom.",
+      "price": "£59",
+      "unit": "inc VAT",
+      "short": "Clean, round white fan light with a wide glowing disc and a built-in fan.",
+      "desc": "A clean, round fan light in white. A wide glowing disc lights the room, and the fan is tucked into a slim central panel with no exposed blades. The same design is also available with a black or wood-effect trim.",
+      "dims": "",
+      "finishes": "White",
+      "rooms": "Bedrooms, living rooms, kitchens",
+      "watts": "70W",
+      "features": [
+        "Light and fan in one ceiling fitting",
+        "Wide round light panel",
+        "Built-in fan in a slim central panel, no exposed blades",
+        "White finish",
+        "Also available with black or wood-effect trim"
+      ],
+      "image": "/images/products/ym-01-lit.webp",
+      "gallery": [
+        "/images/products/ym-01-unlit.webp"
+      ],
+      "video": "/images/products/ym-01-video.mp4",
+      "thumb": "/images/products/ym-01-lit-card.webp",
+      "thumb2": "/images/products/ym-01-unlit-card.webp",
+      "alt": [
+        "Round White Ceiling Fan Light switched on",
+        "Round White Ceiling Fan Light switched off"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "large-rectangular-ceiling-fan-light-ym-15",
+      "sku": "YM-15",
+      "cat": "fan",
+      "art": "fan",
+      "name": "Large Rectangular Ceiling Fan Light",
+      "h1": "Large Rectangular Ceiling Fan Light for Living Rooms",
+      "seo_title": "Large Rectangular Ceiling Fan Light | LURIXA Luton",
+      "meta": "Large rectangular ceiling fan light with layered glowing frames and an enclosed fan, for bigger rooms. £124 inc VAT. See it lit in our Luton showroom.",
+      "price": "£124",
+      "unit": "inc VAT",
+      "short": "Our largest fan light: layered glowing frames around a long enclosed fan.",
+      "desc": "Our largest fan light, made for bigger rooms. Layered rectangular frames glow around a long central fan, giving a bold, architectural look on the ceiling, while the fan keeps the air moving with no exposed blades.",
+      "dims": "",
+      "finishes": "White",
+      "rooms": "Living rooms, open-plan spaces, large bedrooms",
+      "features": [
+        "Light and fan in one ceiling fitting",
+        "Our largest fan light",
+        "Layered rectangular light frames",
+        "Long enclosed fan, no exposed blades",
+        "Suits larger living rooms and open-plan spaces"
+      ],
+      "image": "/images/products/ym-15-lit.webp",
+      "gallery": [
+        "/images/products/ym-15-unlit.webp"
+      ],
+      "video": "/images/products/ym-15-video.mp4",
+      "thumb": "/images/products/ym-15-lit-card.webp",
+      "thumb2": "/images/products/ym-15-unlit-card.webp",
+      "alt": [
+        "Large Rectangular Ceiling Fan Light switched on",
+        "Large Rectangular Ceiling Fan Light switched off"
+      ],
+      "stock": 10,
+      "showroom": true
+    },
+    {
+      "id": "square-white-twin-panel-ceiling-fan-light-ym-03",
+      "sku": "YM-03",
+      "cat": "fan",
+      "art": "fan",
+      "name": "Square White Twin-Panel Ceiling Fan Light",
+      "h1": "Square White Ceiling Fan Light with Twin Light Panels",
+      "seo_title": "Square White Twin-Panel Ceiling Fan Light | LURIXA Luton",
+      "meta": "Square white ceiling fan light with twin light panels and a slim central fan. £59 inc VAT. See it lit in our Luton showroom. Enquire today.",
+      "price": "£59",
+      "unit": "inc VAT",
+      "short": "Crisp square fan light with two wide light panels and a slim central fan.",
+      "desc": "A crisp, square fan light with two wide light panels either side of a slim central fan. Clean and understated, it suits modern bedrooms, studies and kitchens, giving you light and a gentle breeze from one fitting with no exposed blades.",
+      "dims": "",
+      "finishes": "White",
+      "rooms": "Bedrooms, studies, kitchens",
+      "features": [
+        "Light and fan in one ceiling fitting",
+        "Two wide light panels",
+        "Slim central fan, no exposed blades",
+        "Square white design",
+        "Compact size"
+      ],
+      "image": "/images/products/ym-03-lit.webp",
+      "gallery": [
+        "/images/products/ym-03-unlit.webp"
+      ],
+      "video": "/images/products/ym-03-video.mp4",
+      "thumb": "/images/products/ym-03-lit-card.webp",
+      "thumb2": "/images/products/ym-03-unlit-card.webp",
+      "alt": [
+        "Square White Twin-Panel Ceiling Fan Light switched on",
+        "Square White Twin-Panel Ceiling Fan Light switched off"
+      ],
+      "stock": 10,
+      "showroom": true
     }
   ],
   "furniture": [
